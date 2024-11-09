@@ -13,7 +13,7 @@ function initializeCalendar(containerId, inputId, mode) {
     const calendarContent = document.createElement("div");
     calendarContent.className = "calendar-content";
     
-    // Заголовок календаря
+    // Заголовок календар
     const header = document.createElement("div");
     header.className = "calendar-header";
     header.innerHTML = `
