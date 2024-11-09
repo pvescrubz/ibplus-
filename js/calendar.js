@@ -70,11 +70,10 @@ function renderCalendar() {
   // Плавное обновление содержимого календаря
   const existingContent = calendar.querySelector(".calendar-content");
   if (existingContent) {
-    existingContent.classList.add("fade-out");
     setTimeout(() => {
       calendar.removeChild(existingContent);
       calendar.appendChild(calendarContent);
-    }, 500);
+    }, 300);
   } else {
     calendar.appendChild(calendarContent);
   }
