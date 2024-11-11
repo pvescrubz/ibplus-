@@ -411,6 +411,24 @@ html {
 
 
 /* Основные стили для date-picker */
+
+
+.input-text {
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+text-align: center;
+color: var(--black);
+}
+.calendar-days {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: center;
+  color: var(--black);
+}
 .date-picker {
     position: relative;
     width: 250px;
