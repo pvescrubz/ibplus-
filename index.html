@@ -15,9 +15,9 @@
             <img src="./img/Logo.png" alt="Logo" />
             <p class="logo_text">IB.PLUS</p>
           </div>
-          <div class="settings_container hidden">
-            <a href="#0" class="tech_btn disable" id="settings_btn">
-              <svg
+          <div class="settings_container">
+            <a href="#0" class="tech_btn-top"  data-btn="settings_btn" >
+              <svg class="tech_btn-svg"
                 width="28"
                 height="28"
                 viewBox="0 0 28 28"
@@ -30,7 +30,7 @@
                 />
               </svg>
             </a>
-            <ul class="settings_content hidden">
+            <ul class="settings_content">
               <li class="settings_list_item">
                 <a href="#" class="settings_btn">Сменить пароль</a>
                 <svg
@@ -71,8 +71,8 @@
                   />
                 </svg>
               </li>
-              <li class="settings_list_item">
-                <a href="#" class="settings_btn">Выйти</a>
+              <li class="settings_list_item exit">
+                <a href="#" class="settings_btn ">Выйти</a>
                 <svg
                   class="settings_btn-svg"
                   width="12"
@@ -96,8 +96,8 @@
         </div>
         <nav class="nav_menu">
           <ul class="nav_menu_list">
-            <li class="nav_menu_item">
-              <a href="#" class="nav_menu_link">Информация по счетам </a>
+            <li class="nav_menu_item active">
+              <a href="#" class="nav_menu_link ">Информация по счетам </a>
               <svg
                 class="arrow_nav"
                 width="12"
@@ -216,7 +216,7 @@
                 />
               </svg>
             </li>
-            <li class="nav_menu_item active">
+            <li class="nav_menu_item ">
               <a href="#" class="nav_menu_link">Кассовые ордера </a>
               <svg
                 class="arrow_nav"
@@ -485,8 +485,8 @@
             </a>
           </div>
           <div class="nav_tech">
-            <a class="tech_btn" href="#0">
-              <svg
+            <a class="tech_btn bottom" data-btn="settings_btn" href="#0">
+              <svg class="tech_btn-svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -522,88 +522,113 @@
                 />
               </svg>
             </a>
-            <div class="settings_container ">
-              <a href="#0" class="tech_btn disable" id="settings_btn">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23.4502 10.757C21.3385 10.757 20.4752 9.26367 21.5252 7.432C22.1318 6.37033 21.7702 5.017 20.7085 4.41033L18.6902 3.25533C17.7685 2.707 16.5785 3.03367 16.0302 3.95533L15.9018 4.177C14.8518 6.00867 13.1252 6.00867 12.0635 4.177L11.9352 3.95533C11.4102 3.03367 10.2202 2.707 9.2985 3.25533L7.28016 4.41033C6.2185 5.017 5.85683 6.382 6.4635 7.44367C7.52516 9.26367 6.66183 10.757 4.55016 10.757C3.33683 10.757 2.3335 11.7487 2.3335 12.9737V15.027C2.3335 16.2403 3.32516 17.2437 4.55016 17.2437C6.66183 17.2437 7.52516 18.737 6.4635 20.5687C5.85683 21.6303 6.2185 22.9837 7.28016 23.5903L9.2985 24.7453C10.2202 25.2937 11.4102 24.967 11.9585 24.0453L12.0868 23.8237C13.1368 21.992 14.8635 21.992 15.9252 23.8237L16.0535 24.0453C16.6018 24.967 17.7918 25.2937 18.7135 24.7453L20.7318 23.5903C21.7935 22.9837 22.1552 21.6187 21.5485 20.5687C20.4868 18.737 21.3502 17.2437 23.4618 17.2437C24.6752 17.2437 25.6785 16.252 25.6785 15.027V12.9737C25.6668 11.7603 24.6752 10.757 23.4502 10.757ZM14.0002 17.792C11.9118 17.792 10.2085 16.0887 10.2085 14.0003C10.2085 11.912 11.9118 10.2087 14.0002 10.2087C16.0885 10.2087 17.7918 11.912 17.7918 14.0003C17.7918 16.0887 16.0885 17.792 14.0002 17.792Z"
-                    fill="#A3A3C2"
-                  />
-                </svg>
-              </a>
-              <ul class="settings_content hidden">
-                <li class="settings_list_item">
-                  <a href="#" class="settings_btn">Сменить пароль</a>
-                  <svg
-                    class="settings_btn-svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.45508 9.95906L7.71508 6.69906C8.10008 6.31406 8.10008 5.68406 7.71508 5.29906L4.45508 2.03906"
-                      stroke="#4F4BF6"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </li>
-                <li class="settings_list_item">
-                  <a href="#" class="settings_btn">Сменить номер телефона</a>
-                  <svg
-                    class="settings_btn-svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.45508 9.95906L7.71508 6.69906C8.10008 6.31406 8.10008 5.68406 7.71508 5.29906L4.45508 2.03906"
-                      stroke="#4F4BF6"
-                      stroke-width="1.5"
-                      stroke-miterlimit="10"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </nav>
-        <div class="content_main">
-<!-- Календарь для выбора диапазона дат -->
-<div class="date-picker" data-mode="range">
-  <input type="text" id="date-input-range" placeholder="Выберите диапазон" readonly />
-  <div class="calendar" id="calendar-range"></div>
-</div>
+        <div class="content_main main_screen">
+          <div class="content_left">
+          <div class="title_container">
+            <h2 class="main_title ">Информация по счетам</h2>
+            <svg class="svg_title" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.3333 2.16602H8.66667C4.875 2.16602 3.25 4.33268 3.25 7.58268V18.416C3.25 21.666 4.875 23.8327 8.66667 23.8327H17.3333C21.125 23.8327 22.75 21.666 22.75 18.416V7.58268C22.75 4.33268 21.125 2.16602 17.3333 2.16602ZM8.66667 13.2702H13C13.4442 13.2702 13.8125 13.6385 13.8125 14.0827C13.8125 14.5268 13.4442 14.8952 13 14.8952H8.66667C8.2225 14.8952 7.85417 14.5268 7.85417 14.0827C7.85417 13.6385 8.2225 13.2702 8.66667 13.2702ZM17.3333 19.2285H8.66667C8.2225 19.2285 7.85417 18.8602 7.85417 18.416C7.85417 17.9718 8.2225 17.6035 8.66667 17.6035H17.3333C17.7775 17.6035 18.1458 17.9718 18.1458 18.416C18.1458 18.8602 17.7775 19.2285 17.3333 19.2285ZM20.0417 10.0202H17.875C16.2283 10.0202 14.8958 8.68768 14.8958 7.04102V4.87435C14.8958 4.43018 15.2642 4.06185 15.7083 4.06185C16.1525 4.06185 16.5208 4.43018 16.5208 4.87435V7.04102C16.5208 7.78852 17.1275 8.39518 17.875 8.39518H20.0417C20.4858 8.39518 20.8542 8.76352 20.8542 9.20768C20.8542 9.65185 20.4858 10.0202 20.0417 10.0202Z" fill="#CBD2F2" />
+            </svg>
+          </div>
+          <div class="title_content">
+            <h3 class="small_title">TEST [#211.000]</h3>
+            <div class="link_container">
+              <a href="#0" class="text_gray link">Выписка по счету
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.7124 8.29922L6.42907 5.58255C6.7499 5.26172 6.7499 4.73672 6.42907 4.41589L3.7124 1.69922" stroke="#73737c" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> </a>
+              <a href="#0" class="text_gray">Выписка по счету 
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.7124 8.29922L6.42907 5.58255C6.7499 5.26172 6.7499 4.73672 6.42907 4.41589L3.7124 1.69922" stroke="#73737c" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> </a>
+            </div>
+          </div>
+            <div class="table-container">
+              <ul class="grid-table">
+                <li class="grid-row grid-main">
+                  <p class="grid-cell grid_colored  text_bold">Дата последней транзакции</p>
+                  <p class="grid-cell grid_colored text_bold">Текущий остаток</p>
+                  <p class="grid-cell grid_colored text_bold">Валюта счета</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold ">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold ">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold ">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold ">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold ">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row">
+                  <p class="grid-cell text_semibold">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell end text_semibold">USD</p>
+                </li>
+              </ul>
+              <div class="grid_btns">
+                <a href="#0" class="grid-btn active">1</a>
+                <a href="#0" class="grid-btn">2</a>
+                <a href="#0" class="grid-btn">3</a>
+                <a href="#0" class="grid-btn">4</a>
+                <a href="#0" class="grid-btn">5</a>
+                <a href="#0" class="grid-btn more"></a>
+              </div>
+            </div>
+        </div>
+        <div class="news_container">
+          <ul class="news_content">
+            <li class="logo_media news_logo">
+              <img src="./img/Logo.png" alt="Logo" />
+              <p class="news_text">ПОСЛЕДНИЕ НОВОСТИ</p>
+            </li>
+            <li class="new_item">
 
-<!-- Календарь для выбора одной даты -->
-<div class="date-picker" data-mode="single">
-  <input type="text" id="date-input-single" placeholder="Выберите дату" readonly />
-  <div class="calendar" id="calendar-single"></div>
-</div>
-
+              <a href="#0" class="news_info ">
+                <span class="news_date text_gray">12.09.11</span>
+                <span class="text_semibold"> Очень  хорошие новости для всех!!!</span>
+               </a>
+            </li>
+            <li class="new_item">
+              <p class="news_date text_gray">12.09.11</p>
+              <a href="#0" class="news_info text_semibold">Очень хорошие новости для всех!!!</a>
+            </li>
+            <li class="new_item">
+              <p class="news_date text_gray">12.09.11</p>
+              <a href="#0" class="news_info text_semibold">Очень хорошие новости для всех!!!</a>
+            </li>
+            <a href="#0" class="news_button">Список новостей</a>
+          </ul>
+        </div>
         </div>
       </div>
-
-
-
-     
     </main>
   </body>
 
-  <script src="./js/scrooll.js"></script>
-  <script src="./js/calendar.js"></script>
+  <!-- <script src="./js/scrooll.js"></script>
+  <script src="./js/calendar.js"></script> -->
+  <script src="./js/popup.js"></script>
 </html>
