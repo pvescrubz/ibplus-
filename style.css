@@ -337,11 +337,8 @@ html {
     display: none;
 }
 
-.settings_list_item {
-
-}
-
 .settings_content {
+  z-index: 3;
   display: none;
     flex-direction: column;
     gap:10px;
@@ -410,6 +407,7 @@ html {
   padding: 0;
 }
 .news_container {
+  height: fit-content;
   border-radius: 10px;
   max-width: 270px;
   padding: 14px 14px;
@@ -451,10 +449,15 @@ margin: 0;
 
 .grid-row {
   display: grid;
-  grid-template-columns: 1fr 1fr auto; /* 3 колонки */
+  grid-template-columns: 1fr 1fr auto;
   padding: 12px;
   border-bottom: 1px solid #e7e9ef;
   background-color: var(--white);
+}
+
+.grid_account {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .grid-row:last-child {
@@ -472,7 +475,6 @@ margin: 0;
 .grid-cell {
   margin: 0;
   background-color: #ffffff;
-  border-radius: 4px;
   padding: 12px;
   text-align: left;
 }
@@ -550,6 +552,11 @@ color: var(--black);
 }
 .settings_list_item.exit {
   display: none;
+}
+
+.content_account {
+  display: flex;
+  max-width: 1031px;
 }
 
 @media screen and (max-width: 1300px) {
