@@ -47,3 +47,4 @@ line-height: 171%;
 color: var(--grey);
 margin: 0;
 }
+

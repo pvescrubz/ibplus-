@@ -24,7 +24,6 @@ document.querySelectorAll('[data-btn="settings_btn"]').forEach(button => {
   // Закрытие окна при начале скролла
   window.addEventListener('scroll', function() {
     const settingsContent = document.querySelector('.settings_content');
-  
     if (settingsContent.style.display === 'flex') {
       settingsContent.style.display = 'none';
     }
