@@ -12,13 +12,13 @@ function initializeCalendar(containerId, inputId, mode) {
   function renderCalendar() {
     const calendarContent = document.createElement("div");
     calendarContent.className = "calendar-content";
-
+    
     // Заголовок календар
     const header = document.createElement("div");
     header.className = "calendar-header";
     header.innerHTML = `
       <button onclick="changeMonth(-1)">&lt;</button>
-      <span>${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}</span>
+      <span class="input-text">${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}</span>
       <button onclick="changeMonth(1)">&gt;</button>
     `;
     calendarContent.appendChild(header);
