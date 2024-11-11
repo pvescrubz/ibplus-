@@ -583,10 +583,18 @@
           </div>
         </nav>
         <div class="content_main">
-          <div class="date-picker">
-            <input type="text" id="date-input" class="input-text" placeholder="Выберите дату" readonly />
-            <div class="calendar" id="calendar"></div>
-          </div>
+<!-- Календарь для выбора диапазона дат -->
+<div class="date-picker" data-mode="range">
+  <input type="text" id="date-input-range" placeholder="Выберите диапазон" readonly />
+  <div class="calendar" id="calendar-range"></div>
+</div>
+
+<!-- Календарь для выбора одной даты -->
+<div class="date-picker" data-mode="single">
+  <input type="text" id="date-input-single" placeholder="Выберите дату" readonly />
+  <div class="calendar" id="calendar-single"></div>
+</div>
+
         </div>
       </div>
 
