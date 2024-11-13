@@ -237,7 +237,7 @@
                 />
               </svg>
             </li>
-    
+
             <li class="nav_menu_item">
               <a href="#" class="nav_menu_link">Конвертация </a>
               <svg
@@ -525,31 +525,146 @@
                 />
               </svg>
             </div>
-           <div class="content_account">
-                <div class="content_account_item">
-                    <p class="content_account_item_title text_bold">Счет:</p>
-                    <div class="content_account_data_picker"> 
-                        <select>1</select>
-                        <select>1</select>
+            <div class="content_account">
+              <div class="content_account_item">
+                <p class="content_account_item_title text_bold">Счет:</p>
+                <div class="dropdown_container">
+                  <div class="dropdown">
+                    <a class="dropdown-button text_semibold"
+                      ><span class="dropdown-button_text text_semibold"
+                        >Выберите счет</span
+                      ></a
+                    >
+                    <!-- Дефолтное значение -->
+                    <div class="dropdown-content">
+                      <a
+                        href="#option1"
+                        class="text_semibold"
+                        data-value="Счет 1"
+                        >Счет 1</a
+                      >
+                      <a
+                        href="#option2"
+                        class="text_semibold"
+                        data-value="Счет 2"
+                        >Счет 2</a
+                      >
+                      <a
+                        href="#option3"
+                        class="text_semibold"
+                        data-value="Счет 3"
+                        >Счет 3</a
+                      >
                     </div>
-                </div>
-                <div class="content_account_item">
-                    <p class="content_account_item_title text_bold">Выписка</p>
-                    <div class="content_account_data_picker"> 
-                        <select>1</select>
-                        <select>1</select>
+                  </div>
+                  <div class="dropdown">
+                    <a class="dropdown-button text_semibold"
+                      ><span class="dropdown-button_text text_semibold"
+                        >RUB</span
+                      ></a
+                    >
+                    <!-- Дефолтное значение -->
+                    <div class="dropdown-content">
+                      <a href="#option1" class="text_semibold" data-value="USD"
+                        >USD</a
+                      >
+                      <a href="#option2" class="text_semibold" data-value="RUB"
+                        >RUB</a
+                      >
                     </div>
+                  </div>
                 </div>
-           </div>
+                <div class="checkbox_container">
+                  <label class="custom-checkbox text_semibold">
+                    <input type="checkbox" />
+                    <span class="checkbox-mark"></span>
+                    включая непроведенные документы
+                  </label>
+                  <label class="custom-checkbox text_semibold">
+                    <input type="checkbox" />
+                    <span class="checkbox-mark"></span>
+                    сортировать по времени
+                  </label>
+                </div>
+              </div>
+              <div class="content_account_item">
+                <p class="content_account_item_title text_bold">Выписка:</p>
+                <div class="checkbox_content">
+                  <div class="content_account radio">
+                    <div class="radio_container">
+                      <input
+                        type="radio"
+                        id="operation"
+                        name="drone"
+                        value="operation"
+                        checked
+                      />
+                      <label for="operation" class="text_semibold label_radio"
+                        >по операциям</label
+                      >
+                    </div>
+                    <div class="radio_container">
+                      <input
+                        type="radio"
+                        id="period"
+                        name="drone"
+                        value="period"
+                        checked
+                      />
+                      <label for="period" class="text_semibold label_radio"
+                        >за период</label
+                      >
+                    </div>
+                  </div>
+                  <div class="dropdown_content account">
+                    <div class="dropdown">
+                      <a class="dropdown-button text_semibold"
+                        ><span class="dropdown-button_text text_semibold"
+                          >За последние 5 операций</span
+                        ></a
+                      >
+                      <!-- Дефолтное значение -->
+                      <div class="dropdown-content">
+                        <a
+                          href="#option1"
+                          class="text_semibold"
+                          data-value="За последние 5 операций"
+                          >За последние 5 операций</a
+                        >
+                        <a
+                          href="#option2"
+                          class="text_semibold"
+                          data-value="За последние 15 операций"
+                          >За последние 15 операций</a
+                        >
+                        <a
+                          href="#option3"
+                          class="text_semibold"
+                          data-value="За последние 25 операций"
+                          >За последние 25 операций</a
+                        >
+                      </div>
+                    </div>
+                    <div class="date-picker" data-mode="range">
+                      <input
+                        type="text"
+                        id="date-input-range"
+                        class="input-main text_semibold"
+                        placeholder="Выберите диапазон"
+                        readonly
+                      />
+                      <div class="calendar" id="calendar-range"></div>
+                    </div>
+                  </div>
+                </div>
+                <button class="gradient_btn">Сформировать</button>
+              </div>
+            </div>
             <div class="table-container">
               <ul class="grid-table">
                 <li class="grid-row grid-main grid_account">
-                  <p class="grid-cell grid_colored text_bold">
-                    Дата	
-                  </p>
-                  <p class="grid-cell grid_colored text_bold">
-                    Документ
-                  </p>
+                  <p class="grid-cell grid_colored text_bold">Дата</p>
+                  <p class="grid-cell grid_colored text_bold">Документ</p>
                   <p class="grid-cell grid_colored text_bold">Номер</p>
                   <p class="grid-cell grid_colored text_bold">Детали</p>
                   <p class="grid-cell grid_colored text_bold">Корреспондент</p>
@@ -568,35 +683,35 @@
                   <p class="grid-cell text_semibold">USD</p>
                 </li>
                 <li class="grid-row grid_account">
-                    <p class="grid-cell text_semibold">14.06.2020</p>
-                    <p class="grid-cell middle text_semibold">604.06</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                  </li>
-                  <li class="grid-row grid_account">
-                    <p class="grid-cell text_semibold">14.06.2020</p>
-                    <p class="grid-cell middle text_semibold">604.06</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                  </li>
-                  <li class="grid-row grid_account">
-                    <p class="grid-cell text_semibold">14.06.2020</p>
-                    <p class="grid-cell middle text_semibold">604.06</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                    <p class="grid-cell text_semibold">USD</p>
-                  </li>
+                  <p class="grid-cell text_semibold">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row grid_account">
+                  <p class="grid-cell text_semibold">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
+                <li class="grid-row grid_account">
+                  <p class="grid-cell text_semibold">14.06.2020</p>
+                  <p class="grid-cell middle text_semibold">604.06</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                  <p class="grid-cell text_semibold">USD</p>
+                </li>
               </ul>
               <div class="grid_btns">
                 <a href="#0" class="grid-btn active">1</a>
@@ -616,4 +731,5 @@
   <script src="./js/scrooll.js"></script>
   <script src="./js/calendar.js"></script>
   <script src="./js/popup.js"></script>
+  <script src="./js/dropdown.js"></script>
 </html>

@@ -149,6 +149,15 @@ function initializeCalendar(containerId, inputId, mode) {
     }
   });
 
+  window.addEventListener('scroll', function() {
+    if (!calendar.contains(event.target) && event.target !== dateInput) {
+      calendar.classList.remove("active");
+    }
+
+
+  });
+
+
   dateInput.addEventListener("click", toggleCalendar);
 }
 
