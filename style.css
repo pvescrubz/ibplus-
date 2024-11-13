@@ -554,10 +554,217 @@ color: var(--black);
   display: none;
 }
 
+
 .content_account {
   display: flex;
+  margin-bottom: 30px;
+  justify-content: space-between;
   max-width: 1031px;
 }
+
+.content_account.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: normal;
+    gap: 29px;
+}
+
+/* Стили для drop-down */
+
+.dropdown_container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button_text {
+  position: relative;
+}
+
+.dropdown-button::after {
+  content: "";
+  background-image: url(./img/arrow-bottom.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 9px;
+  width: 10px;
+  height: 10px;
+}
+
+.dropdown-button {
+  position: relative;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid var(--purple-1);
+  border-radius: 10px;
+  padding: 10px 35px;
+}
+
+.dropdown-content {
+  margin-top: 15px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+
+
+/* Стиль для custom-checkbox */
+
+.content_account {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.radio_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5px
+}
+
+input[type='radio'] {
+  border: 1px solid var(--purple-1);
+}
+
+
+/* Скрытие стандартного чекбокса */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+/* Контейнер для кастомного чекбокса */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Стиль для кастомного чекбокса */
+.custom-checkbox .checkbox-mark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--purple-1);
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  background: var(--white);
+  box-sizing: border-box;
+}
+
+/* Отображение галочки при активном состоянии чекбокса */
+.custom-checkbox input[type="checkbox"]:checked + .checkbox-mark::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 8px;
+  height: 15px;
+  border: solid #007bff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+
+.radio_container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none; /* Hide the default radio button */
+}
+
+.label_radio {
+  position: relative;
+  padding-left: 30px; /* Space for custom radio */
+  cursor: pointer;
+}
+
+.label_radio::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Size of the custom radio */
+  height: 20px; /* Size of the custom radio */
+  border: 1px solid var(--purple-1);
+  border-radius: 50%; /* Make it round */
+  background-color: white; /* Background color */
+  transition: background 0.3s;
+}
+
+
+
+input[type="radio"]:checked + .label_radio::after {
+  content: '';
+  position: absolute;
+  left: 8px; /* Position of the inner dot */
+  top: 50%;
+  transform: translate(0,-50%);
+  width: 6px; /* Size of the inner dot */
+  height: 6px; /* Size of the inner dot */
+  border-radius: 50%; /* Make it round */
+  background-color: var(--purple-2); /* Inner dot color */
+}
+
+
+
+
+
+.checkbox_content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px; /* Space between grid items */
+}
+
+.dropdown_content.account {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
 
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
@@ -689,8 +896,6 @@ color: var(--black);
     width: 100%;
   }
 
-
-
   .nav_svg {
     width: 24px;
     height: 24px;
@@ -753,6 +958,12 @@ color: var(--black);
   .news_info  {
     flex-direction: column;
   }
+
+.content_account {
+  flex-direction: column;
+}
+
+
 }
 
 @media screen and (max-width: 768px) {
@@ -786,18 +997,23 @@ color: var(--black);
 }
 
 .input-main {
+  width: 100%;
+  border-color: transparent;
+  padding: 8px 5px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid var(--purple-1);
+border-radius: 10px;
+}
+
+.input-main::placeholder {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 14px;
   line-height: 171%;
   text-align: center;
   color: var(--black);
-  border-color: transparent;
-  padding: 8px 5px;
-  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
-  border-radius: 10px;
 }
-
 .input-main:focus,
 .input-main:hover {
   border-color: transparent;
@@ -813,7 +1029,6 @@ color: var(--black);
 }
 .date-picker {
     position: relative;
-    width: 250px;
   }
   
   #date-input {
@@ -830,11 +1045,11 @@ color: var(--black);
     position: absolute;
     top: 50px;
     width: 100%;
+    min-width: 250px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .calendar.active {
@@ -898,4 +1113,29 @@ color: var(--black);
     background: var(--purple-2);
     color: #fff;
     border-radius: 50%;
+  }
+
+  .content_account_item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gradient_btn {
+    margin-left: auto;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+    cursor: pointer;
+    color: white;
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+border: none;
+text-align: center;
+color: var(--white);
+padding: 10px 35px;
+  }
+
+  .gradient_btn:focus {
+    outline: #007bff;
   }
