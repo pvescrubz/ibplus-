@@ -801,7 +801,13 @@ font-size: 16px;
 line-height: 150%;
 color: var(--black);
 }
+.vipiska_tabs_content {
+  display: none;
+}
 
+.vipiska_tabs_content.active {
+  display: block;
+}
 .color_green {
   font-family: var(--font-family);
   font-weight: 700;
@@ -859,6 +865,101 @@ color: var(--black);
 .checkbox_container {
   width: fit-content;
 }
+
+
+.grid_data {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.vipiska_tabs_content {
+  padding: 0;
+}
+
+
+/* Основной контейнер попапа */
+.popup-container_vipiska {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Содержимое попапа */
+.popup-content_vipiska {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: left;
+}
+
+/* Кнопка закрытия */
+.popup-close {
+  font-size: 39px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 200%;
+  margin: 0;
+  color: var(--purple-2);
+}
+
+.popup-title-main-vipiska {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#popup-data_vipiska {
+  padding: 10px 15px;
+  background: var(--purple-1);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Два равных столбца */
+  gap: 10px; /* Расстояние между блоками */
+}
+
+.popup-descr-vipiska{
+  font-family: var(--font-family);
+font-weight: 600;
+font-size: 14px;
+line-height: 171%;
+color: var(--black);
+}
+
+/* Анимация появления попапа */
+.popup-container_vipiska {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Для адаптивности */
+
 
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
@@ -1183,7 +1284,20 @@ color: var(--black);
   .onlypc {
    display: none;
   }
+  .popup-content_vipiska {
+    max-width: 90%;
+    padding: 15px;
+  }
 
+  #popup-data_vipiska {
+    grid-template-columns: 1fr; /* Два равных столбца */
+  }
+  .popup-item_vipiska {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
