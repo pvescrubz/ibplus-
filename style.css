@@ -67,6 +67,7 @@ font-size: 14px;
 line-height: 171%;
 color: var(--black);
 }
+
 .new_item {
   padding-top: 10px;
   display: flex;
@@ -117,7 +118,9 @@ margin: 0;
 font-weight: 500;
 font-size: 14px;
 line-height: 171%;
+white-space: nowrap;
 color: var(--black);
+margin: 0 0 5px 0;
 }
 /* 
 Главный UI
@@ -128,7 +131,7 @@ body {
 }
 
 html {
-  min-width: 340px;
+  min-width: 360px;
 }
 
 .content {
@@ -195,7 +198,6 @@ html {
   position: relative;
   justify-content: center;
 }
-
 
 .content_main {
   padding-left: 15px;
@@ -356,7 +358,7 @@ html {
   .settings_content.active {
     display: flex;
   }
-  
+
   .settings_list_item {
     display: flex;
     align-items: center;
@@ -400,7 +402,6 @@ html {
   word-wrap: break-word;
 }
 
-
 .news_content {
   display: flex;
   flex-direction: column;
@@ -424,9 +425,9 @@ margin: 0;
 }
 
 .content_left {
+
   width: 100%;
 }
-
 
 .table-container {
   display: flex;
@@ -523,7 +524,6 @@ color: var(--black);
   background: var(--purple-1);
 }
 .grid_colored:first-child {
-
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -532,7 +532,14 @@ color: var(--black);
 
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-} .tech_btn {
+} 
+
+.grid_colored:nth-last-child(2) {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.tech_btn {
   position: relative;
   z-index: 3;
 }
@@ -571,6 +578,8 @@ color: var(--black);
     align-items: flex-start;
     justify-content: normal;
     gap: 29px;
+    margin-bottom: 0;
+    justify-content: space-evenly;
 }
 
 /* Стили для drop-down */
@@ -582,6 +591,7 @@ color: var(--black);
 }
 
 .dropdown {
+  width: 100%;
   position: relative;
   display: inline-block;
 }
@@ -603,7 +613,10 @@ color: var(--black);
 }
 
 .dropdown-button {
+
+  text-align: center;
   position: relative;
+  display: block;
   background-color: #ffffff;
   cursor: pointer;
   border: 1px solid var(--purple-1);
@@ -643,13 +656,11 @@ color: var(--black);
   display: none;
 }
 
-
-
 /* Стиль для custom-checkbox */
 
 .content_account {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
 }
 
@@ -663,7 +674,6 @@ color: var(--black);
 input[type='radio'] {
   border: 1px solid var(--purple-1);
 }
-
 
 /* Скрытие стандартного чекбокса */
 .custom-checkbox input[type="checkbox"] {
@@ -703,8 +713,6 @@ input[type='radio'] {
   transform: rotate(45deg);
 }
 
-
-
 .radio_container {
   display: flex;
   align-items: center;
@@ -734,8 +742,6 @@ input[type="radio"] {
   transition: background 0.3s;
 }
 
-
-
 input[type="radio"]:checked + .label_radio::after {
   content: '';
   position: absolute;
@@ -748,14 +754,21 @@ input[type="radio"]:checked + .label_radio::after {
   background-color: var(--purple-2); /* Inner dot color */
 }
 
-
-
-
+.show_more-btn {
+  display: none;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 6px;
+  color: #73737C;
+}
 
 .checkbox_content {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px; /* Space between grid items */
+  margin-bottom: 20px;
 }
 
 .dropdown_content.account {
@@ -764,7 +777,88 @@ input[type="radio"]:checked + .label_radio::after {
   gap: 20px;
 }
 
+.text_content {
+  display: flex;
+  padding-left: 15px;
+  flex-direction: column;
 
+}
+
+.table_content_info {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.table_content_info_item {
+  display: flex;
+  gap: 10px;
+}
+.title_table {
+  font-family: var(--font-family);
+font-weight: 700;
+font-size: 16px;
+line-height: 150%;
+color: var(--black);
+}
+
+.color_green {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: center;
+  margin: 0;
+  color: var(--green-2);
+}
+
+.vipiska_btns-container {
+  margin: 0 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  align-items: center;
+}
+
+
+.vipiska_btns-nav {
+  margin: 0;
+
+}
+
+.help_btn {
+  background: linear-gradient(180deg, #13182c 0%, #3432a1 100%), rgba(0, 0, 0, 0.6);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: center;
+  cursor: pointer;
+  color: var(--white);
+  border-radius: 40px;
+  padding: 12px 24px;
+  border: unset;
+}
+
+.pc-tablet {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.onlypc {
+  display: block;
+}
+
+.tablet-mobile {
+ display: none;
+}
+
+.checkbox_container {
+  width: fit-content;
+}
 
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
@@ -778,9 +872,53 @@ input[type="radio"]:checked + .label_radio::after {
   .logo {
     padding-left: 10px;
   }
+
+
 }
 
+
+
+
 @media screen and (max-width: 1200px) {
+
+  .gradient_btn {
+    width: 100%;
+    margin-left: 0;
+  }
+  .content_account {
+    max-width: 100%;
+  }
+  .content_account_item {
+    width: 100%;
+  }
+  .grid_colored:nth-last-child(2) {
+    border-top-right-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+  .show_more-btn {
+    display: block;
+  }
+  .pc-tablet {
+    display: block;
+  }
+  
+  .mobile-only {
+   display: none;
+  }
+  
+  .onlypc {
+   display: none;
+  }
+
+  .tablet-mobile {
+    display: block;
+  }
+
+
+  .grid_account {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
 
   .nav_menu_item.active {
     background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
@@ -843,7 +981,6 @@ input[type="radio"]:checked + .label_radio::after {
   .tech_btn.disable {
     display: flex;
   }
-
 
   .tech_btn.bottom {
     display: flex;
@@ -967,6 +1104,54 @@ input[type="radio"]:checked + .label_radio::after {
 }
 
 @media screen and (max-width: 768px) {
+  .tablet-mobile {
+    display: block;
+
+  }
+
+  .dropdown-button {
+    padding: 10px 10px;
+    text-align: center;
+  }
+
+  .input-main::placeholder,.dropdown-button_text {
+    font-size: 12px !important;
+  }
+
+  .vipiska_btns {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .help_btn {
+    display: block;
+    width: 100%;
+  }
+  .vipiska_btns-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .table_content_info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  
+  .table_content_info_item {
+    display: flex;
+    gap: 3px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+
+  .title_table {
+    text-align: center;
+    font-size: 14px;
+  }
   .nav {
     padding: 0;
   }
@@ -980,7 +1165,25 @@ input[type="radio"]:checked + .label_radio::after {
     display: none;
   }
   
- 
+
+
+  .grid_account {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pc-tablet {
+   display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .onlypc {
+   display: none;
+  }
+
 }
 
 
