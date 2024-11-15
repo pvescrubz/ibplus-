@@ -153,8 +153,6 @@ function initializeCalendar(containerId, inputId, mode) {
     if (!calendar.contains(event.target) && event.target !== dateInput) {
       calendar.classList.remove("active");
     }
-
-
   });
 
 
@@ -163,4 +161,4 @@ function initializeCalendar(containerId, inputId, mode) {
 
 // Инициализация календарей
 initializeCalendar("calendar-range", "date-input-range", "range");  // Для выбора диапазона
-initializeCalendar("calendar-single", "date-input-single", "single");  // Для выбора одной даты
+// initializeCalendar("calendar-single", "date-input-single", "single");  // Для выбора одной даты
