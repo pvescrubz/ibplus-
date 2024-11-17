@@ -118,7 +118,6 @@ margin: 0;
 font-weight: 500;
 font-size: 14px;
 line-height: 171%;
-white-space: nowrap;
 color: var(--black);
 margin: 0 0 5px 0;
 }
@@ -534,10 +533,7 @@ color: var(--black);
   border-bottom-right-radius: 30px;
 } 
 
-.grid_colored:nth-last-child(2) {
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
+
 
 .tech_btn {
   position: relative;
@@ -598,6 +594,7 @@ color: var(--black);
 
 .dropdown-button_text {
   position: relative;
+  white-space: nowrap; 
 }
 
 .dropdown-button::after {
@@ -625,7 +622,7 @@ color: var(--black);
 }
 
 .dropdown-content {
-  margin-top: 15px;
+  margin-top: 10px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -640,6 +637,7 @@ color: var(--black);
   padding: 8px 12px;
   text-decoration: none;
   display: block;
+  text-align: center;
   border-radius: 5px;
 }
 
@@ -1014,7 +1012,10 @@ color: var(--black);
   .tablet-mobile {
     display: block;
   }
-
+  .grid_colored-vipiska:nth-last-child(2) {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
 
   .grid_account {
     display: grid;
@@ -1210,6 +1211,10 @@ color: var(--black);
 
   }
 
+  .table-container {
+    padding: 0;
+  }
+
   .dropdown-button {
     padding: 10px 10px;
     text-align: center;
@@ -1302,7 +1307,9 @@ color: var(--black);
 
 
 /* Основные стили для date-picker */
-
+.day.in-range {
+  background: var(--purple-1);
+}
 
 .input-text {
   font-family: var(--font-family);
@@ -1344,8 +1351,12 @@ border-radius: 10px;
   text-align: center;
   color: var(--black);
 }
+.calendar-days > div {
+  margin-bottom: 10px; /* Отступ только снизу */
+}
 .date-picker {
     position: relative;
+    cursor: pointer;
   }
   
   #date-input {
@@ -1406,30 +1417,54 @@ border-radius: 10px;
   
   .day {
     position: relative;
-    padding: 5px;
-    transition: all 0.3 linear;
+    transition: all 0.3s linear;
     cursor: pointer;
+    z-index: 4;
+  }
+
+  .selected-start {
+    position: relative;
+    z-index: 4;
+    background: linear-gradient(to left, rgba(237,237,254, 1) 50%, transparent 50%) !important;
   }
   
+
   /* Стили для выбранных и промежуточных дат */
 
 
+
   .day.in-range {
-    background: var(--purple-1);
     color: #000;
-    border-radius: 50%;
   }
 
   .day.selected-end {
-    background: var(--purple-2);
-    color: #fff;
+    background: linear-gradient(to right, rgba(237,237,254, 1) 50%, transparent 50%) !important;
+  }
+
+  .day-text {
+    display: block;
+    width: 35px;
+    margin: 0 auto;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
     border-radius: 50%;
   }
-  
-  .day.selected-start {
-    background: var(--purple-2);
-    color: #fff;
+
+  .day.selected-end > .day-text {
+    color: white;
+    background-color: var(--purple-2);
     border-radius: 50%;
+    display: block;
+    text-align: center;
+  }
+  
+  .day.selected-start  > .day-text{
+    color: white;
+    background-color: var(--purple-2);
+    border-radius: 50%;
+    display: block;
+    text-align: center;
   }
 
   .content_account_item {
