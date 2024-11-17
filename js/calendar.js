@@ -15,13 +15,25 @@ function initializeCalendar(containerId, inputId, mode) {
     
     // Заголовок календар
     const header = document.createElement("div");
-    header.className = "calendar-header";
-    header.innerHTML = `
-      <button onclick="changeMonth(-1)">&lt;</button>
-      <span class="input-text">${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}</span>
-      <button onclick="changeMonth(1)">&gt;</button>
-    `;
-    calendarContent.appendChild(header);
+header.className = "calendar-header";
+
+const prevButton = document.createElement("button");
+prevButton.textContent = "<";
+prevButton.addEventListener("click", () => changeMonth(-1));
+
+const nextButton = document.createElement("button");
+nextButton.textContent = ">";
+nextButton.addEventListener("click", () => changeMonth(1));
+
+const title = document.createElement("span");
+title.className = "input-text";
+title.textContent = `${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}`;
+
+header.appendChild(prevButton);
+header.appendChild(title);
+header.appendChild(nextButton);
+
+calendarContent.appendChild(header);
 
     // Заголовок дней недели
     const daysHeader = document.createElement("div");
@@ -48,8 +60,12 @@ function initializeCalendar(containerId, inputId, mode) {
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), day);
       const dayElement = document.createElement("div");
-      dayElement.textContent = day;
+      const dayText = document.createElement("span");
+      dayText.textContent = day;
+      dayText.classList.add("day-text");
+
       dayElement.className = "day";
+      dayElement.appendChild(dayText);
       
       if (mode === "range") {
         // Логика выбора диапазона
