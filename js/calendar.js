@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let startDate = new Date();
     let endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
     let displayedDate = new Date();
-    let datesSelected = false; // Флаг, указывающий на выбор обеих дат
+    let datesSelected = false;
 
     function setInitialRange() {
       updateTextInput();
@@ -27,11 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const prevButton = document.createElement("button");
       prevButton.textContent = "<";
-      prevButton.addEventListener("click", () => changeMonth(-1));
+      prevButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Остановка всплытия события
+        changeMonth(-1);
+      });
 
       const nextButton = document.createElement("button");
       nextButton.textContent = ">";
-      nextButton.addEventListener("click", () => changeMonth(1));
+      nextButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Остановка всплытия события
+        changeMonth(1);
+      });
 
       const title = document.createElement("span");
       title.className = "input-text";
@@ -73,12 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dayElement.className = "day";
         dayElement.appendChild(dayText);
 
-        // Добавление классов для диапазона дат
         if (datesSelected && startDate && endDate && date >= startDate && date <= endDate) {
           dayElement.classList.add("in-range");
         }
 
-        // Класс для начальной и конечной дат
         if (startDate && date.getTime() === startDate.getTime()) {
           dayElement.classList.add("selected-start");
         }
@@ -86,7 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
           dayElement.classList.add("selected-end");
         }
 
-        dayElement.onclick = () => selectDate(date);
+        dayElement.onclick = (event) => {
+          event.stopPropagation(); // Остановка всплытия события
+          selectDate(date);
+        };
         daysContainer.appendChild(dayElement);
       }
 
@@ -109,38 +116,39 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!startDate || (startDate && endDate)) {
           startDate = date;
           endDate = null;
-          datesSelected = false; // Пока обе даты не выбраны
+          datesSelected = false;
           updateTextInput();
         } else if (date < startDate) {
-          // Если вторая выбранная дата меньше первой, меняем местами
           endDate = startDate;
           startDate = date;
-          datesSelected = true; // Обе даты выбраны
+          datesSelected = true;
           updateTextInput();
-    
-          toggleCalendar(); // Закрываем календарь
+          toggleCalendar();
         } else {
           endDate = date;
-          datesSelected = true; // Обе даты выбраны
+          datesSelected = true;
           updateTextInput();
-    
           if (startDate && endDate) {
-            toggleCalendar(); // Закрываем календарь
+            toggleCalendar();
           }
         }
-    
-        renderCalendar(); // Перерисовываем календарь для обновления выбора
+        renderCalendar();
       } else if (mode === "single") {
         startDate = date;
         updateTextInput();
-        toggleCalendar(); // Закрываем календарь сразу после выбора даты
+        toggleCalendar();
       }
     }
     function formatDate(date) {
-      return date.toLocaleDateString("ru-RU", { day: "2-digit", month: "2-digit", year: "numeric" });
+      // Форматируем дату в виде DD.MM.YYYY
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0"); // Месяцы начинаются с 0
+      const year = date.getFullYear();
+      return `${day}.${month}.${year}`;
     }
 
     function formatDateForInput(date) {
+      // Форматируем дату для input в виде YYYY-MM-DD
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, "0");
       const day = String(date.getDate()).padStart(2, "0");
@@ -150,20 +158,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateTextInput() {
       if (dateInput) {
         if (startDate && endDate) {
-          const formattedStartDate = formatDate(startDate);
-          const formattedEndDate = formatDate(endDate);
-
-          dateInput.value = `${formattedStartDate} - ${formattedEndDate}`;
-
+          // Если выбраны обе даты, форматируем диапазон
+          dateInput.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
+    
+          // Обновляем значения скрытых input
           if (startDateInput) startDateInput.value = formatDateForInput(startDate);
           if (endDateInput) endDateInput.value = formatDateForInput(endDate);
         } else if (startDate) {
-          const formattedStartDate = formatDate(startDate);
-          dateInput.value = `${formattedStartDate} - ...`;
-
+          // Если выбрана только начальная дата
+          dateInput.value = `${formatDate(startDate)} - ...`;
+    
           if (startDateInput) startDateInput.value = formatDateForInput(startDate);
           if (endDateInput) endDateInput.value = "";
         } else {
+          // Если даты не выбраны
           dateInput.value = "Выберите диапазон";
           if (startDateInput) startDateInput.value = "";
           if (endDateInput) endDateInput.value = "";
@@ -181,6 +189,19 @@ document.addEventListener("DOMContentLoaded", () => {
     dateInput.addEventListener("click", (event) => {
       event.stopPropagation();
       toggleCalendar();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        calendar.classList.contains("active") &&
+        !datePicker.contains(event.target)
+      ) {
+        calendar.classList.remove("active");
+      }
+    });
+
+    calendar.addEventListener("click", (event) => {
+      event.stopPropagation();
     });
   }
 
