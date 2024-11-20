@@ -1,39 +1,47 @@
 function initializeCalendar(containerId, inputId, mode) {
-  const dateInput = document.getElementById(inputId);
+  const dateInput = document.getElementById(inputId); // Поле для текстового диапазона
   const calendar = document.getElementById(containerId);
 
   const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
   const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
-  let startDate = null;
-  let endDate = null;
+  let startDate = new Date();
+  let endDate = new Date(startDate.getTime() + 24 * 60 * 60 * 1000); // Завтра только при инициализации
   let displayedDate = new Date();
+
+  // Установить начальные значения в input type="date" и текстовый input
+  const startDateInput = document.getElementById("start-date");
+  const endDateInput = document.getElementById("end-date");
+
+  if (startDateInput) startDateInput.value = formatDateForInput(startDate);
+  if (endDateInput) endDateInput.value = formatDateForInput(endDate);
+  if (dateInput) dateInput.value = `${formatDate(startDate)} - ${formatDate(endDate)}`; // Устанавливаем диапазон в текстовый input
 
   // Функция для генерации календаря
   function renderCalendar() {
     const calendarContent = document.createElement("div");
     calendarContent.className = "calendar-content";
-    
-    // Заголовок календар
+
+    // Заголовок календаря
     const header = document.createElement("div");
-header.className = "calendar-header";
+    header.className = "calendar-header";
 
-const prevButton = document.createElement("button");
-prevButton.textContent = "<";
-prevButton.addEventListener("click", () => changeMonth(-1));
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "<";
+    prevButton.addEventListener("click", () => changeMonth(-1));
 
-const nextButton = document.createElement("button");
-nextButton.textContent = ">";
-nextButton.addEventListener("click", () => changeMonth(1));
+    const nextButton = document.createElement("button");
+    nextButton.textContent = ">";
+    nextButton.addEventListener("click", () => changeMonth(1));
 
-const title = document.createElement("span");
-title.className = "input-text";
-title.textContent = `${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}`;
+    const title = document.createElement("span");
+    title.className = "input-text";
+    title.textContent = `${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}`;
 
-header.appendChild(prevButton);
-header.appendChild(title);
-header.appendChild(nextButton);
+    header.appendChild(prevButton);
+    header.appendChild(title);
+    header.appendChild(nextButton);
 
-calendarContent.appendChild(header);
+    calendarContent.appendChild(header);
 
     // Заголовок дней недели
     const daysHeader = document.createElement("div");
@@ -66,11 +74,13 @@ calendarContent.appendChild(header);
 
       dayElement.className = "day";
       dayElement.appendChild(dayText);
-      
+
       if (mode === "range") {
         // Логика выбора диапазона
-        if (startDate && endDate && date >= startDate && date <= endDate) {
-          dayElement.classList.add("in-range");
+        if (startDate && endDate) {
+          if (date >= startDate && date <= endDate) {
+            dayElement.classList.add("in-range");
+          }
         }
         if (startDate && date.getTime() === startDate.getTime()) {
           dayElement.classList.add("selected-start");
@@ -79,7 +89,6 @@ calendarContent.appendChild(header);
           dayElement.classList.add("selected-end");
         }
       } else if (mode === "single" && startDate && date.getTime() === startDate.getTime()) {
-        // Логика выбора одной даты
         dayElement.classList.add("selected-start");
       }
 
@@ -88,16 +97,12 @@ calendarContent.appendChild(header);
     }
     calendarContent.appendChild(daysContainer);
 
-    // Плавное обновление содержимого календаря
+    // Обновление содержимого календаря
     const existingContent = calendar.querySelector(".calendar-content");
     if (existingContent) {
-      setTimeout(() => {
-        calendar.removeChild(existingContent);
-        calendar.appendChild(calendarContent);
-      }, 300);
-    } else {
-      calendar.appendChild(calendarContent);
+      calendar.removeChild(existingContent);
     }
+    calendar.appendChild(calendarContent);
   }
 
   // Функция для изменения месяца
@@ -108,33 +113,49 @@ calendarContent.appendChild(header);
 
   // Функция для выбора даты или диапазона
   function selectDate(date) {
+    const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  
     if (mode === "range") {
       if (!startDate || (startDate && endDate)) {
-        startDate = date;
+        startDate = utcDate;
         endDate = null;
-      } else if (date < startDate) {
+        if (startDateInput) startDateInput.value = formatDateForInput(startDate);
+        if (endDateInput) endDateInput.value = ""; // Очищаем конечную дату
+      } else if (utcDate < startDate) {
         endDate = startDate;
-        startDate = date;
+        startDate = utcDate;
+        if (startDateInput) startDateInput.value = formatDateForInput(startDate);
+        if (endDateInput) endDateInput.value = formatDateForInput(endDate);
       } else {
-        endDate = date;
+        endDate = utcDate;
+        if (endDateInput) endDateInput.value = formatDateForInput(endDate);
       }
-      
-      updateInput();
-      if (startDate && endDate) {
-        toggleCalendar(); // Закрываем календарь после выбора диапазона
-      } else {
-        renderCalendar();
-      }
+  
+      updateTextInput();
+      renderCalendar();
     } else if (mode === "single") {
-      startDate = date;
-      updateInput();
-      toggleCalendar(); // Закрываем календарь после выбора даты
+      startDate = utcDate;
+      if (startDateInput) startDateInput.value = formatDateForInput(startDate);
+      updateTextInput();
+      toggleCalendar();
     }
   }
 
-  // Обновление поля ввода
-  function updateInput() {
-    if (mode === "range") {
+  // Форматирование даты для input type="date"
+  function formatDateForInput(date) {
+    return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
+      .toISOString()
+      .split("T")[0];
+  }
+
+  // Форматирование даты для текстового поля
+  function formatDate(date) {
+    return date.toLocaleDateString("ru-RU", { day: "2-digit", month: "2-digit", year: "numeric" });
+  }
+
+  // Обновление текстового input
+  function updateTextInput() {
+    if (dateInput) {
       if (startDate && endDate) {
         dateInput.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
       } else if (startDate) {
@@ -142,14 +163,7 @@ calendarContent.appendChild(header);
       } else {
         dateInput.value = "Выберите диапазон";
       }
-    } else if (mode === "single" && startDate) {
-      dateInput.value = formatDate(startDate);
     }
-  }
-
-  // Форматирование даты
-  function formatDate(date) {
-    return date.toLocaleDateString("ru-RU", { day: '2-digit', month: '2-digit', year: 'numeric' });
   }
 
   // Открытие и закрытие календаря
@@ -165,16 +179,10 @@ calendarContent.appendChild(header);
     }
   });
 
-  window.addEventListener('scroll', function() {
-    if (!calendar.contains(event.target) && event.target !== dateInput) {
-      calendar.classList.remove("active");
-    }
-  });
-
-
   dateInput.addEventListener("click", toggleCalendar);
 }
 
 // Инициализация календарей
-initializeCalendar("calendar-range", "date-input-range", "range");  // Для выбора диапазона
-// initializeCalendar("calendar-single", "date-input-single", "single");  // Для выбора одной даты
+if (document.getElementById("calendar-range") && document.getElementById("date-input-range")) {
+  initializeCalendar("calendar-range", "date-input-range", "range");
+}

@@ -1,37 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll(".dropdown");
-  
-    dropdowns.forEach((dropdown) => {
-      const button = dropdown.querySelector(".dropdown-button");
-      const content = dropdown.querySelector(".dropdown-content");
-  
-      // Дефолтное значение
-      let defaultText = button.textContent;
-  
-      button.addEventListener("click", function (event) {
-        event.stopPropagation(); // Останавливаем всплытие события
-        closeAllDropdowns();
-        dropdown.classList.toggle("active");
-      });
-  
-      // Обработчик выбора опции
-      content.querySelectorAll("a").forEach((item) => {
-        item.addEventListener("click", function (event) {
-          event.preventDefault(); // Предотвращаем переход по ссылке
-          const selectedValue = item.getAttribute("data-value");
-          button.textContent = selectedValue; // Устанавливаем выбранное значение в кнопку
-          dropdown.classList.remove("active"); // Закрываем dropdown
-        });
-      });
+  // Находим все dropdown элементы
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  dropdowns.forEach((dropdown) => {
+    // Получаем связанный select по data-target
+    const targetSelectId = dropdown.getAttribute("data-target");
+    const select = document.getElementById(targetSelectId);
+
+    // Находим кнопку dropdown и список опций
+    const button = dropdown.querySelector(".dropdown-button");
+    const content = dropdown.querySelector(".dropdown-content");
+
+    // Проверяем, что элементы найдены
+    if (!select || !button || !content) {
+      return;
+    }
+
+    // Открытие и закрытие dropdown
+    button.addEventListener("click", function (event) {
+      event.stopPropagation(); // Останавливаем всплытие события
+      closeAllDropdowns(); // Закрываем все открытые dropdown
+      dropdown.classList.toggle("active"); // Переключаем текущий dropdown
     });
-  
-    // Закрыть все открытые выпадающие меню
-    function closeAllDropdowns() {
-      dropdowns.forEach((dropdown) => {
+
+    // Обработка выбора опции
+    content.querySelectorAll("a").forEach((item) => {
+      item.addEventListener("click", function (event) {
+        event.preventDefault(); // Предотвращаем переход по ссылке
+
+        const selectedValue = item.getAttribute("data-value");
+
+        // Обновляем текст кнопки
+        const buttonText = button.querySelector(".dropdown-button_text");
+        if (buttonText) {
+          buttonText.textContent = selectedValue;
+        }
+
+        // Обновляем значение <select>
+        updateSelect(select, selectedValue);
+
+        // Закрываем dropdown
         dropdown.classList.remove("active");
       });
-    }
-  
-    // Закрытие всех dropdown при клике вне области меню
-    window.addEventListener("click", closeAllDropdowns);
+    });
   });
+
+  // Закрытие всех открытых dropdown при клике вне их области
+  window.addEventListener("click", closeAllDropdowns);
+
+  // Функция для закрытия всех dropdown
+  function closeAllDropdowns() {
+    dropdowns.forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
+  }
+
+  // Функция для обновления <select>
+  function updateSelect(select, value) {
+    // Удаляем все текущие опции
+    select.innerHTML = "";
+
+    // Создаем новую опцию
+    const newOption = document.createElement("option");
+    newOption.value = value;
+    newOption.textContent = value;
+    newOption.selected = true;
+
+    // Добавляем новую опцию в select
+    select.appendChild(newOption);
+  }
+});
