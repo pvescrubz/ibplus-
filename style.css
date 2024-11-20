@@ -605,7 +605,7 @@ color: var(--black);
 
 .sbmt-btn {
   position: absolute;
-  bottom: -30px;
+  bottom: -35px;
   right:  0;
 }
 .content_account {
@@ -835,7 +835,7 @@ padding: 10px 15px;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px; /* Space between grid items */
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .dropdown_content.account {
@@ -1058,7 +1058,7 @@ color: var(--grey);
 }
 
 .hidden-form {
-  
+  display: none;
 }
 
 @media screen and (max-width: 1300px) {
@@ -1411,6 +1411,24 @@ border-radius: 10px;
 .date-picker {
     position: relative;
     cursor: pointer;
+    position: relative;
+  }
+
+  .error-data {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    color: red;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 171%;
+    text-align: center;
+  }
+
+  .input-error {
+    border: 1px solid red;
+
   }
   
   #date-input {
@@ -1536,14 +1554,18 @@ border-radius: 10px;
     flex-direction: column;
   }
 
-
-
   .gradient_btn:focus {
     outline: #007bff;
   }
   @media screen and (max-width: 768px) {
 
-   
+   .calendar {
+    min-width: unset;
+   }
+
+   .operation_dropdown {
+    min-width:  unset;
+  }
   .grid_colored-last-tablet {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

@@ -5,6 +5,8 @@ id="select1"  // Номер счета
 id="select2" // Валюта
 id="select3"  // Кол-во операций -->
 
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -584,10 +586,10 @@ id="select3"  // Кол-во операций -->
                     </div>
                   </div>
                   <!-- Невидимый селект 1-2 -->
-                  <select id="select1" name="account" >
+                  <select id="select1" name="account" hidden>
                     <option value="Счет 1" selected>Счет 1</option>
                   </select>
-                  <select id="select2" name="currency" >
+                  <select id="select2" name="currency" hidden>
                     <option value="RUB" selected>RUB</option>
                   </select>
                 </div>
@@ -646,7 +648,7 @@ id="select3"  // Кол-во операций -->
                       </div>
                     </div>
                      <!-- Невидимый селект 3 -->
-                    <select id="select3" name="operations" >
+                    <select id="select3" name="operations" hidden>
                       <option value="За последние 5 операций">За последние 5 операций</option>
                     </select>
                     <div class="date-picker" data-mode="range">
