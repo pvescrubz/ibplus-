@@ -213,6 +213,15 @@ html {
 .content_main {
   padding-left: 15px;
 }
+.opoznanie-screen {
+  padding-top: 30px !important;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-left: 0 !important;
+}
 
 .title_container {
   display: flex;
@@ -471,6 +480,8 @@ margin: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 0 auto;
+  align-self: center;
 }
 
 .table-container {
@@ -561,7 +572,7 @@ color: var(--black);
   margin: 0;
 }
 .faktura-date {
-  margin-top: 15px;
+
 }
 .grid-btn.more {
   background-image: url(../img/arrow.svg);
@@ -866,6 +877,20 @@ padding: 10px 15px;
   gap: 20px;
 }
 
+.opoznanie-title {
+ align-self: center;
+}
+
+.opoznanie-title-container {
+  justify-content: center;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 0;
+  background: var(--purple-1);
+  padding: 30px 30px;
+  margin: 0 auto;
+}
+
 .text_content {
   box-sizing: border-box; 
   overflow-wrap: break-word; /* Перенос слов */
@@ -1104,6 +1129,50 @@ color: var(--grey);
   padding: 5px 5px;
 }
 
+
+.opoznanie-screen {
+  background-color: white;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-title {
+  margin: 0;
+}
+
+.opoznanie-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две равные колонки */
+  gap: 20px; /* Расстояние между элементами */
+  padding: 20px; /* Внутренние отступы контейнера */
+  box-sizing: border-box; /* Включает отступы в ширину */
+}
+
+.opoznanie-main-container > div, 
+.opoznanie-main-container > label {
+    grid-column: span 1; /* Каждый элемент занимает одну колонку */
+}
+.money-label {
+  width: 100%;
+  display: block;
+
+}
+
+.flex-container {
+  display: flex;
+  gap: 25px;
+}
+
+.dropdown-money {
+  max-width: 150px;
+}
+.opoznanie-input-container {
+  display: flex;
+  flex-direction: column;
+}
 
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
