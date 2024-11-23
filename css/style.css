@@ -867,6 +867,10 @@ padding: 10px 15px;
 }
 
 .text_content {
+  box-sizing: border-box; 
+  overflow-wrap: break-word; /* Перенос слов */
+  word-break: break-word;   /* Перенос длинных слов */
+  max-width: 100%;          /* Ограничение ширины */
   display: flex;
   padding-left: 15px;
   flex-direction: column;
