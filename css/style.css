@@ -751,6 +751,7 @@ input[type='radio'] {
 
 /* Контейнер для кастомного чекбокса */
 .custom-checkbox {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -1055,6 +1056,7 @@ color: var(--black);
   background: inherit;
   position: absolute;
   top: 50%;
+  border-radius: 30px;
   left: 50%;
   transform: translate(-50%,-50%);
   text-align: center;
@@ -1626,6 +1628,15 @@ border-radius: 10px;
       gap: 10px;
       display: flex;
       flex-direction: column;
+    }
+
+    .grid-table {
+      margin-bottom: 70px;
+    }
+
+    .empty-item {
+      min-height: 100px;
+      width: 100%;
     }
 
     .faktura-checkbox {
