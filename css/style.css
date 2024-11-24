@@ -103,6 +103,10 @@ background: var(--green-1);
   margin-top: 30px;
 }
 
+.input_text-area {
+  padding-left: 20px;
+  max-width: 49.5%;
+}
 .news_date  {
   margin: 0;
 }
@@ -1410,6 +1414,11 @@ border-radius: 10px;
       display: flex;
     }
     
+
+    .input_text-area {
+      padding-left: 15px;
+      max-width: 100%;
+    } 
      .nav_tech {
         display: none;
       }
