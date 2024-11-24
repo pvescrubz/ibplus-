@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetSelectId = dropdown.getAttribute("data-target");
     const select = document.getElementById(targetSelectId);
 
+    console.log('asdasda')
     // Находим кнопку dropdown и список опций
     const button = dropdown.querySelector(".dropdown-button");
     const content = dropdown.querySelector(".dropdown-content");

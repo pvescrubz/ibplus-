@@ -35,6 +35,7 @@
 Главный UI
 */
 
+
 .input-error:hover,
 .input-error:focus {
   outline-color: red !important;
@@ -99,6 +100,7 @@ background: var(--green-1);
 .new_item:last-of-type {
   border-bottom: unset;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .news_date  {
@@ -1221,9 +1223,11 @@ border-radius: 10px;
   text-align: center;
   color: var(--black);
 }
+
+
 .input-main:focus,
 .input-main:hover {
-  border-color: transparent;
+  border-color: var(--purple-1);
   outline: unset;
 }
 .calendar-days {
@@ -1401,7 +1405,10 @@ border-radius: 10px;
 
   @media screen and (max-width: 1200px) {
   
-
+    .opoznanie-main-container {
+      flex-direction: column;
+      display: flex;
+    }
     
      .nav_tech {
         display: none;
