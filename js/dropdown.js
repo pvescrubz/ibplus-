@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (option) {
       // Изменяем значение и текст существующей опции
       option.value = value;
+      
       option.textContent = value;
   
       // Устанавливаем новое значение как выбранное (selected)
