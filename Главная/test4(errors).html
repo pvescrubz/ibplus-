@@ -578,11 +578,11 @@
                     </div>
                   </div>
                   <!-- Невидимый селект 1-2 -->
-                  <select id="select1" name="account" hidden >
-                    <option value="Счет 1" selected>Счет 1</option>
+                  <select id="select1" name="account" hidden>
+                    <option id="select1_option1" value="Счет 1" selected>Счет 1</option>
                   </select>
                   <select id="select2" name="currency" hidden>
-                    <option value="RUB" selected>RUB</option>
+                    <option id="select2_option2" value="RUB" selected>RUB</option>
                   </select>
                 </div>
                 <div class="checkbox_container">
@@ -603,28 +603,12 @@
                 <div class="checkbox_content">
                   <div class="content_account radio">
                     <div class="radio_container">
-                      <input
-                        type="radio"
-                        id="operation"
-                        name="drone"
-                        value="operation"
-                        checked
-                      />
-                      <label for="operation" class="text_semibold label_radio"
-                        >по операциям</label
-                      >
+                      <input type="radio" id="radio1" name="drone" value="radio1" checked>
+                      <label for="radio1" class="text_semibold label_radio">по операциям</label>
                     </div>
                     <div class="radio_container">
-                      <input
-                        type="radio"
-                        id="period"
-                        name="drone"
-                        value="period"
-                        checked
-                      />
-                      <label for="period" class="text_semibold label_radio"
-                        >за период</label
-                      >
+                      <input type="radio" id="radio2" name="drone" value="radio2" >
+                      <label for="radio2" class="text_semibold label_radio">за период</label>
                     </div>
                   </div>
                   <div class="dropdown_content operation_dropdown">
@@ -640,8 +624,8 @@
                       </div>
                     </div>
                      <!-- Невидимый селект 3 -->
-                    <select id="select3" name="operations" hidden>
-                      <option value="За последние 5 операций">За последние 5 операций</option>
+                     <select id="select3" name="operations" >
+                      <option id="select3_option" value="За последние 5 операций">За последние 5 операций</option>
                     </select>
                     <div class="date-picker" data-mode="range">
                       <p class="error-data">Требуется выбрать дату</p>

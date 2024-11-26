@@ -160,21 +160,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (startDate && endDate) {
           // Если выбраны обе даты, форматируем диапазон
           dateInput.value = `${formatDate(startDate)} - ${formatDate(endDate)}`;
-    
-          // Обновляем значения скрытых input
-          if (startDateInput) startDateInput.value = formatDateForInput(startDate);
-          if (endDateInput) endDateInput.value = formatDateForInput(endDate);
+          
+          // Обновляем значения полей с type="date"
+          if (startDateInput) startDateInput.setAttribute('value', formatDateForInput(startDate));
+          if (endDateInput) endDateInput.setAttribute('value', formatDateForInput(endDate));
         } else if (startDate) {
           // Если выбрана только начальная дата
           dateInput.value = `${formatDate(startDate)} - ...`;
     
-          if (startDateInput) startDateInput.value = formatDateForInput(startDate);
-          if (endDateInput) endDateInput.value = "";
+          if (startDateInput) startDateInput.setAttribute('value', formatDateForInput(startDate));
+          if (endDateInput) endDateInput.setAttribute('value', "");
         } else {
           // Если даты не выбраны
           dateInput.value = "Выберите диапазон";
-          if (startDateInput) startDateInput.value = "";
-          if (endDateInput) endDateInput.value = "";
+    
+          if (startDateInput) startDateInput.setAttribute('value', "");
+          if (endDateInput) endDateInput.setAttribute('value', "");
         }
       }
     }

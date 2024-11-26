@@ -133,7 +133,7 @@ border-radius: 20px;
 }
 
 .form-buttons {
-  padding-top: 30px;
+  padding: 30px 0 0 0;
   display: flex;
   align-items: center;
   background: var(--bg);
@@ -270,15 +270,36 @@ html {
   font-size: 14px;
   line-height: 171%;
   color: var(--white);
-
 }
+
+
+
+.link.gradient_btn {
+  margin-left: auto;
+  background: none !important;
+  border-radius: 40px;
+  width: 100%;
+  background: inherit;
+  cursor: pointer;
+  color: var(--grey);
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+border: none;
+text-align: center;
+padding: 10px 10px;
+}
+
 
 .last-documents-title {
   font-family: var(--font-family);
-font-weight: 700;
-font-size: clamp(16px,3dvw,12px);
-line-height: 150%;
-color: var(--black);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black);
+  white-space: nowrap;
+  width: 100%;
 }
 
 .last-documents-text {
@@ -316,6 +337,7 @@ color: var(--grey);
   color: var(--white);
 }
 
+
 .nav_btn {
   display: flex;
   justify-content: center;
@@ -327,30 +349,18 @@ color: var(--grey);
   transition: all 0.3s linear;
 }
 
+.gradient_link-svg {
+  fill: white;
+  stroke: white;
+}
+
 .nav_svg {
-  fill: var(--purple-3);
+  fill: white;
   transition: all 0.3s linear;
 }
 
 .link_container {
   gap: 15px;
-}
-
-
-.link.gradient_btn {
-  margin-left: auto;
-  border-radius: 40px;
-  width: 100%;
-  background: inherit;
-  cursor: pointer;
-  color: var(--grey-slidebar);
-  font-family: var(--font-family);
-font-weight: 500;
-font-size: 14px;
-line-height: 171%;
-border: none;
-text-align: center;
-padding: 10px 10px;
 }
 
 
@@ -666,12 +676,10 @@ color: var(--black);
   border-bottom-left-radius: 10px;
 }
 
-
 .grid_colored-last-pc {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
 
 .grid_colored-last-tablet {
   border-top-right-radius: 0;
@@ -818,6 +826,11 @@ color: var(--black);
   gap:5px
 }
 
+input[type="hidden"] {
+  display: none;
+}
+
+
 input[type='radio'] {
   border: 1px solid var(--purple-1);
 }
@@ -906,7 +919,7 @@ input[type="radio"]:checked + .label_radio::after {
 .gradient_btn {
   z-index: 1;
   border-radius: 40px;
-  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%) !important;
   cursor: pointer;
   font-family: var(--font-family);
 font-weight: 500;
@@ -1241,12 +1254,52 @@ color: var(--grey);
   flex-direction: column;
 }
 
+.documents-last-list {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.documents-last-item_text-small {
+margin: 0 0 0 0;
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 10px;
+line-height: 200%;
+color: var(--purple-4);
+}
+
+.documents-last-item {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.documents-last-item_text {
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 12px;
+line-height: 200%;
+color: var(--black);
+  margin: 0 0 15px 0;
+}
+.documents-last-item {
+  width: 100%;
+  text-align: start;
+}
+
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
 
+  .opoznanie_svg_title {
+    display: none;
+  }
+  
   .form-buttons {
+    padding: 30px 10px 0 10px;
     justify-content: center;
   }
   .opoznanie-help-btn {
@@ -1318,6 +1371,10 @@ border-radius: 10px;
   line-height: 171%;
   text-align: center;
   color: var(--black);
+}
+
+.input-label {
+  position: relative;
 }
 .calendar-days > div {
   margin-bottom: 10px; /* Отступ только снизу */
@@ -1498,7 +1555,27 @@ border-radius: 10px;
       flex-direction: column;
     }
   
-  
+    
+
+    
+.link.gradient_btn {
+  margin-left: auto;
+  background: none !important;
+  border-radius: 40px;
+  width: 100%;
+  background: inherit;
+  cursor: pointer;
+  color: var(--grey);
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+border: none;
+text-align: center;
+padding: 10px 10px;
+}
+
+
     .opoznanie-main-container {
       flex-direction: column;
       display: flex;
@@ -1549,7 +1626,7 @@ border-radius: 10px;
     .link.gradient_btn {
       margin-left: auto;
       border-radius: 40px;
-      background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+      background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%) !important;
       cursor: pointer;
       font-family: var(--font-family);
   font-weight: 500;
@@ -1560,6 +1637,8 @@ border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
     }
+
+
     .gradient_btn {
       width: 100%;
       margin-left: 0;
@@ -2082,3 +2161,52 @@ border-radius: 10px;
         color: var(--white);
   }
   
+
+
+  @media screen and (max-width: 1300px) and (min-width: 768px) {
+    .documents-last-item {
+      display: flex;
+      padding: 10px 10px;
+      gap: 10px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .documents-last-item_content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      background: var(--purple-1);
+      text-align: center;
+      align-items: center;
+      border-radius: 10px;
+      padding: 10px 10px;
+      gap: 10px;
+      justify-content: center;
+    }
+    .documents-last-item_text {
+      margin: 0;
+    }
+  
+    .documents-last-item_text-small {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  color: var(--black);
+    }
+  
+    .documents-last-list{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .documents-last-item_text {
+      font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  color: var(--black);
+    }
+    
+  }
