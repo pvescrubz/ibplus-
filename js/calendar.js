@@ -1,26 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  function initializeCalendar(containerSelector, options = {}) {
-    const datePicker = document.querySelector(containerSelector);
+  function initializeCalendar(datePicker) {
     const dateInput = datePicker.querySelector(".input-main");
     const calendar = datePicker.querySelector(".calendar");
     const hiddenDateInputs = datePicker.querySelectorAll('input[type="date"]');
-    const mode = options.mode || datePicker.dataset.mode || "single";
+    const mode = datePicker.dataset.mode || "single"; // Определение режима (range или single)
 
-    const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+    const monthNames = [
+      "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+      "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ];
     const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
-    const minYear = 2000;
-    const maxYear = new Date().getFullYear(); 
 
     let displayedDate = new Date();
     let startDate = null;
     let endDate = null;
+    let userInteracted = false; // Флаг для отслеживания выбора пользователем
 
-    function extractDateFromServerFormat(dateStr) {
-      return dateStr.split(" ")[0];
-    }
-
-    function convertToInputDate(dateStr) {
-      const [day, month, year] = dateStr.split(".");
+    function formatToInputDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
       return `${year}-${month}-${day}`;
     }
 
@@ -32,61 +31,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initializeDates() {
-      // Утилита для преобразования даты из формата с временем в формат yyyy-MM-dd
-      function toInputDateFormat(value) {
-        if (!value) return ""; // Если значение пустое, возвращаем пустую строку
-        if (value.includes(" ")) {
-          return value.split(" ")[0]; // Отсекаем время, оставляем только дату
-        }
-        return value; // Если значение уже в правильном формате yyyy-MM-dd
-      }
-    
-      // Проверяем значения скрытых полей и преобразуем их
       if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
-        const normalizedStartDate = toInputDateFormat(hiddenDateInputs[0].value);
-        startDate = new Date(normalizedStartDate); // Преобразуем в объект Date
-        hiddenDateInputs[0].value = normalizedStartDate; // Устанавливаем значение в правильном формате
-      } else {
-        // Если значения нет, задаем текущую дату
-        const today = new Date();
-        startDate = today;
-        hiddenDateInputs[0].value = today.toISOString().split("T")[0];
+        startDate = new Date(hiddenDateInputs[0].value);
       }
-    
+
       if (mode === "range" && hiddenDateInputs[1] && hiddenDateInputs[1].value) {
-        const normalizedEndDate = toInputDateFormat(hiddenDateInputs[1].value);
-        endDate = new Date(normalizedEndDate); // Преобразуем в объект Date
-        hiddenDateInputs[1].value = normalizedEndDate; // Устанавливаем значение в правильном формате
-      } else if (mode === "range") {
-        // Если значения нет, задаем текущую дату + 1 день
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        endDate = tomorrow;
-        hiddenDateInputs[1].value = tomorrow.toISOString().split("T")[0];
+        endDate = new Date(hiddenDateInputs[1].value);
       }
-    
-      // Обновляем текстовое поле для отображения
+
       updateTextInput();
     }
-    
-    
+
     function updateTextInput() {
       if (dateInput) {
         if (mode === "range") {
           if (startDate && endDate) {
             dateInput.value = `${formatToDisplayDate(startDate)} - ${formatToDisplayDate(endDate)}`;
+            hiddenDateInputs[0].value = formatToInputDate(startDate);
+            hiddenDateInputs[1].value = formatToInputDate(endDate);
           } else if (startDate) {
             dateInput.value = `${formatToDisplayDate(startDate)} - ...`;
+            hiddenDateInputs[0].value = formatToInputDate(startDate);
+            if (hiddenDateInputs[1]) hiddenDateInputs[1].value = "";
           } else {
             dateInput.value = "Выберите диапазон";
+            hiddenDateInputs.forEach((input) => (input.value = ""));
           }
         } else if (mode === "single") {
-          dateInput.value = startDate ? formatToDisplayDate(startDate) : "Выберите дату";
+          if (startDate) {
+            dateInput.value = formatToDisplayDate(startDate);
+            hiddenDateInputs[0].value = formatToInputDate(startDate);
+          } else {
+            dateInput.value = "Выберите дату";
+            hiddenDateInputs[0].value = "";
+          }
         }
       }
-
-      if (hiddenDateInputs[0]) hiddenDateInputs[0].value = startDate ? convertToInputDate(formatToDisplayDate(startDate)) : "";
-      if (mode === "range" && hiddenDateInputs[1]) hiddenDateInputs[1].value = endDate ? convertToInputDate(formatToDisplayDate(endDate)) : "";
     }
 
     function renderCalendar() {
@@ -123,14 +103,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const monthDisplay = document.createElement("span");
-      monthDisplay.textContent = monthNames[displayedDate.getMonth()];
+      monthDisplay.textContent = `${monthNames[displayedDate.getMonth()]} ${displayedDate.getFullYear()}`;
 
       header.appendChild(prevButton);
       header.appendChild(monthDisplay);
-
-      // Вызовем функцию для рендеринга кнопки выбора года
-      renderYearSelector(header);
-
       header.appendChild(nextButton);
 
       calendarContent.appendChild(header);
@@ -166,19 +142,31 @@ document.addEventListener("DOMContentLoaded", () => {
         dayElement.className = "day";
         dayElement.appendChild(dayText);
 
-        if (mode === "range" && startDate && endDate && date >= startDate && date <= endDate) {
+        // Класс для начальной даты
+        if (startDate && date.getTime() === startDate.getTime()) {
+          dayElement.classList.add("selected-start");
+          if (mode === "range") dayElement.classList.add("in-range");
+        }
+
+        // Класс для конечной даты
+        if (mode === "range" && endDate && date.getTime() === endDate.getTime()) {
+          dayElement.classList.add("selected-end", "in-range");
+        }
+
+        // Класс для дней внутри диапазона (только для режима range)
+        if (
+          userInteracted &&
+          mode === "range" &&
+          startDate &&
+          endDate &&
+          date > startDate &&
+          date < endDate
+        ) {
           dayElement.classList.add("in-range");
         }
 
-        if (startDate && date.getTime() === startDate.getTime()) {
-          dayElement.classList.add("selected-start");
-        }
-        if (mode === "range" && endDate && date.getTime() === endDate.getTime()) {
-          dayElement.classList.add("selected-end");
-        }
-
         dayElement.onclick = (event) => {
-          event.stopPropagation();  // Останавливаем всплытие события
+          event.stopPropagation();
           selectDate(date);
         };
         daysContainer.appendChild(dayElement);
@@ -193,49 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
       calendar.appendChild(calendarContent);
     }
 
-    function renderYearSelector(header) {
-      const yearWrapper = document.createElement("div");
-      yearWrapper.className = "year-wrapper"; // Новый контейнер для кнопки и списка лет
-
-      const yearButton = document.createElement("button");
-      yearButton.className = "year-selector-button";
-      yearButton.textContent = displayedDate.getFullYear();
-    
-      const yearList = document.createElement("div");
-      yearList.className = "year-selector-list";
-
-      // Предотвращаем стандартное поведение кнопки
-      yearButton.addEventListener("click", (event) => {
-        event.preventDefault();  // Останавливаем стандартное поведение кнопки
-        event.stopPropagation(); // Останавливаем всплытие события
-        yearList.classList.toggle("active");
-      });
-    
-      // Создаем элементы для каждого года
-      for (let year = minYear; year <= maxYear; year++) {
-        const yearItem = document.createElement("div");
-        yearItem.textContent = year;
-        yearItem.className = "year-item";
-    
-        // При клике на год, меняем отображаемый год
-        yearItem.addEventListener("click", (event) => {
-          event.stopPropagation();  // Останавливаем всплытие события
-          displayedDate.setFullYear(year);
-          yearButton.textContent = year;
-          yearList.classList.remove("active");  // Закрываем список лет
-          renderCalendar();  // Перерисовываем календарь с новым годом
-        });
-    
-        yearList.appendChild(yearItem);
-      }
-
-      yearWrapper.appendChild(yearButton);
-      yearWrapper.appendChild(yearList);
-      header.appendChild(yearWrapper);  // Добавляем годовой блок в header
-    }
-
     function selectDate(date) {
       if (mode === "range") {
+        userInteracted = true;
         if (!startDate || (startDate && endDate)) {
           startDate = date;
           endDate = null;
@@ -287,8 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeDates();
   }
 
+  // Инициализация всех календарей с классом .date-picker
   const datePickers = document.querySelectorAll(".date-picker");
   datePickers.forEach((datePicker) => {
-    initializeCalendar(`#${datePicker.id}`);
+    initializeCalendar(datePicker);
   });
 });
