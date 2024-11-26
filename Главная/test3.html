@@ -13,7 +13,7 @@
       <div class="left_main">
         <div class="logo">
           <div class="logo_media">
-            <img src="../img/Logo.png" alt="Logo" />
+            <img src="./img/Logo.png" alt="Logo" />
             <p class="logo_text">IB.PLUS</p>
           </div>
           <div class="settings_container">
@@ -612,7 +612,7 @@
                     </div>
                   </div>
                   <div class="dropdown_content operation_dropdown">
-                    <div class="dropdown" data-target="select3">
+                    <div class="dropdown" data-target="select3" >
                       <a class="dropdown-button text_semibold">
                         <span class="dropdown-button_text text_semibold">За последние 5 операций</span>
                       </a>
@@ -624,22 +624,22 @@
                       </div>
                     </div>
                      <!-- Невидимый селект 3 -->
-                    <select id="select3" name="operations" >
+                     <select id="select3" name="operations" >
                       <option id="select3_option" value="За последние 5 операций">За последние 5 операций</option>
                     </select>
                     <div class="date-picker" data-mode="range">
-                      <!-- <p class="error-data">Требуется выбрать дату</p> --> 
+                      <p class="error-data">Требуется выбрать дату</p>
                       <input
                         type="text"
                         id="date-input-range"
-                        class="input-main text_semibold"
+                        class="input-main text_semibold input-error"
                         placeholder="Выберите диапазон"
                         readonly
                       />
                       <div class="calendar" id="calendar-range">
                         <!-- Инпуты с датой -->
                       </div>
-                      <div class="">
+                      <div class="hidden-form">
                         <input type="date" id="start-date" >
                         <input type="date" id="end-date">
                        </div>
