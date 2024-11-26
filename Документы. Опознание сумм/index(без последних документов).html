@@ -614,7 +614,7 @@ id=end-date
                   <div class="calendar" id="calendar-range">
                     <!-- Инпуты с датой -->
                   </div>
-                  <div class="">
+                  <div class="hidden-form">
                     <input type="date" id="start-date" />
                     <input type="date" id="end-date" />
                   </div>
@@ -670,7 +670,7 @@ id=end-date
                         >
                       </div>
                     </div>
-                    <select id="select1" class="hidden-select" >
+                    <select id="select1" class="hidden-select" hidden>
                       <option value="RUB">RUB</option>
                       <option value="USD">USD</option>
                       <option value="EUR">EUR</option>
@@ -709,7 +709,7 @@ id=end-date
                     >
                   </div>
                 </div>
-                <select id="select2" class="hidden-select" >
+                <select id="select2" class="hidden-select" hidden>
                   <option value="Счет 1">Счет 1</option>
                   <option value="Счет 2">Счет 2</option>
                   <option value="Счет 3">Счет 3</option>
@@ -729,7 +729,7 @@ id=end-date
                     >
                   </div>
                 </div>
-                <select id="select4" class="hidden-select" >
+                <select id="select4" class="hidden-select" hidden>
                   <option value="Да">Да</option>
                   <option value="Нет">Нет</option>
                 </select>
@@ -782,28 +782,7 @@ id=end-date
           </form>
           <div class="last-documents-container">
             <p class="last-documents-title">ПОСЛЕДНИЕ ДОКУМЕНТЫ</p>
-            <ul class="documents-last-list">
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-            </ul>
+            <p class="last-documents-text">Не введено ни одного платежа</p>
             <a href="#0" class="last-documents-link">Список документов</a>
           </div>
         </div>

@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetSelectId = dropdown.getAttribute("data-target");
     const select = document.getElementById(targetSelectId);
 
-    console.log('asdasda')
     // Находим кнопку dropdown и список опций
     const button = dropdown.querySelector(".dropdown-button");
     const content = dropdown.querySelector(".dropdown-content");
@@ -58,16 +57,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Функция для обновления <select>
   function updateSelect(select, value) {
-    // Удаляем все текущие опции
-    select.innerHTML = "";
-
-    // Создаем новую опцию
-    const newOption = document.createElement("option");
-    newOption.value = value;
-    newOption.textContent = value;
-    newOption.selected = true;
-
-    // Добавляем новую опцию в select
-    select.appendChild(newOption);
+    // Проверяем, есть ли хотя бы одна опция
+    const option = select.querySelector("option");
+  
+    if (option) {
+      // Изменяем значение и текст существующей опции
+      option.value = value;
+      option.textContent = value;
+  
+      // Устанавливаем новое значение как выбранное (selected)
+      option.selected = true;
+    } else {
+      // Если опций нет, создаём новую
+      const newOption = document.createElement("option");
+      newOption.value = value;
+      newOption.textContent = value;
+      newOption.selected = true;
+      select.appendChild(newOption);
+    }
   }
 });
+
+
+
+

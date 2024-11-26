@@ -606,42 +606,45 @@ id=end-date
                   <p class="data-picker_title text_bold">За период:</p>
                   <input
                     type="text"
-                    id="date-input-range"
-                    class="input-main text_semibold"
+                    id="date-input-range "
+                    class="input-main text_semibold input-error"
                     placeholder="Выберите диапазон"
                     readonly
                   />
+                  <p class="error-data">Требуется заполнить поле</p>
                   <div class="calendar" id="calendar-range">
                     <!-- Инпуты с датой -->
                   </div>
-                  <div class="">
+                  <div class="hidden-form">
                     <input type="date" id="start-date" />
                     <input type="date" id="end-date" />
                   </div>
                 </div>
-                <label for="input6">
+                <label for="input6" class="input-label">
                   <span class="input-title text_bold">Плательщик:</span>
                   <input
                     name="input6"
                     type="text"
                     id="input6"
-                    class="input-main text_semibold"
+                    class="input-main text_semibold input-error"
                     placeholder="Введите название плательщика"
                     required
                   />
+                  <p class="error-data">Требуется заполнить поле</p>
                 </label>
                 <div class="opoznanie-input-container">
                   <p class="data-picker_title text_bold">Счет:</p>
                   <div class="flex-container">
-                    <label for="input2" class="money-label">
+                    <label for="input2" class="money-label input-label">
                       <input
                         name="input2"
                         id="input2"
                         type="text"
-                        class="input-main text_semibold"
+                        class="input-main text_semibold input-error"
                         placeholder="Введите сумму"
                         required
                       />
+                      <p class="error-data">Требуется заполнить поле</p>
                     </label>
                     <div class="dropdown dropdown-money" data-target="select1">
                       <a class="dropdown-button text_semibold">
@@ -670,7 +673,7 @@ id=end-date
                         >
                       </div>
                     </div>
-                    <select id="select1" class="hidden-select" >
+                    <select id="select1" class="hidden-select" hidden>
                       <option value="RUB">RUB</option>
                       <option value="USD">USD</option>
                       <option value="EUR">EUR</option>
@@ -686,7 +689,7 @@ id=end-date
                     id="input3"
                     class="input-main text_semibold"
                     placeholder="Введите ИНН"
-                    required
+                    
                   />
                 </label>
 
@@ -709,7 +712,7 @@ id=end-date
                     >
                   </div>
                 </div>
-                <select id="select2" class="hidden-select" >
+                <select id="select2" class="hidden-select" hidden>
                   <option value="Счет 1">Счет 1</option>
                   <option value="Счет 2">Счет 2</option>
                   <option value="Счет 3">Счет 3</option>
@@ -729,7 +732,7 @@ id=end-date
                     >
                   </div>
                 </div>
-                <select id="select4" class="hidden-select" >
+                <select id="select4" class="hidden-select" hidden>
                   <option value="Да">Да</option>
                   <option value="Нет">Нет</option>
                 </select>
@@ -741,7 +744,7 @@ id=end-date
                     type="text"
                     class="input-main text_semibold"
                     placeholder="Введите номер ПП"
-                    required
+                    
                   />
                 </label>
 
@@ -753,7 +756,7 @@ id=end-date
                     type="text"
                     class="input-main text_semibold"
                     placeholder="Введите название получателя"
-                    required
+                    
                   />
                 </label>
               </div>
@@ -764,7 +767,7 @@ id=end-date
                   id="input7"
                   class="input-main text_semibold"
                   placeholder="Ваш комментарий"
-                  required
+                  
                   rows="4"
                 ></textarea>
               </label>

@@ -29,3 +29,5 @@ navMenuList.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 2; 
   navMenuList.scrollLeft = scrollLeft - walk;
 });
+
+
