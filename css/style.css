@@ -522,7 +522,7 @@ color: var(--grey);
 .news_info {
   display: flex;
   flex-wrap: wrap;
-  background-image: url(./img/arrow.svg);
+  background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
   background-position: top 31px right;
   width: 100%;
@@ -862,7 +862,7 @@ input[type='radio'] {
 }
 
 /* Отображение галочки при активном состоянии чекбокса */
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-mark::before {
+.custom-checkbox input[type="checkbox"]:checked ~ .checkbox-mark::before {
   content: '';
   position: absolute;
   left: 4px;
@@ -874,19 +874,59 @@ input[type='radio'] {
   transform: rotate(45deg);
 }
 
+.year-selector-button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.year-wrapper {
+  position: relative;
+}
+.year-selector-list {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  top: 17px;
+  right: 50%;
+  transform: translate(50%, 0);
+  z-index: 10;
+  overflow-y: auto;
+  margin-top: 10px;
+  width: 100px;
+}
+
+.year-selector-list.active {
+  display: block;
+}
+
+.year-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.year-item:hover {
+  background-color: #f0f0f0;
+}
+
 .radio_container {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 input[type="radio"] {
-  display: none; /* Hide the default radio button */
+  display: none; /* Скрываем стандартный радио-баттон */
 }
 
 .label_radio {
+  display: inline-block;
   position: relative;
-  padding-left: 30px; /* Space for custom radio */
   cursor: pointer;
+  padding-left: 30px; /* Пространство для кастомной кнопки */
 }
 
 .label_radio::before {
@@ -895,26 +935,25 @@ input[type="radio"] {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 20px; /* Size of the custom radio */
-  height: 20px; /* Size of the custom radio */
+  width: 20px;
+  height: 20px;
   border: 1px solid var(--purple-1);
-  border-radius: 50%; /* Make it round */
-  background-color: white; /* Background color */
+  border-radius: 50%;
+  background-color: white;
   transition: background 0.3s;
 }
 
 input[type="radio"]:checked + .label_radio::after {
   content: '';
   position: absolute;
-  left: 8px; /* Position of the inner dot */
+  left: 8px;
   top: 50%;
-  transform: translate(0,-50%);
-  width: 6px; /* Size of the inner dot */
-  height: 6px; /* Size of the inner dot */
-  border-radius: 50%; /* Make it round */
-  background-color: var(--purple-2); /* Inner dot color */
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--purple-2);
 }
-
 
 .gradient_btn {
   z-index: 1;
