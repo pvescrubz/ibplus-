@@ -1510,6 +1510,7 @@ border-radius: 10px;
     position: relative;
   }
   
+
   
   .selected-start.inrange > .day-text {
     background: linear-gradient(to left, rgba(237,237,254, 1) 50%, transparent 50%) !important;

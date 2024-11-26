@@ -552,7 +552,7 @@ select3_option1
           </div>
         </nav>
         <div class="content_main main_screen">
-          <div class="content_left">
+          <form class="content_left">
             <div class="title_container">
               <h2 class="main_title">ВЫПИСКА ПО СЧЕТУ</h2>
               <svg
@@ -569,7 +569,7 @@ select3_option1
                 />
               </svg>
             </div>
-            <form class="content_account">
+            <div class="content_account">
               <div class="content_account_item">
                 <p class="content_account_item_title text_bold">Счет:</p>
                 <div class="dropdown_container">
@@ -641,7 +641,7 @@ select3_option1
                       <option id="select3_option3" value="За последние 25 операций">За последние 25 операций</option>
                       <option id="select3_option4" value="Все операции">Все операции</option>
                     </select>
-                    <div class="date-picker" id="calendar-range-picker" data-mode="range">
+                    <div class="date-picker"  data-mode="range">
                       
                       <!-- Видимое поле для отображения выбранного диапазона -->
                       <input 
@@ -654,8 +654,23 @@ select3_option1
                       <div class="calendar"></div>
                       <!-- Скрытые поля для начальной и конечной дат -->
                       <div class="">
-                        <input type="date" id="hidden-start-date" value="2021-11-21"/>
-                        <input type="date" id="hidden-end-date" value="2028-11-21"/>
+                        <input type="date" id="hidden-start-date" value="2012-11-21"/>
+                        <input type="date" id="hidden-end-date" value="2015-11-21"/>
+                      </div>
+                    </div>
+                    <div class="date-picker"  data-mode="single">
+                      <!-- Видимое поле для отображения выбранной даты -->
+                      <input 
+                        type="text" 
+                        class="input-main text_semibold" 
+                        placeholder="Выберите дату" 
+                        readonly 
+                      />
+                      <!-- Контейнер для календаря -->
+                      <div class="calendar"></div>
+                      <!-- Скрытое поле для отправки даты на сервер -->
+                      <div class="">
+                        <input type="date" id="hidden-single-date" value="2024-11-26" />
                       </div>
                     </div>
                   </div>
@@ -663,7 +678,7 @@ select3_option1
               </div>
               <button
                 type="submit" class="gradient_btn sbmt-btn">Сформировать</button>
-            </form>
+            </div>
             <div class="text_content">
               <div class="text_content">
                 <p class="text_bold title_table">
@@ -776,7 +791,7 @@ select3_option1
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
