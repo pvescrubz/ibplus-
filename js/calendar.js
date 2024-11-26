@@ -32,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initializeDates() {
-      // Утилита для очистки времени и получения даты в формате yyyy-MM-dd
+      // Утилита для преобразования даты из формата с временем в формат yyyy-MM-dd
       function toInputDateFormat(value) {
         if (!value) return ""; // Если значение пустое, возвращаем пустую строку
         if (value.includes(" ")) {
           return value.split(" ")[0]; // Отсекаем время, оставляем только дату
         }
-        return value; // Если значение уже в правильном формате
+        return value; // Если значение уже в правильном формате yyyy-MM-dd
       }
     
-      // Преобразование и установка стартовой даты
+      // Проверяем значения скрытых полей и преобразуем их
       if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
         const normalizedStartDate = toInputDateFormat(hiddenDateInputs[0].value);
         startDate = new Date(normalizedStartDate); // Преобразуем в объект Date
-        hiddenDateInputs[0].value = normalizedStartDate; // Записываем обратно в поле
+        hiddenDateInputs[0].value = normalizedStartDate; // Устанавливаем значение в правильном формате
       } else {
         // Если значения нет, задаем текущую дату
         const today = new Date();
@@ -53,11 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
         hiddenDateInputs[0].value = today.toISOString().split("T")[0];
       }
     
-      // Преобразование и установка конечной даты (если режим range)
       if (mode === "range" && hiddenDateInputs[1] && hiddenDateInputs[1].value) {
         const normalizedEndDate = toInputDateFormat(hiddenDateInputs[1].value);
         endDate = new Date(normalizedEndDate); // Преобразуем в объект Date
-        hiddenDateInputs[1].value = normalizedEndDate; // Записываем обратно в поле
+        hiddenDateInputs[1].value = normalizedEndDate; // Устанавливаем значение в правильном формате
       } else if (mode === "range") {
         // Если значения нет, задаем текущую дату + 1 день
         const tomorrow = new Date();
@@ -69,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Обновляем текстовое поле для отображения
       updateTextInput();
     }
+    
     
     function updateTextInput() {
       if (dateInput) {
