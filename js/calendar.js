@@ -32,35 +32,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initializeDates() {
-      const today = new Date();
-      if (mode === "single") {
-        if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
-          const rawDate = extractDateFromServerFormat(hiddenDateInputs[0].value);
-          startDate = new Date(convertToInputDate(rawDate));
-        } else {
-          startDate = today;
-          hiddenDateInputs[0].value = convertToInputDate(formatToDisplayDate(today));
+      // Утилита для очистки времени и получения даты в формате yyyy-MM-dd
+      function toInputDateFormat(value) {
+        if (!value) return ""; // Если значение пустое, возвращаем пустую строку
+        if (value.includes(" ")) {
+          return value.split(" ")[0]; // Отсекаем время, оставляем только дату
         }
-      } else if (mode === "range") {
-        if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
-          const rawDate = extractDateFromServerFormat(hiddenDateInputs[0].value);
-          startDate = new Date(convertToInputDate(rawDate));
-        } else {
-          startDate = today;
-          hiddenDateInputs[0].value = convertToInputDate(formatToDisplayDate(today));
-        }
-
-        if (hiddenDateInputs[1] && hiddenDateInputs[1].value) {
-          const rawDate = extractDateFromServerFormat(hiddenDateInputs[1].value);
-          endDate = new Date(convertToInputDate(rawDate));
-        } else {
-          endDate = new Date(today.getTime() + 24 * 60 * 60 * 1000);
-          hiddenDateInputs[1].value = convertToInputDate(formatToDisplayDate(endDate));
-        }
+        return value; // Если значение уже в правильном формате
       }
+    
+      // Преобразование и установка стартовой даты
+      if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
+        const normalizedStartDate = toInputDateFormat(hiddenDateInputs[0].value);
+        startDate = new Date(normalizedStartDate); // Преобразуем в объект Date
+        hiddenDateInputs[0].value = normalizedStartDate; // Записываем обратно в поле
+      } else {
+        // Если значения нет, задаем текущую дату
+        const today = new Date();
+        startDate = today;
+        hiddenDateInputs[0].value = today.toISOString().split("T")[0];
+      }
+    
+      // Преобразование и установка конечной даты (если режим range)
+      if (mode === "range" && hiddenDateInputs[1] && hiddenDateInputs[1].value) {
+        const normalizedEndDate = toInputDateFormat(hiddenDateInputs[1].value);
+        endDate = new Date(normalizedEndDate); // Преобразуем в объект Date
+        hiddenDateInputs[1].value = normalizedEndDate; // Записываем обратно в поле
+      } else if (mode === "range") {
+        // Если значения нет, задаем текущую дату + 1 день
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        endDate = tomorrow;
+        hiddenDateInputs[1].value = tomorrow.toISOString().split("T")[0];
+      }
+    
+      // Обновляем текстовое поле для отображения
       updateTextInput();
     }
-
+    
     function updateTextInput() {
       if (dateInput) {
         if (mode === "range") {
