@@ -1,3 +1,18 @@
+<!-- 
+ id="start-date" начальная дата
+id="end-date"   конечная дата
+id="select1"  // Номер счета
+id="select2" // Валюта
+id="select3"  // Кол-во операций
+
+select1_option1 - элементы выбора у каждого из списков 
+
+select2_option1
+
+select3_option1
+-->
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +28,7 @@
       <div class="left_main">
         <div class="logo">
           <div class="logo_media">
-            <img src="./img/Logo.png" alt="Logo" />
+            <img src="../img/Logo.png" alt="Logo" />
             <p class="logo_text">IB.PLUS</p>
           </div>
           <div class="settings_container">
@@ -558,36 +573,36 @@
               <div class="content_account_item">
                 <p class="content_account_item_title text_bold">Счет:</p>
                 <div class="dropdown_container">
+                  <!-- Dropdown для select1 -->
                   <div class="dropdown" data-target="select1">
                     <a class="dropdown-button text_semibold">
-                      <span class="dropdown-button_text text_semibold">Счет #1</span>
+                      <span class="dropdown-button_text text_semibold"></span>
                     </a>
-                    <div class="dropdown-content">
-                      <a href="#option1" class="text_semibold" data-value="Счет 1">Счет 1</a>
-                      <a href="#option2" class="text_semibold" data-value="Счет 2">Счет 2</a>
-                      <a href="#option3" class="text_semibold" data-value="Счет 3">Счет 3</a>
-                    </div>
+                    <div class="dropdown-content"></div>
                   </div>
-                  <div class="dropdown" data-target="select2">
+                
+                  <!-- Dropdown для select2 -->
+                  <div class="dropdown" data-target="select2" >
                     <a class="dropdown-button text_semibold">
-                      <span class="dropdown-button_text text_semibold">RUB</span>
+                      <span class="dropdown-button_text text_semibold"></span>
                     </a>
-                    <div class="dropdown-content">
-                      <a href="#option1" class="text_semibold" data-value="USD">USD</a>
-                      <a href="#option2" class="text_semibold" data-value="RUB">RUB</a>
-                    </div>
+                    <div class="dropdown-content"></div>
                   </div>
-                  <!-- Невидимый селект 1-2 -->
+                
+                  <!-- Скрытые селекты -->
                   <select id="select1" name="account" hidden>
                     <option id="select1_option1" value="Счет 1" selected>Счет 1</option>
+                    <option id="select1_option2" value="Счет 2">Счет 2</option>
+                    <option id="select1_option3" value="Счет 3">Счет 3</option>
                   </select>
                   <select id="select2" name="currency" hidden>
+                    <option id="select2_option1" value="USD">USD</option>
                     <option id="select2_option2" value="RUB" selected>RUB</option>
                   </select>
                 </div>
                 <div class="checkbox_container">
                   <label class="custom-checkbox text_semibold">
-                    <input type="checkbox" />
+                    <input type="checkbox" id="checkbox1"/>
                     <span class="checkbox-mark"></span>
                     включая непроведенные документы
                   </label>
@@ -612,23 +627,22 @@
                     </div>
                   </div>
                   <div class="dropdown_content operation_dropdown">
-                    <div class="dropdown" data-target="select3" >
+                    <div class="dropdown" data-target="select3">
                       <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold">За последние 5 операций</span>
+                        <span class="dropdown-button_text text_semibold"></span>
                       </a>
-                      <div class="dropdown-content">
-                        <a href="#option1" class="text_semibold" data-value="За последние 5 операций">За последние 5 операций</a>
-                        <a href="#option2" class="text_semibold" data-value="За последние 15 операций">За последние 15 операций</a>
-                        <a href="#option2" class="text_semibold" data-value="За последние 25 операций">За последние 25 операций</a>
-                        <a href="#option2" class="text_semibold" data-value="Все операции">Все операции</a>
-                      </div>
+                      <div class="dropdown-content"></div>
                     </div>
-                     <!-- Невидимый селект 3 -->
-                     <select id="select3" name="operations" >
-                      <option id="select3_option" value="За последние 5 операций">За последние 5 операций</option>
+                  
+                    <!-- Скрытый select для операций -->
+                    <select id="select3" name="operations" hidden>
+                      <option id="select3_option1" value="За последние 5 операций" selected>За последние 5 операций</option>
+                      <option id="select3_option2" value="За последние 15 операций">За последние 15 операций</option>
+                      <option id="select3_option3" value="За последние 25 операций">За последние 25 операций</option>
+                      <option id="select3_option4" value="Все операции">Все операции</option>
                     </select>
                     <div class="date-picker" data-mode="range">
-                      <p class="error-data">Требуется выбрать дату</p>
+                      <p class="error-data">Требуется выбрать дату</p> 
                       <input
                         type="text"
                         id="date-input-range"
@@ -638,6 +652,7 @@
                       />
                       <div class="calendar" id="calendar-range">
                         <!-- Инпуты с датой -->
+                       
                       </div>
                       <div class="hidden-form">
                         <input type="date" id="start-date" >
@@ -689,11 +704,51 @@
                   </p>
                   <p class="grid-cell grid_colored text_bold tablet-mobile grid_colored-last-tablet grid_colored-last-mobile"></p>
                 </li>
-                <li class="vipiska_tabs_content">
-                  <div class="grid-row grid-main grid_account empty-item">
-                    <p class="grid-cell text_semibold empty-text">Нет счетов-фактур за указанный период по выбранному счёту</p>
-                  </div>
-                </li>
+                  <li class="grid-row grid-main grid_account " >
+                    <p class="grid-cell text_semibold">Дата 1</p>
+                    <p class="grid-cell text_semibold onlypc">Документ</p>
+                    <p class="grid-cell text_semibold onlypc">Номер</p>
+                    <p class="grid-cell text_semibold onlypc">Детали</p>
+                    <p class="grid-cell text_semibold onlypc">Корреспондент</p>
+                    <p class="grid-cell text_semibold">Списано</p>
+                    <p class="grid-cell text_semibold pc-tablet">Зачислено</p>
+                    <p class="grid-cell text_semibold pc-tablet">Валюта</p>
+                    <p
+                      class="grid-cell text_semibold tablet-mobile show_more-btn"
+                    >
+                      ...
+                    </p>
+                  </li>
+                  <li class="grid-row grid-main grid_account">
+                    <p class="grid-cell text_semibold">Дата</p>
+                    <p class="grid-cell text_semibold onlypc">Документ</p>
+                    <p class="grid-cell text_semibold onlypc">Номер</p>
+                    <p class="grid-cell text_semibold onlypc">Детали</p>
+                    <p class="grid-cell text_semibold onlypc">Корреспондент</p>
+                    <p class="grid-cell text_semibold">Списано</p>
+                    <p class="grid-cell text_semibold pc-tablet">Зачислено</p>
+                    <p class="grid-cell text_semibold pc-tablet">Валюта</p>
+                    <p
+                      class="grid-cell text_semibold tablet-mobile show_more-btn"
+                    >
+                      ...
+                    </p>
+                  </li>
+                  <li class="grid-row grid-main grid_account">
+                    <p class="grid-cell text_semibold">Дата</p>
+                    <p class="grid-cell text_semibold onlypc">Документ</p>
+                    <p class="grid-cell text_semibold onlypc">Номер</p>
+                    <p class="grid-cell text_semibold onlypc">Детали</p>
+                    <p class="grid-cell text_semibold onlypc">Корреспондент</p>
+                    <p class="grid-cell text_semibold">Списано</p>
+                    <p class="grid-cell text_semibold pc-tablet">Зачислено</p>
+                    <p class="grid-cell text_semibold pc-tablet">Валюта</p>
+                    <p
+                      class="grid-cell text_semibold tablet-mobile show_more-btn"
+                    >
+                      ...
+                    </p>
+                  </li>
               </ul>
               <div class="grid_btns vipiska_btns-container">
                 <div class="grid_btns vipiska_btns-nav">
@@ -736,3 +791,4 @@
   <script src="../js/popup.js"></script>
   <script src="../js/dropdown.js"></script>
 </html>
+
