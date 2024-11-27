@@ -552,7 +552,7 @@ select3_option1
           </div>
         </nav>
         <div class="content_main main_screen">
-          <form class="content_left">
+          <div class="content_left">
             <div class="title_container">
               <h2 class="main_title">ВЫПИСКА ПО СЧЕТУ</h2>
               <svg
@@ -569,6 +569,7 @@ select3_option1
                 />
               </svg>
             </div>
+            <form class="form-main">
             <div class="content_account">
               <div class="content_account_item">
                 <p class="content_account_item_title text_bold">Счет:</p>
@@ -590,12 +591,12 @@ select3_option1
                   </div>
                 
                   <!-- Скрытые селекты -->
-                  <select id="select1" name="account" >
+                  <select id="select1" name="account" hidden>
                     <option id="select1_option1" value="Счет 1" selected>Счет 1</option>
                     <option id="select1_option2" value="Счет 2">Счет 2</option>
                     <option id="select1_option3" value="Счет 3">Счет 3</option>
                   </select>
-                  <select id="select2" name="currency" >
+                  <select id="select2" name="currency" hidden >
                     <option id="select2_option1" value="USD">USD</option>
                     <option id="select2_option2" value="RUB" selected>RUB</option>
                   </select>
@@ -635,7 +636,7 @@ select3_option1
                     </div>
                   
                     <!-- Скрытый select для операций -->
-                    <select id="select3" name="operations" >
+                    <select id="select3" name="operations" hidden >
                       <option id="select3_option1" value="За последние 5 операций" selected>За последние 5 операций</option>
                       <option id="select3_option2" value="За последние 15 операций">За последние 15 операций</option>
                       <option id="select3_option3" value="За последние 25 операций">За последние 25 операций</option>
@@ -653,24 +654,9 @@ select3_option1
                       <!-- Контейнер для календаря -->
                       <div class="calendar"></div>
                       <!-- Скрытые поля для начальной и конечной дат -->
-                      <div class="">
+                      <div class="hidden-form">
                         <input type="date" id="hidden-start-date" value="2012-11-21"/>
                         <input type="date" id="hidden-end-date" value="2015-11-21"/>
-                      </div>
-                    </div>
-                    <div class="date-picker"  data-mode="single">
-                      <!-- Видимое поле для отображения выбранной даты -->
-                      <input 
-                        type="text" 
-                        class="input-main text_semibold" 
-                        placeholder="Выберите дату" 
-                        readonly 
-                      />
-                      <!-- Контейнер для календаря -->
-                      <div class="calendar"></div>
-                      <!-- Скрытое поле для отправки даты на сервер -->
-                      <div class="">
-                        <input type="date" id="hidden-single-date" value="2024-11-26" />
                       </div>
                     </div>
                   </div>
@@ -792,6 +778,7 @@ select3_option1
               </div>
             </div>
           </form>
+          </div>
         </div>
       </div>
 
