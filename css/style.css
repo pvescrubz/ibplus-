@@ -873,44 +873,41 @@ input[type='radio'] {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
+.year-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
 
-.year-selector-button {
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
+.year-display {
   cursor: pointer;
 }
 
-.year-wrapper {
-  position: relative;
-}
-.year-selector-list {
+.year-dropdown {
   display: none;
   position: absolute;
-  background-color: white;
+  top: 100%;
+  left: 0;
+  background: white;
   border: 1px solid #ccc;
-  max-height: 200px;
-  top: 17px;
-  right: 50%;
-  transform: translate(50%, 0);
   z-index: 10;
+  max-height: 150px;
   overflow-y: auto;
-  margin-top: 10px;
-  width: 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.year-selector-list.active {
+.year-dropdown.active {
   display: block;
 }
 
-.year-item {
-  padding: 5px;
+.year-option {
+  padding: 5px 10px;
   cursor: pointer;
 }
 
-.year-item:hover {
-  background-color: #f0f0f0;
+.year-option:hover {
+  background: #f0f0f0;
 }
+
 
 .radio_container {
   display: flex;
@@ -1533,6 +1530,9 @@ border-radius: 10px;
     background: linear-gradient(to right, rgba(237,237,254, 1) 50%, transparent 50%) !important;
   }
 
+  .day.selected-start {
+    background: linear-gradient(to left, rgba(237,237,254, 1) 50%, transparent 50%) !important;
+  }
   .day-text {
     display: block;
     width: 35px;
