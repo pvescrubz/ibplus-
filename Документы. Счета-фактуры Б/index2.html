@@ -551,7 +551,7 @@ id="date-error" окно ошибки в календаре
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">ВЫПИСКА ПО СЧЕТУ</h2>
+              <h2 class="main_title">Счета-фактуры Б</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -593,23 +593,25 @@ id="date-error" окно ошибки в календаре
                           <a href="#option2" class="text_semibold" data-value="Счет4">Счет4</a>
                         </div>
                       </div>
-                      <div class="date-picker faktura-date error" data-mode="range">
-                        <p class="data-picker_title text_bold">Счет</p>
-                        <input
-                          type="text"
-                          id="date-input-range"
-                          class="input-main text_semibold"
-                          placeholder="Выберите диапазон"
-                          readonly
-                        />
-                        <div class="calendar" id="calendar-range">
-                          <!-- Инпуты с датой -->
-                        </div>
-                        <div class="hidden-form">
-                          <input type="date" id="start-date" >
-                          <input type="date" id="end-date">
-                         </div>
-                      </div>
+                      <p class="content_account_item_title text_bold">За период</p>
+
+                  <div class="date-picker" data-mode="range">
+                    <!-- Видимое поле для отображения выбранного диапазона -->
+                    <input 
+                      type="text" 
+                      class="input-main text_semibold" 
+                      placeholder="Выберите диапазон" 
+                      readonly 
+                    />
+
+                    <!-- Контейнер для календаря -->
+                    <div class="calendar"></div>
+                    <!-- Скрытые поля для начальной и конечной дат -->
+                    <div class="form-hidden">
+                      <input type="hidden" class="hidden-start-date" value="22.11.2013" />
+                      <input type="hidden" class="hidden-end-date" value="22.11.2015" />
+                    </div>
+                  </div>
                      <!-- Невидимый селект 3 -->
                     <select id="select1" name="operations" hidden>
                       <option value=""></option>
