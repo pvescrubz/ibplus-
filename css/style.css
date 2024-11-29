@@ -878,6 +878,11 @@ input[type='radio'] {
   display: inline-block;
 }
 
+
+.new-faktura {
+  max-width: 100% !important;
+  padding: 0;
+}
 .year-display {
   cursor: pointer;
 }
@@ -969,8 +974,16 @@ text-align: center;
 padding: 10px 15px;
 }
 
+textarea {
+  resize: none; /* Отключает изменение размера */
+}
+
+.new-faktura {
+  min-height: 150px;
+}
+
 .faktura-btn {
-  bottom: 2px;
+  bottom: -20px;
 }
 
 .show_more-btn {
