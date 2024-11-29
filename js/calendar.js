@@ -119,17 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const yearDropdown = document.createElement("div");
       yearDropdown.className = "year-dropdown";
-
-      for (let year = displayedDate.getFullYear() - 10; year <= displayedDate.getFullYear() + 10; year++) {
+      
+      // Устанавливаем диапазон от 2000 до текущего года
+      const startYear = 2000;
+      const endYear = new Date().getFullYear();
+      
+      for (let year = startYear; year <= endYear; year++) {
         const yearOption = document.createElement("div");
         yearOption.className = "year-option";
         yearOption.textContent = year;
+      
         yearOption.addEventListener("click", (event) => {
           event.stopPropagation();
           displayedDate.setFullYear(year);
           renderCalendar();
           yearDropdown.classList.remove("active");
         });
+      
         yearDropdown.appendChild(yearOption);
       }
 
