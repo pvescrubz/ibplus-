@@ -99,7 +99,7 @@ background: var(--green-1);
 
 .new_item:last-of-type {
   border-bottom: unset;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   margin-top: 30px;
 }
 
@@ -1031,6 +1031,15 @@ textarea {
   background: var(--purple-1);
   padding: 30px 30px;
   margin: 0 auto;
+}
+
+.news_content .new_item {
+  display: none; /* Скрываем все элементы .new_item */
+}
+
+.news_content .new_item:nth-child(-n+4), /* Показываем первые 3 .new_item */
+.news_content .new_item:last-child { /* Показываем последний .new_item */
+  display: flex;
 }
 
 .text_content {
