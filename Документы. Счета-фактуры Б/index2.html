@@ -593,25 +593,22 @@ id="date-error" окно ошибки в календаре
                           <a href="#option2" class="text_semibold" data-value="Счет4">Счет4</a>
                         </div>
                       </div>
-                      <p class="content_account_item_title text_bold">За период</p>
+                    
 
-                  <div class="date-picker" data-mode="range">
-                    <!-- Видимое поле для отображения выбранного диапазона -->
-                    <input 
-                      type="text" 
-                      class="input-main text_semibold" 
-                      placeholder="Выберите диапазон" 
-                      readonly 
-                    />
-
-                    <!-- Контейнер для календаря -->
-                    <div class="calendar"></div>
-                    <!-- Скрытые поля для начальной и конечной дат -->
-                    <div class="form-hidden">
-                      <input type="hidden" class="hidden-start-date" value="22.11.2013" />
-                      <input type="hidden" class="hidden-end-date" value="22.11.2015" />
-                    </div>
-                  </div>
+                      <div class="checkbox_container">
+                        <label class="custom-checkbox text_semibold">
+                          <input
+                            data-val="true"
+                            data-val-required="Только с остатком"
+                            id="Incompleted"
+                            name="Incompleted"
+                            type="checkbox"
+                            value="true"
+                          /><input name="Incompleted" type="hidden" value="false" />
+                          <span class="checkbox-mark"></span>
+                          Только с остатком
+                        </label>
+                      </div>
                      <!-- Невидимый селект 3 -->
                     <select id="select1" name="operations" hidden>
                       <option value=""></option>
@@ -641,7 +638,8 @@ id="date-error" окно ошибки в календаре
             <div class="text_content">
               <div class="text_content">
                 <p class="text_bold title_table">
-                    Счета-фактуры за период с 16.10.2024 по 17.10.2024 по счёту 211.000002:
+                  Счета-фактуры за период с <span class="text_bold title_table">16.10.2024 </span class="text_bold title_table"> по <span>17.10.2024</span по счёту
+                  211.000002:
                 </p>
               </div>
             </div>
