@@ -970,8 +970,19 @@ padding: 10px 15px;
 .faktura-btn {
   bottom: 2px;
 }
+
 .show_more-btn {
-  display: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 6px;
+  color: #73737C;
+}
+
+.show_more-btn-faktura-b {
+  display: block;
   text-align: center;
   font-family: var(--font-family);
   font-weight: 500;
@@ -1712,14 +1723,18 @@ border-radius: 10px;
   }
 
   .faktura-table-colored {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     padding: 12px;
     border-bottom: 1px solid #e7e9ef;
     background-color: var(--white);
   }
 
   .grid_account-faktura {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid_colored-last {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
 
@@ -1792,6 +1807,7 @@ padding: 10px 10px;
       border-bottom-right-radius: 10px;
     }
   
+
     
      .gradient_link-svg {
       display: none;
@@ -2055,6 +2071,8 @@ padding: 10px 10px;
     border-bottom: 1px solid #e7e9ef;
     background-color: var(--white);
   }
+
+  
   .grid-cell-faktura {
     height: 100%;
   }
@@ -2064,11 +2082,17 @@ padding: 10px 10px;
   }
   
   @media screen and (max-width: 768px) {
+
+
     .input-content {
       min-width: 300px;
       gap: 10px;
       display: flex;
       flex-direction: column;
+    }
+
+    .mobile-hidden {
+      display: none;
     }
 
     .grid-table {
