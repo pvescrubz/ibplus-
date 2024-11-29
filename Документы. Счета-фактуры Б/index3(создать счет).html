@@ -621,6 +621,9 @@ id="select3"  // Кол-во операций -->
                         <option id="select2_option4" value="Счет3">Счет3</option>
                       </select>
                   <div class="dropdown" data-target="select3">
+                    <p class="error-data">
+                      <span class="field-validation-error" data-valmsg-for="Details" data-valmsg-replace="true"><span for="Details" generated="true" class="">Требуется поле счет фактура</span></span>
+                  </p>
                     <p class="content_account_item_title text_bold">
                       Компания
                     </p>
@@ -631,8 +634,8 @@ id="select3"  // Кол-во операций -->
                   </div>
                   <!-- Скрытый select для операций -->
                   <select id="select3" name="operations" hidden>
-                    <option id="select3_option1" value="Компания" selected>
-                        Компания
+                    <option id="select3_option1" value="Ромашка" >
+                        Ромашка
                     </option>
                     <option id="select3_option2" value="Компания 1">
                         Компания
@@ -665,9 +668,11 @@ id="select3"  // Кол-во операций -->
                     </div>
                   </div>
                   <label for="input4">
+                    
                     <p class="content_account_item_title text_bold">
                         Сумма счёт-фактуры
                     </p>
+                   
                     <input
                       name="input4"
                       type="text"
@@ -675,6 +680,7 @@ id="select3"  // Кол-во операций -->
                       placeholder="Введите сумму счёт-фактуры"
                       required
                     />
+                    <p class="error-data">Требуется поле поле поле поле поле поле поле</p>
                   </label>
                   <div class="dropdown" data-target="select4">
                     <p class="content_account_item_title text_bold">
@@ -765,9 +771,14 @@ id="select3"  // Кол-во операций -->
                   </label>
                 </div>
               </div>
-              <button type="submit" class="gradient_btn sbmt-btn faktura-btn">
-                Сформировать
-              </button>
+              <div class="faktura-btns">
+                <button type="submit" class="gradient_btn ">
+                  Сформировать
+                </button>
+                <button type="submit" class="gradient_btn ">
+                  Отмена
+                </button>
+              </div>
             </div>
             </form>
           </div>

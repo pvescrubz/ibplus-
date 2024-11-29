@@ -1504,6 +1504,20 @@ color: var(--black);
   text-align: start;
 }
 
+label {
+  display: block;
+}
+
+input {
+  position: relative;
+}
+
+.faktura-btns {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+}
+
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
