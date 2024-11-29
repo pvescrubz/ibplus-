@@ -124,6 +124,7 @@ border-radius: 20px;
 }
 
 .input_text-area {
+  position: relative;
   display: block;
   padding-left: 20px;
   max-width: 49.5%;
@@ -355,7 +356,7 @@ color: var(--grey);
 }
 
 .nav_svg {
-  fill: white;
+  fill: #CBD2F2;
   transition: all 0.3s linear;
 }
 
@@ -764,8 +765,16 @@ color: var(--black);
   height: 10px;
 }
 
-.dropdown-button {
+.btns-create-faktura {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  display: flex;
+  gap: 15px;
+}
 
+.dropdown-button {
+  min-height: 50px;
   text-align: center;
   position: relative;
   display: block;
@@ -983,7 +992,7 @@ textarea {
 }
 
 .faktura-btn {
-  bottom: -20px;
+  bottom: -50px;
 }
 
 .show_more-btn {
@@ -1401,6 +1410,7 @@ body.no-scroll {
 .input-content {
   min-width: 400px;
   margin-bottom: 30px;
+  gap: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -1589,14 +1599,18 @@ border-radius: 10px;
     cursor: pointer;
     position: relative;
   }
-
+  label {
+    position: relative;
+  }
   .error-data {
     position: absolute;
-    bottom: -35px;
+    bottom: -25px;
+    margin: 0;
     left: 0;
     color: red;
     font-family: var(--font-family);
     font-weight: 500;
+    margin-bottom: 10px;
     font-size: 14px;
     line-height: 171%;
     text-align: center;
@@ -1604,9 +1618,8 @@ border-radius: 10px;
 
   .input-error {
     border: 1px solid red;
-
   }
-  
+
   #date-input {
     width: 100%;
     padding: 10px;
@@ -1863,6 +1876,7 @@ padding: 10px 10px;
     }
     .content_account_item {
       width: 100%;
+      gap: 15px;
     }
     .grid_colored:nth-last-child(2) {
       border-top-right-radius: unset;

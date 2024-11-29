@@ -645,6 +645,7 @@ id="select3"  // Кол-во операций -->
                     </option>
                   </select>
                   <div class="date-picker" data-mode="single">
+                    <p class="error-data">Ошибка календаря </p>
                     <p class="content_account_item_title text_bold">Дата счёт-фактуры:
                        
                         </p>
@@ -725,6 +726,9 @@ id="select3"  // Кол-во операций -->
                     />
                   </label>
                   <label for="input3" class="faktura-label">
+                    <p class="error-data">
+                        <span class="field-validation-error" data-valmsg-for="Details" data-valmsg-replace="true"><span for="Details" generated="true" class="">Требуется поле Назначение платежа.</span></span>
+                    </p>
                     <p class="content_account_item_title text_bold">
                         Название контрагента:
                     </p>
@@ -754,6 +758,9 @@ id="select3"  // Кол-во операций -->
                   </select>
                   <label for="input6" class="input_text-area new-faktura">
                     <p class="input-title text_bold">Комментарий</p>
+                    <p class="error-data">
+                        <span class="field-validation-error" data-valmsg-for="Details" data-valmsg-replace="true"><span for="Details" generated="true" class="">Требуется поле Назначение платежа.</span></span>
+                    </p>
                     <textarea name="input6" id="input6" class="input-main text_semibold" placeholder="Ваш комментарий" required="" rows="4"></textarea>
                   </label>
                 </div>
@@ -768,7 +775,6 @@ id="select3"  // Кол-во операций -->
       </div>
     </main>
   </body>
-  <script src="../js/input-copy.js"></script>
   <script src="../js/scrooll.js"></script>
   <script src="../js/calendar.js"></script>
   <script src="../js/popupTablets.js"></script>
