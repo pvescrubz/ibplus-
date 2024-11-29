@@ -3,10 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupClose = document.getElementById('popup-close_vipiska'); // Кнопка закрытия попапа
   const popupData = document.getElementById('popup-data_vipiska'); // Контейнер для данных
   const showMoreButtons = document.querySelectorAll('.show_more-btn'); // Кнопки "Показать больше"
+  const gridHead = document.querySelector('.grid-head'); // Заголовки таблицы
+
+  // Проверяем наличие всех необходимых элементов
+  if (!popup || !popupClose || !popupData || !showMoreButtons.length || !gridHead) {
+    return; // Если элементы отсутствуют, прекращаем выполнение скрипта
+  }
 
   // Получаем заголовки из grid-head, исключая элементы с data-not-count="true"
   const headers = Array.from(
-    document.querySelector('.grid-head').querySelectorAll('.grid-cell:not(.show_more-btn)')
+    gridHead.querySelectorAll('.grid-cell:not(.show_more-btn)')
   )
     .filter(header => !header.hasAttribute('data-not-count')) // Исключаем по атрибуту
     .map(header => header.textContent.trim());
