@@ -564,23 +564,25 @@ id=end-date
               </svg>
             </div>
             <div class="opoznanie-main-container">
-                <div class="date-picker faktura-date " data-mode="range">
-                    <p class="data-picker_title text_bold">За период:</p>
-                    <input
-                      type="text"
-                      id="date-input-range"
-                      class="input-main text_semibold"
-                      placeholder="Выберите диапазон"
-                      readonly
-                    />
-                    <div class="calendar" id="calendar-range">
-                      <!-- Инпуты с датой -->
-                    </div>
-                    <div class="hidden-form">
-                      <input type="date" id="start-date" >
-                      <input type="date" id="end-date">
-                     </div>
+                <div class="date-picker" data-mode="range">
+                  <p class="data-picker_title text_bold">За период:</p>
+                  <!-- Видимое поле для отображения выбранного диапазона -->
+                  <input 
+                    type="text" 
+                    class="input-main text_semibold" 
+                    placeholder="Выберите диапазон" 
+                    readonly 
+                  />
+
+                  <!-- Контейнер для календаря -->
+                  <div class="calendar"></div>
+                  <!-- Скрытые поля для начальной и конечной дат -->
+                  <div class="form-hidden">
+                    <input type="text" class="hidden-start-date" value="22.11.2013" />
+                    <input type="text" class="hidden-end-date" value="22.11.2015" />
+                  </div>
                 </div>
+
 
                 <label for="input6">
                   <p class="input-title text_bold">Плательщик:</p>
@@ -591,7 +593,6 @@ id=end-date
                 <div class="flex-container">
                 <label for="input2 " class="money-label">
                     <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Введите сумму" required>
-                    
                 </label>
                 <div class="dropdown dropdown-money" data-target="select1">
                   <a class="dropdown-button text_semibold">

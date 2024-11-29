@@ -585,7 +585,7 @@ id="select3"  // Кол-во операций -->
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Счета-фактуры Б</h2>
+              <h2 class="main_title">Отчёт по счетам-фактурам</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -645,19 +645,23 @@ id="select3"  // Кол-во операций -->
                       Тип оплаты3
                     </option>
                   </select>
-                  <div class="checkbox_container">
-                    <label class="custom-checkbox text_semibold">
-                      <input
-                        data-val="true"
-                        data-val-required="Только с остатком"
-                        id="Incompleted"
-                        name="Incompleted"
-                        type="checkbox"
-                        value="true"
-                      /><input name="Incompleted" type="hidden" value="false" />
-                      <span class="checkbox-mark"></span>
-                      Только с остатком
-                    </label>
+                  <p class="content_account_item_title text_bold">За период</p>
+                  <div class="date-picker" data-mode="range">
+                    <!-- Видимое поле для отображения выбранного диапазона -->
+                    <input 
+                      type="text" 
+                      class="input-main text_semibold" 
+                      placeholder="Выберите диапазон" 
+                      readonly 
+                    />
+
+                    <!-- Контейнер для календаря -->
+                    <div class="calendar"></div>
+                    <!-- Скрытые поля для начальной и конечной дат -->
+                    <div class="form-hidden">
+                      <input type="text" class="hidden-start-date" value="22.11.2013" />
+                      <input type="text" class="hidden-end-date" value="22.11.2015" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -696,7 +700,7 @@ id="select3"  // Кол-во операций -->
             <div class="text_content">
               <div class="text_content">
                 <p class="text_bold title_table">
-                  Счета-фактуры за период с 16.10.2024 по 17.10.2024 по счёту
+                  Счета-фактуры за период с <span class="text_bold title_table">16.10.2024 </span class="text_bold title_table"> по <span>17.10.2024</span по счёту
                   211.000002:
                 </p>
               </div>
