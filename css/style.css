@@ -883,6 +883,7 @@ input[type='radio'] {
 }
 
 .year-dropdown {
+
   display: none;
   position: absolute;
   top: 100%;
@@ -897,6 +898,7 @@ input[type='radio'] {
 
 .year-dropdown.active {
   display: block;
+  width: 100px;
 }
 
 .year-option {
