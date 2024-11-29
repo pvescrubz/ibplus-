@@ -21,10 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     populateDropdown(content, select);
 
     // Устанавливаем начальное значение кнопки
-    const defaultOption = select.querySelector("option[selected]");
-    if (defaultOption) {
-      buttonText.textContent = defaultOption.textContent || defaultOption.value || "Выберите";
-    }
+    setDefaultButtonValue(buttonText, select);
 
     // Открытие и закрытие dropdown
     button.addEventListener("click", function (event) {
@@ -95,6 +92,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Устанавливаем выбранное значение
       optionToSelect.selected = true;
       optionToSelect.setAttribute("selected", "selected"); // Обновляем HTML-атрибут
+    }
+  }
+
+  // Устанавливаем значение кнопки из первого option
+  function setDefaultButtonValue(buttonText, select) {
+    const defaultOption = select.querySelector("option[selected]") || select.querySelector("option:first-child");
+    if (defaultOption) {
+      buttonText.textContent = defaultOption.textContent || defaultOption.value || "Выберите";
     }
   }
 });
