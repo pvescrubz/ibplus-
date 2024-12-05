@@ -104,8 +104,8 @@ background: var(--green-1);
 }
 
 .form_content {
-  border-radius: 30px;
-  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
   padding: 15px 20px;
 }
 
@@ -134,10 +134,10 @@ border-radius: 20px;
 }
 
 .form-buttons {
-  padding: 30px 0 0 0;
+  padding: 0 0 0 0;
   display: flex;
   align-items: center;
-  background: var(--bg);
+  background-color: white;
   justify-content: flex-end;
   gap: 10px;
 }
@@ -1593,6 +1593,8 @@ body.no-scroll {
 }
 
 .opoznanie-left {
+  border-radius: 30px;
+  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
   background-color: white;
 }
 
@@ -1700,12 +1702,31 @@ input::placeholder {
   margin-top:50px;
 }
 
+.archive_btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 !important;
+  padding: 15px 10px ;
+}
 
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
 
+  .opoznanie-help-btn {
+    padding: 10px 25px;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
+
+
+  .opoznanie-screen {
+    padding-bottom: 100px !important;
+  }
   .faktura-btns {
     position: relative;
     display: flex;
@@ -1720,7 +1741,7 @@ input::placeholder {
   }
   
   .form-buttons {
-    padding: 30px 10px 0 10px;
+    padding: 0 10px 0 10px;
     justify-content: center;
   }
   .opoznanie-help-btn {
@@ -1986,12 +2007,23 @@ border-radius: 10px;
   }
 
 
+  .archive-btns-zayavka {
+    border-radius: 30px;
+    padding: 0 15px 30px 0;
+  }
   @media screen and (max-width: 1200px) {
 
     .form-buttons {
+      padding-top: 10px;
+      flex-direction: column;
+      padding-bottom: 30px;
+    }
+
+
+    
+    .archive_btns-container {
       flex-direction: column;
     }
-  
     .opoznanie-archive-container {
       flex-direction: column;
     }
