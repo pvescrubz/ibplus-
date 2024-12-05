@@ -79,6 +79,7 @@ id=end-date
                     stroke-linejoin="round"
                   /></svg
               ></a>
+
               <a href="#" class="settings_btn tablet-mobile"
                 >Выйти
                 <svg
@@ -584,9 +585,7 @@ id=end-date
           <form class="content_left opoznanie-left">
             <div class="form_content">
               <div class="title_container opoznanie-title-container">
-                <h2 class="main_title">
-                  Добавление новой заявки на опознание суммы
-                </h2>
+                <h2 class="main_title">Архив заявок на опознание суммы</h2>
                 <svg
                   class="opoznanie_svg_title"
                   width="26"
@@ -601,211 +600,56 @@ id=end-date
                   />
                 </svg>
               </div>
-              <div class="opoznanie-main-container">
-                <div class="date-picker faktura-date" data-mode="range">
-                  <p class="data-picker_title text_bold">За период:</p>
-                  <input
-                    type="text"
-                    id="date-input-range"
-                    class="input-main text_semibold"
-                    placeholder="Выберите диапазон"
-                    readonly
-                  />
-                  <div class="calendar" id="calendar-range">
-                    <!-- Инпуты с датой -->
+                <div class="opoznanie_show">
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Состояние:</p>
+                    <span class="popup-descr-vipiska">Выпуск</span>
                   </div>
-                  <div class="">
-                    <input type="date" id="start-date" />
-                    <input type="date" id="end-date" />
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Дата:</p>
+                    <span class="popup-descr-vipiska">2</span>
                   </div>
-                </div>
-                <label for="input6">
-                  <span class="input-title text_bold">Плательщик:</span>
-                  <input
-                    name="input6"
-                    type="text"
-                    id="input6"
-                    class="input-main text_semibold"
-                    placeholder="Введите название плательщика"
-                    required
-                  />
-                </label>
-                <div class="opoznanie-input-container">
-                  <p class="data-picker_title text_bold">Счет:</p>
-                  <div class="flex-container">
-                    <label for="input2" class="money-label">
-                      <input
-                        name="input2"
-                        id="input2"
-                        type="text"
-                        class="input-main text_semibold"
-                        placeholder="Введите сумму"
-                        required
-                      />
-                    </label>
-                    <div class="dropdown dropdown-money" data-target="select1">
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >RUB</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#option1"
-                          class="text_semibold"
-                          data-value="RUB"
-                          >RUB</a
-                        >
-                        <a
-                          href="#option2"
-                          class="text_semibold"
-                          data-value="USD"
-                          >USD</a
-                        >
-                        <a
-                          href="#option3"
-                          class="text_semibold"
-                          data-value="EUR"
-                          >EUR</a
-                        >
-                      </div>
-                    </div>
-                    <select id="select1" class="hidden-select" >
-                      <option value="RUB">RUB</option>
-                      <option value="USD">USD</option>
-                      <option value="EUR">EUR</option>
-                    </select>
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Дата вал.:</p>
+                    <span class="popup-descr-vipiska">3</span>
                   </div>
-                </div>
-
-                <label for="input3">
-                  <span class="input-title text_bold">ИНН плательщика:</span>
-                  <input
-                    name="input3"
-                    type="text"
-                    id="input3"
-                    class="input-main text_semibold"
-                    placeholder="Введите ИНН"
-                    required
-                  />
-                </label>
-
-                <div class="dropdown" data-target="select2">
-                  <p class="data-picker_title text_bold">Счет зачисления</p>
-                  <a class="dropdown-button text_semibold">
-                    <span class="dropdown-button_text text_semibold"
-                      >Счет зачисления</span
-                    >
-                  </a>
-                  <div class="dropdown-content">
-                    <a href="#option1" class="text_semibold" data-value="Счет 1"
-                      >Счет 1</a
-                    >
-                    <a href="#option2" class="text_semibold" data-value="Счет 2"
-                      >Счет 2</a
-                    >
-                    <a href="#option3" class="text_semibold" data-value="Счет 3"
-                      >Счет 3</a
-                    >
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Документ:</p>
+                    <span class="popup-descr-vipiska">4</span>
                   </div>
-                </div>
-                <select id="select2" class="hidden-select" >
-                  <option value="Счет 1">Счет 1</option>
-                  <option value="Счет 2">Счет 2</option>
-                  <option value="Счет 3">Счет 3</option>
-                </select>
-
-                <div class="dropdown" data-target="select4">
-                  <span class="input-title text_bold">Счет-фактура:</span>
-                  <a class="dropdown-button text_semibold">
-                    <span class="dropdown-button_text text_semibold">Нет</span>
-                  </a>
-                  <div class="dropdown-content">
-                    <a href="#option1" class="text_semibold" data-value="Нет"
-                      >Нет</a
-                    >
-                    <a href="#option2" class="text_semibold" data-value="Да"
-                      >Да</a
-                    >
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Валюта:</p>
+                    <span class="popup-descr-vipiska">5</span>
                   </div>
-                </div>
-                <select id="select4" class="hidden-select" >
-                  <option value="Да">Да</option>
-                  <option value="Нет">Нет</option>
-                </select>
-                <label for="input4">
-                  <span class="input-title text_bold">Номер ПП:</span>
-                  <input
-                    name="input4"
-                    id="input4"
-                    type="text"
-                    class="input-main text_semibold"
-                    placeholder="Введите номер ПП"
-                    required
-                  />
-                </label>
-
-                <label for="input5">
-                  <span class="input-title text_bold">Получатель:</span>
-                  <input
-                    name="input5"
-                    id="input5"
-                    type="text"
-                    class="input-main text_semibold"
-                    placeholder="Введите название получателя"
-                    required
-                  />
-                </label>
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Сумма:</p>
+                    <span class="popup-descr-vipiska">6</span>
+                  </div>
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Плательщик:</p>
+                    <span class="popup-descr-vipiska">7</span>
+                  </div>
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">ИНН:</p>
+                    <span class="popup-descr-vipiska">8</span>
+                  </div>
+                  <div class="popup-item_vipiska">
+                    <p class="popup-title">Комментарий:</p>
+                    <span class="popup-descr-vipiska">9</span>
+                  </div>
               </div>
-              <label for="input7" class="input_text-area">
-                <span class="input-title text_bold">Комментарий</span>
-                <textarea
-                  name="input7"
-                  id="input7"
-                  class="input-main text_semibold"
-                  placeholder="Ваш комментарий"
-                  required
-                  rows="4"
-                ></textarea>
-              </label>
             </div>
             <div class="form-buttons">
-              <button  class="help_btn opoznanie-help-btn">
-                Сохранить
+              <button type="submit" class="help_btn opoznanie-help-btn">
+                Вставить в платеж
               </button>
-              <button type="submit" class="help_btn gradient_btn opoznanie-help-btn">
+              <button class="help_btn opoznanie-help-btn">
                 Передать в Банк
               </button>
-              <button class="help_btn opoznanie-help-btn">Импорт</button>
+              <button class="help_btn opoznanie-help-btn">Удалить</button>
               <button class="help_btn opoznanie-help-btn">Очистить</button>
             </div>
           </form>
-          <div class="last-documents-container">
-            <p class="last-documents-title">ПОСЛЕДНИЕ ДОКУМЕНТЫ</p>
-            <ul class="documents-last-list">
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-            </ul>
-            <a href="#0" class="last-documents-link">Список документов</a>
-          </div>
         </div>
       </div>
     </main>
@@ -814,5 +658,8 @@ id=end-date
   <script src="../js/scrooll.js"></script>
   <script src="../js/popup.js"></script>
   <script src="../js/dropdown.js"></script>
+  <script src="../js/popupTablets.js"></script>
   <script src="../js/calendar.js"></script>
+  <script src="../js/checkboxes.js"></script>
+  <script></script>
 </html>
