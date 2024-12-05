@@ -79,6 +79,7 @@ id=end-date
                     stroke-linejoin="round"
                   /></svg
               ></a>
+
               <a href="#" class="settings_btn tablet-mobile"
                 >Выйти
                 <svg
@@ -584,9 +585,7 @@ id=end-date
           <form class="content_left opoznanie-left">
             <div class="form_content">
               <div class="title_container opoznanie-title-container">
-                <h2 class="main_title">
-                  Добавление новой заявки на опознание суммы
-                </h2>
+                <h2 class="main_title">Архив заявок на опознание суммы</h2>
                 <svg
                   class="opoznanie_svg_title"
                   width="26"
@@ -601,213 +600,347 @@ id=end-date
                   />
                 </svg>
               </div>
-              <div class="opoznanie-main-container">
-                <div class="date-picker faktura-date" data-mode="range">
-                  <p class="data-picker_title text_bold">За период:</p>
-                  <input
-                    type="text"
-                    id="date-input-range "
-                    class="input-main text_semibold input-error"
-                    placeholder="Выберите диапазон"
-                    readonly
-                  />
-                  <p class="error-data">Требуется заполнить поле</p>
-                  <div class="calendar" id="calendar-range">
-                    <!-- Инпуты с датой -->
-                  </div>
-                  <div class="hidden-form">
-                    <input type="date" id="start-date" />
-                    <input type="date" id="end-date" />
-                  </div>
-                </div>
-                <label for="input6" class="input-label">
-                  <span class="input-title text_bold">Плательщик:</span>
-                  <input
-                    name="input6"
-                    type="text"
-                    id="input6"
-                    class="input-main text_semibold input-error"
-                    placeholder="Введите название плательщика"
-                    required
-                  />
-                  <p class="error-data">Требуется заполнить поле</p>
-                </label>
-                <div class="opoznanie-input-container">
-                  <p class="data-picker_title text_bold">Счет:</p>
-                  <div class="flex-container">
-                    <label for="input2" class="money-label input-label">
+              <div class="opoznanie-archive-container">
+                <div class="checkbox_content">
+                  <div class="content_account radio">
+                    <div class="radio_container">
                       <input
-                        name="input2"
-                        id="input2"
-                        type="text"
-                        class="input-main text_semibold input-error"
-                        placeholder="Введите сумму"
-                        required
+                        type="radio"
+                        id="radio1"
+                        name="drone"
+                        value="radio1"
+                        checked=""
                       />
-                      <p class="error-data">Требуется заполнить поле</p>
-                    </label>
-                    <div class="dropdown dropdown-money" data-target="select1">
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >RUB</span
+                      <label for="radio1" class="text_semibold label_radio"
+                        >по операциям</label
+                      >
+                    </div>
+                    <div class="radio_container">
+                      <input
+                        type="radio"
+                        id="radio2"
+                        name="drone"
+                        value="radio2"
+                      />
+                      <label for="radio2" class="text_semibold label_radio"
+                        >за период</label
+                      >
+                    </div>
+                  </div>
+                  <div class="dropdown_content operation_dropdown">
+                    <div class="dropdown-archive-box">
+                      <div class="dropdown" data-target="select3">
+                        <a class="dropdown-button text_semibold">
+                          <span class="dropdown-button_text text_semibold"
+                            >За последние 5 операций</span
+                          >
+                        </a>
+                        <div class="dropdown-content">
+                          <a
+                            href="#За последние 5 операций"
+                            class="text_semibold"
+                            data-value="За последние 5 операций"
+                            >За последние 5 операций</a
+                          ><a
+                            href="#За последние 15 операций"
+                            class="text_semibold"
+                            data-value="За последние 15 операций"
+                            >За последние 15 операций</a
+                          ><a
+                            href="#За последние 25 операций"
+                            class="text_semibold"
+                            data-value="За последние 25 операций"
+                            >За последние 25 операций</a
+                          ><a
+                            href="#Все операции"
+                            class="text_semibold"
+                            data-value="Все операции"
+                            >Все операции</a
+                          >
+                        </div>
+                      </div>
+
+                      <!-- Скрытый select для операций -->
+                      <select id="select3" name="operations" hidden="">
+                        <option
+                          id="select3_option1"
+                          value="За последние 5 операций"
+                          selected=""
                         >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#option1"
-                          class="text_semibold"
-                          data-value="RUB"
-                          >RUB</a
+                          За последние 5 операций
+                        </option>
+                        <option
+                          id="select3_option2"
+                          value="За последние 15 операций"
                         >
-                        <a
-                          href="#option2"
-                          class="text_semibold"
-                          data-value="USD"
-                          >USD</a
+                          За последние 15 операций
+                        </option>
+                        <option
+                          id="select3_option3"
+                          value="За последние 25 операций"
                         >
-                        <a
-                          href="#option3"
-                          class="text_semibold"
-                          data-value="EUR"
-                          >EUR</a
-                        >
+                          За последние 25 операций
+                        </option>
+                        <option id="select3_option4" value="Все операции">
+                          Все операции
+                        </option>
+                      </select>
+                      <div class="dropdown" data-target="select4">
+                        <a class="dropdown-button text_semibold">
+                          <span class="dropdown-button_text text_semibold"
+                            >За последние 5 операций</span
+                          >
+                        </a>
+                        <div class="dropdown-content">
+                          <a
+                            href="#За последние 5 операций"
+                            class="text_semibold"
+                            data-value="За последние 5 операций"
+                            >За последние 5 операций</a
+                          ><a
+                            href="#За последние 15 операций"
+                            class="text_semibold"
+                            data-value="За последние 15 операций"
+                            >За последние 15 операций</a
+                          ><a
+                            href="#За последние 25 операций"
+                            class="text_semibold"
+                            data-value="За последние 25 операций"
+                            >За последние 25 операций</a
+                          ><a
+                            href="#Все операции"
+                            class="text_semibold"
+                            data-value="Все операции"
+                            >Все операции</a
+                          >
+                        </div>
+                      </div>
+
+                      <!-- Скрытый select для операций -->
+                      <select id="select4" name="operations" hidden="">
+                        <option id="select3_option1" value="USD" selected="">
+                          USD
+                        </option>
+                        <option id="select3_option2" value="USD">USD</option>
+                        <option id="select3_option3" value="USD">USD</option>
+                        <option id="select3_option4" value="USD">USD</option>
+                      </select>
+                    </div>
+
+                    <div class="date-picker" data-mode="range">
+                      <!-- Видимое поле для отображения выбранного диапазона -->
+                      <input
+                        type="text"
+                        class="input-main text_semibold"
+                        placeholder="Выберите диапазон"
+                        readonly=""
+                      />
+                      <!-- Контейнер для календаря -->
+                      <div class="calendar"></div>
+                      <!-- Скрытые поля для начальной и конечной дат -->
+                      <div class="form-hidden">
+                        <input
+                          type="hidden"
+                          class="hidden-start-date"
+                          value="22.11.2013"
+                        />
+                        <input
+                          type="hidden"
+                          class="hidden-end-date"
+                          value="22.11.2015"
+                        />
                       </div>
                     </div>
-                    <select id="select1" class="hidden-select" hidden>
-                      <option value="RUB">RUB</option>
-                      <option value="USD">USD</option>
-                      <option value="EUR">EUR</option>
-                    </select>
                   </div>
                 </div>
-
-                <label for="input3">
-                  <span class="input-title text_bold">ИНН плательщика:</span>
-                  <input
-                    name="input3"
-                    type="text"
-                    id="input3"
-                    class="input-main text_semibold"
-                    placeholder="Введите ИНН"
-                    
-                  />
-                </label>
-
-                <div class="dropdown" data-target="select2">
-                  <p class="data-picker_title text_bold">Счет зачисления</p>
-                  <a class="dropdown-button text_semibold">
-                    <span class="dropdown-button_text text_semibold"
-                      >Счет зачисления</span
+                <div class="archive-content">
+                  <label for="input4" class="dropdown-archive">
+                    <p class="content_account_item_title text_bold">
+                      Плательщик:
+                    </p>
+                    <input
+                      name="input4"
+                      type="text"
+                      class="input-main text_semibold input-archive"
+                      placeholder="Введите название плательщика"
+                      required
+                    />
+                  </label>
+                  <div class="dropdown dropdown-archive" data-target="select6">
+                    <p
+                      class="content_account_item_title text_bold archive-text"
                     >
-                  </a>
-                  <div class="dropdown-content">
-                    <a href="#option1" class="text_semibold" data-value="Счет 1"
-                      >Счет 1</a
+                      Состояние:
+                    </p>
+                    <a
+                      class="dropdown-button text_semibold archive-span-dropdown"
                     >
-                    <a href="#option2" class="text_semibold" data-value="Счет 2"
-                      >Счет 2</a
-                    >
-                    <a href="#option3" class="text_semibold" data-value="Счет 3"
-                      >Счет 3</a
-                    >
+                      <span
+                        class="dropdown-button_text text_semibold archive-span-dropdown"
+                        >Все</span
+                      >
+                    </a>
+                    <div class="dropdown-content archive-dropdown"></div>
+                    <button class="gradient_btn archive-btn">Искать</button>
                   </div>
+                  <select id="select6" name="operations" hidden>
+                    <option id="select3_option1" value="все">все</option>
+                    <option id="select3_option2" value="Введен">Введен</option>
+                    <option id="select3_option3" value="В обработке">
+                      В обработке
+                    </option>
+                    <option id="select3_option4" value="Выполнен">
+                      Выполнен
+                    </option>
+                    <option id="select3_option4" value="Отказан">
+                      Отказан
+                    </option>
+                  </select>
                 </div>
-                <select id="select2" class="hidden-select" hidden>
-                  <option value="Счет 1">Счет 1</option>
-                  <option value="Счет 2">Счет 2</option>
-                  <option value="Счет 3">Счет 3</option>
-                </select>
-
-                <div class="dropdown" data-target="select4">
-                  <span class="input-title text_bold">Счет-фактура:</span>
-                  <a class="dropdown-button text_semibold">
-                    <span class="dropdown-button_text text_semibold">Нет</span>
-                  </a>
-                  <div class="dropdown-content">
-                    <a href="#option1" class="text_semibold" data-value="Нет"
-                      >Нет</a
-                    >
-                    <a href="#option2" class="text_semibold" data-value="Да"
-                      >Да</a
-                    >
-                  </div>
-                </div>
-                <select id="select4" class="hidden-select" hidden>
-                  <option value="Да">Да</option>
-                  <option value="Нет">Нет</option>
-                </select>
-                <label for="input4">
-                  <span class="input-title text_bold">Номер ПП:</span>
-                  <input
-                    name="input4"
-                    id="input4"
-                    type="text"
-                    class="input-main text_semibold"
-                    placeholder="Введите номер ПП"
-                    
-                  />
-                </label>
-
-                <label for="input5">
-                  <span class="input-title text_bold">Получатель:</span>
-                  <input
-                    name="input5"
-                    id="input5"
-                    type="text"
-                    class="input-main text_semibold"
-                    placeholder="Введите название получателя"
-                    
-                  />
-                </label>
               </div>
-              <label for="input7" class="input_text-area">
-                <span class="input-title text_bold">Комментарий</span>
-                <textarea
-                  name="input7"
-                  id="input7"
-                  class="input-main text_semibold"
-                  placeholder="Ваш комментарий"
-                  
-                  rows="4"
-                ></textarea>
-              </label>
+              <p class="title-archive text_bold">Документы за последние 5 операций. Всего в базе 6 документов</p>
+              <div id="statementArea" class="wideTableContainer-archive">
+                <table id="statement" class="reference-archive table-archive">
+                  <tbody class="grid-archive" >
+                    <tr class="grid-archive ">
+                      <th class="text_bold grid_colored"></th>
+                      <th class="grid_colored text_bold pc-tablet">
+                        <input
+                          type="checkbox"
+                        />
+                      </th>
+                      <th class="grid_colored archive-title-th text_bold pc-tablet">Состояние1</th>
+                      <th class="grid_colored archive-title-th text_bold">Дата2</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc">Дата вал.3</th>
+                      <th class="grid_colored archive-title-th text_bold">Документ4</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc">Валюта5</th>
+                      <th class="grid_colored archive-title-th text_bold ">Сумма6</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc">Плательщик7</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc">ИНН8</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc grid_colored archive-title-th-last-pc ">Комментарий9</th>
+                      <th class="grid_colored archive-title-th text_bold "></th>
+                    </tr>
+                    <tr
+                      class="pointered"
+                    >
+                      <td class="radio_container1 ">
+                        <input
+                          data-val="true"
+                          data-val-number="Значением поля SelectedItem должно быть число."
+                          id="SelectedItem"
+                          class="visible-radio"
+                          name="SelectedItem"
+                          type="radio"
+                          value="57"
+                        />
+                      </td>
+                      <td class="pc-tablet">
+                        <input
+                          type="checkbox"
+                          name="CheckedItems"
+                          id="CheckedItems"
+                          value="57"
+                        />
+                      </td>
+                      <td class="text_semibold pc-tablet">
+                        <img src="../img/refresh-circle.png" title="Выпуск"/>
+                      </td>
+                      <td class="text_semibold">2</td>
+                      <td class="text_semibold onlypc">3</td>
+                      <td class="text_semibold">
+                        <a href="/IdentificationPay/View/57">4</a>
+                      </td>
+                      <td class="text_semibold onlypc">5</td>
+                      <td class="text_semibold ">6</td>
+                      <td class="text_semibold onlypc ">7</td>
+                      <td class="text_semibold onlypc">8</td>
+                      <td class="text_semibold onlypc">9</td>
+                      <td class="text_semibold tablet-mobile pointer">...</td>
+                    </tr>
+                    <tr
+                      class="pointered"
+                    >
+                      <td class="radio_container1">
+                        <input
+                          id="SelectedItem"
+                          class="visible-radio"
+                          name="SelectedItem"
+                          type="radio"
+                          value="55"
+                          class="visible-radio"
+                        />
+                      </td>
+                      <td class="text_semibold pc-tablet"></td>
+                      <td class="text_semibold pc-tablet">
+                        <img src="../img/tick-circle.png" title="Выпуск"/>
+                      </td>
+                      <td class="text_semibold">2</td>
+                      <td class="text_semibold onlypc">3</td>
+                      <td class="text_semibold">
+                        <a href="/IdentificationPay/View/55">4</a>
+                      </td>
+                      <td class="text_semibold onlypc">5</td>
+                      <td class="text_semibold ">6</td>
+                      <td class="text_semibold onlypc">7</td>
+                      <td class="text_semibold onlypc">8</td>
+                      <td class="text_semibold onlypc">9</td>
+                      <td class="text_semibold tablet-mobile pointer">...</td>
+                    </tr>
+                    <tr
+                      class="pointered"
+                    >
+                      <td class="radio_container1">
+                        <input
+                          id="SelectedItem"
+                          class="visible-radio"
+                          name="SelectedItem"
+                          type="radio"
+                          value="55"
+                          class="visible-radio"
+                        />
+                      </td>
+                      <td class="text_semibold pc-tablet"></td>
+                      <td class="text_semibold pc-tablet">
+                        <img src="../img/tick-circle.png" title="Выпуск"/>
+                      </td>
+                      <td class="text_semibold">2</td>
+                      <td class="text_semibold onlypc">3</td>
+                      <td class="text_semibold">
+                        <a href="/IdentificationPay/View/55">4</a>
+                      </td>
+                      <td class="text_semibold onlypc">5</td>
+                      <td class="text_semibold ">6</td>
+                      <td class="text_semibold onlypc">7</td>
+                      <td class="text_semibold onlypc">8</td>
+                      <td class="text_semibold onlypc">9</td>
+                      <td class="text_semibold tablet-mobile pointer">...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div class="form-buttons">
-              <button  class="help_btn opoznanie-help-btn">
-                Сохранить
+              <button type="submit" class="help_btn opoznanie-help-btn disabled-form-btn">
+                Вставить в платеж
               </button>
-              <button type="submit" class="help_btn gradient_btn opoznanie-help-btn">
+              <button class="help_btn opoznanie-help-btn">
                 Передать в Банк
               </button>
-              <button class="help_btn opoznanie-help-btn">Импорт</button>
+              <button class="help_btn opoznanie-help-btn">Удалить</button>
               <button class="help_btn opoznanie-help-btn">Очистить</button>
             </div>
           </form>
-          <div class="last-documents-container">
-            <p class="last-documents-title">ПОСЛЕДНИЕ ДОКУМЕНТЫ</p>
-            <ul class="documents-last-list">
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-                <li class="documents-last-item">
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Дата платежа:</p>
-                        <p class="documents-last-item_text">17.09.2024</p>
-                    </div>
-                    <div class="documents-last-item_content">
-                        <p class="documents-last-item_text-small">Сумма платежа:</p>
-                        <p class="documents-last-item_text">567</p>
-                    </div>
-                </li>
-            </ul>
-            <a href="#0" class="last-documents-link">Список документов</a>
+        </div>
+      </div>
+      <div id="popup" class="popup-container_vipiska" style="display: none;">
+        <div class="popup-content_vipiska">
+           <div class="popup-title-main-vipiska">
+            <h2 class="main_title">Документ №123</h2>
+            <span id="popup-close_vipiska" class="popup-close">&times;</span>
+           </div>
+          <!-- Динамически заполняемый контент -->
+          <div id="popup-data_vipiska">
+            <!-- Здесь будут отображаться поля и значения -->
           </div>
         </div>
       </div>
@@ -817,5 +950,10 @@ id=end-date
   <script src="../js/scrooll.js"></script>
   <script src="../js/popup.js"></script>
   <script src="../js/dropdown.js"></script>
+  <script src="../js/popupTablets.js"></script>
   <script src="../js/calendar.js"></script>
+  <script src="../js/checkboxes.js"></script>
+  <script>
+
+  </script>
 </html>

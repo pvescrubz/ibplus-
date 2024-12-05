@@ -174,6 +174,52 @@ body {
   background: var(--bg);
 }
 
+.login_form-title {
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+text-align: center;
+color: var(--white);
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px 25px;
+}
+
+.login-btn {
+  margin:  0 auto !important;
+}
+.login_page {
+  background: url(../img/login-bg.png);
+  background-repeat: no-repeat;
+}
+
+
+.login-error-data {
+  position: relative !important;
+  font-size: 18px !important;
+}
+
+.login_form-container {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+}
 html {
   min-width: 360px;
 }
@@ -677,6 +723,11 @@ color: var(--black);
   border-bottom-left-radius: 10px;
 }
 
+.archive-title-th  {
+  padding: 20px 0 20px 0;
+}
+
+
 .grid_colored-last-pc {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -748,6 +799,36 @@ color: var(--black);
   display: inline-block;
 }
 
+.archive-text {
+  margin: 0 11px 0 0 !important;
+}
+
+.archive-title {
+  margin-top: 10px !important;
+  font-size: 20px;
+}
+
+.input-archive {
+  min-width:  250px;
+}
+
+.archive-btn {
+  display: block;
+  margin-left: auto;
+}
+
+.dropdown-archive-box {
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown-archive {
+  display: flex;
+  height: fit-content;
+  gap: 10px;
+  align-items: center;
+}
+
 .dropdown-button_text {
   position: relative;
   white-space: nowrap; 
@@ -785,6 +866,15 @@ color: var(--black);
   padding: 10px 35px;
 }
 
+
+
+.archive-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: fit-content;
+  align-items: stretch
+}
 .dropdown-content {
   margin-top: 10px;
   display: none;
@@ -794,6 +884,11 @@ color: var(--black);
   width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+}
+
+.archive-dropdown {
+  top: 50px;
+  left: 93px;
 }
 
 .dropdown-content a {
@@ -931,6 +1026,8 @@ input[type='radio'] {
   gap: 5px;
 }
 
+
+
 input[type="radio"] {
   display: none; /* Скрываем стандартный радио-баттон */
 }
@@ -940,6 +1037,51 @@ input[type="radio"] {
   position: relative;
   cursor: pointer;
   padding-left: 30px; /* Пространство для кастомной кнопки */
+}
+
+.visible-radio {
+  display: block !important;
+}
+
+.radio_container1 {
+  padding-left: 5px;
+}
+
+/* Для всей строки tr */
+.pointered {
+  text-align: center; /* Горизонтальное выравнивание */
+  vertical-align: middle; /* Вертикальное выравнивание */
+  height: 30px;
+}
+
+.active-row {
+  background-color: var(--purple-4);
+}
+
+/* Для каждой ячейки td внутри строки */
+.pointered td {
+  text-align: center; /* Горизонтальное выравнивание */
+  vertical-align: middle; /* Вертикальное выравнивание */
+}
+
+/* Для кастомных элементов, например, радио-кнопок, если нужно */
+.radio_container1 {
+  display: flex;
+  height: 30px;
+  justify-content: center; /* Центрируем элементы внутри контейнера */
+  align-items: center; /* Центрируем по вертикали */
+}
+
+
+/* Для изображения в ячейке */
+.pointered td img {
+  display: block; /* Убираем возможные отступы */
+  margin: 0 auto; /* Центрируем изображение */
+}
+
+/* Можно также задать размеры для ячеек и элементов внутри */
+.pointered td, .pointered input, .pointered img {
+  padding: 0 10px; /* Отступы между элементами */
 }
 
 .label_radio::before {
@@ -967,6 +1109,22 @@ input[type="radio"]:checked + .label_radio::after {
   border-radius: 50%;
   background-color: var(--purple-2);
 }
+
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkbox-mark::before,
+.custom-checkbox input[type="radio"]:checked ~ .checkbox-mark::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 8px;
+  height: 15px;
+  border: solid #007bff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
 
 .gradient_btn {
   z-index: 1;
@@ -1135,6 +1293,14 @@ color: var(--black);
   display: block;
 }
 
+th.onlypc, td.onlypc {
+  display: table-cell;
+}
+th.pc-tablet, td.pc-tablet {
+  display: table-cell;
+}
+
+
 .tablet-mobile {
  display: none;
 }
@@ -1266,7 +1432,11 @@ color: var(--grey);
 }
 
 .operation_dropdown {
-  min-width:  275px;
+  min-width: 275px;
+  display: flex
+;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .hidden-form {
@@ -1410,9 +1580,7 @@ body.no-scroll {
 .input-content {
   min-width: 400px;
   margin-bottom: 30px;
-  gap: 20px;
-  display: flex;
-  flex-direction: column;
+ 
 }
 
 
@@ -1518,10 +1686,34 @@ input {
   right: 0;
 }
 
+.archive-right-content {
+  display: flex;
+}
+input::placeholder {
+  
+}
+
+.opoznanie-archive-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top:50px;
+}
+
+
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
+
+  .faktura-btns {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
 
   .opoznanie_svg_title {
     display: none;
@@ -1575,16 +1767,17 @@ color: var(--black);
   text-align: center;
   border-radius: 10px;
   border: 1px solid var(--purple-1);
+  min-height: 50px;
 border-radius: 10px;
 }
 
 .input-main::placeholder {
   font-family: var(--font-family);
-  font-weight: 500;
+  font-weight: 300;
   font-size: 14px;
   line-height: 171%;
   text-align: center;
-  color: var(--black);
+  color: var(--grey)
 }
 
 
@@ -1760,6 +1953,10 @@ border-radius: 10px;
   }
 
 
+  .archive-title-th-last-pc {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 
   .opoznanie-help-btn {
     background: linear-gradient(180deg, #13182c 0%, #3432a1 100%), rgba(0, 0, 0, 0.6);
@@ -1795,7 +1992,14 @@ border-radius: 10px;
       flex-direction: column;
     }
   
-    
+    .opoznanie-archive-container {
+      flex-direction: column;
+    }
+
+
+th.pc-tablet, td.pc-tablet {
+  display: table-cell;
+}
 
     
 .link.gradient_btn {
@@ -1857,9 +2061,8 @@ padding: 10px 10px;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
     }
-  
 
-    
+
      .gradient_link-svg {
       display: none;
     }
@@ -1910,6 +2113,10 @@ padding: 10px 10px;
     .onlypc {
      display: none;
     }
+    th.onlypc, td.onlypc {
+      display: none;
+    }
+    
   
     .tablet-mobile {
       display: block;
@@ -2124,6 +2331,10 @@ padding: 10px 10px;
     background-color: var(--white);
   }
 
+  .pointer {
+    cursor: pointer;
+  }
+
   
   .grid-cell-faktura {
     height: 100%;
@@ -2134,8 +2345,37 @@ padding: 10px 10px;
   }
   
   @media screen and (max-width: 768px) {
+    .login_form-btns {
+      flex-direction: column;
+      gap:10px !important;
+    }
+    .login_form-container {
+      max-width: 90%;
+      margin: 50px auto;
+      position: relative;
+      transform: none;
+      top: 0;
+      left: 0;
+    }
+    .opoznanie_show {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: 10px;
+      width: 100%;
+      margin: auto;
+    }
 
+    th.pc-tablet, td.pc-tablet {
+      display: none;
+    }
+    
 
+    .form_content {
+      padding: 15px 5px;
+    }
+    .checkbox_content {
+      gap: 10px;
+    }
     .input-content {
       min-width: 300px;
       gap: 10px;
@@ -2310,7 +2550,26 @@ padding: 10px 10px;
     }
   
     .input-main::placeholder,.dropdown-button_text {
-      font-size: 12px !important;
+      font-size: 10px !important;
+    }
+    .input-main {
+      font-size: 10px !important;
+    }
+    .archive-content{
+      width: 100%;
+    }
+
+    .archive-span-dropdown {
+      width: 100%;
+    }
+    .dropdown-archive {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+    .label_radio {
+      font-size: 10px;
     }
   
     .vipiska_btns {
@@ -2378,6 +2637,10 @@ padding: 10px 10px;
     .onlypc {
      display: none;
     }
+    th.onlypc, td.onlypc {
+      display: none;
+    }
+    
     .popup-content_vipiska {
       max-width: 90%;
       padding: 15px;
@@ -2410,10 +2673,63 @@ padding: 10px 10px;
         line-height: 133%;
         color: var(--white);
   }
+
+  .grid-archive {
+    width: 100%;
+  }
+
   
 
+  .reference-archive {
+    width: 100%;
+  }
 
+  table, th, td, tr {
+    border: none;
+    outline: none;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse; /* Объединяет границы */
+  }
+
+
+  .disabled-form-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .opoznanie_show {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin: 30px auto 0 auto;
+  }
+
+  .login-btn {
+    width: 80% !important;
+    margin-top: 20px !important;
+  }
+
+  .login_form-btns {
+    display: flex;
+    gap: 20px;
+  }
+
+  .qr-code {
+    display: block;
+    margin: 0 auto;
+    max-width: 350px;
+    max-height: 350px;
+    ;}
   @media screen and (max-width: 1300px) and (min-width: 768px) {
+
+
     .documents-last-item {
       display: flex;
       padding: 10px 10px;
