@@ -114,13 +114,14 @@ background: var(--green-1);
   gap: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
 background: var(--white);
 border-radius: 20px;
   text-align: center;
+  max-height: 400px;
   padding: 20px 15px;
+  margin-top: 63px;
 }
 
 .input_text-area {
@@ -1194,10 +1195,9 @@ textarea {
   justify-content: center;
   width: 90%;
   border-radius: 10px;
-  margin-bottom: 0;
   background: var(--purple-1);
   padding: 30px 30px;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .news_content .new_item {
@@ -1596,6 +1596,7 @@ body.no-scroll {
   border-radius: 30px;
   box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
   background-color: white;
+  padding-bottom: 30px;
 }
 
 .opoznanie-screen {
@@ -1750,6 +1751,7 @@ input::placeholder {
 
   .last-documents-container {
     width: 100%;
+
   }
 
   

@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+function createAllDropDowns() {
+
   // Находим все элементы dropdown
   const dropdowns = document.querySelectorAll(".dropdown");
 
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Устанавливаем выбранное значение
       optionToSelect.selected = true;
       optionToSelect.setAttribute("selected", "selected"); // Обновляем HTML-атрибут
+      $(select).trigger("change");
     }
   }
 
@@ -102,4 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
       buttonText.textContent = defaultOption.textContent || defaultOption.value || "Выберите";
     }
   }
-});
+
+}
+
+
+
+
+
+createAllDropDowns();
+
