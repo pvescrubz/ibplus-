@@ -554,7 +554,7 @@
               <div class="form_content">
               
               <div class="opoznanie-main-container">
-                  <div class="date-picker" data-mode="single">
+                  <div class="date-picker" data-mode="range">
                     <p class="data-picker_title text_bold">За период:</p>
                     <!-- Видимое поле для отображения выбранного диапазона -->
                     <input type="text" class="input-main text_semibold" placeholder="Выберите диапазон" readonly="">
@@ -563,6 +563,7 @@
                     <!-- Скрытые поля для начальной и конечной дат -->
                     <div class="form-hidden">
                       <input type="hidden" class="hidden-start-date" value="22.11.2013">
+                      <input type="hidden" class="hidden-end-date" value="22.11.2015">
                     </div>
                   </div>
                   <label for="input6">
@@ -646,9 +647,8 @@
             <div class="form-buttons">
               <button type="submit" class="help_btn opoznanie-help-btn">Сохранить</button>
               <button class="help_btn opoznanie-help-btn">Передать в Банк</button>
-           
-  <input class="help_btn opoznanie-help-btn" type="button" name="Import" id="Import" value="Импорт" data-href="/IdentificationPay/ImportDialog" data-dialog-id="importDialog" data-dialog-title="Импорт из файла" data-dialog-width="450" data-dialog-height="auto" onclick="DialogFrom(this, '#outformDialogArea');">
-
+              <label class="help_btn opoznanie-help-btn" for="file-upload">Импорт</label>
+  <input type="file" id="file-upload" style="display: none;">
               <button class="help_btn opoznanie-help-btn">Очистить</button>
             </div>
             </form>
@@ -664,10 +664,7 @@
 
       
   </body>
+  <script src="../js/popupTablets.js"></script>
   <script src="../js/scrooll.js"></script>
   <script src="../js/popup.js"></script>
-  <script src="../js/dropdown.js"></script>
-  <script src="../js/popupTablets.js"></script>
-  <script src="../js/calendar.js"></script>
-  <script src="../js/checkboxes.js"></script>
 </html>
