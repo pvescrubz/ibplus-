@@ -760,16 +760,40 @@
                     />
                   </label>
 
-                  <label for="input5">
-                    <p class="input-title text_bold">Получатель:</p>
-                    <input
-                      name="input5"
-                      type="text"
-                      class="input-main text_semibold"
-                      placeholder="Введите название получателя"
-                      required=""
-                    />
-                  </label>
+                  <div class="opoznanie-element">
+                    <label for="input5">
+                      <p class="input-title text_bold">Получатель:</p>
+                      <input
+                        name="input5"
+                        type="text"
+                        class="input-main text_semibold"
+                        placeholder="Введите название получателя"
+                        required=""
+                      />
+                    </label>
+                    <div class="dropdown dropdown_small" data-target="select6">
+                      <p class="input-title text_bold">
+                        
+                      </p>
+                      <a class="dropdown-button text_semibold">
+                        <span class="dropdown-button_text text_semibold"> </span>
+                      </a>
+                      <div class="dropdown-content">
+                        <a href="#Да" class="text_semibold" data-value="Да"></a>
+                        ><a href="#Нет" class="text_semibold" data-value="Нет"
+                          >Нет</a
+                        >
+                      </div>
+                    </div>
+                    <select id="select6" class="hidden-select" hidden="">
+                      <option value=" "></option>
+                      <option value="Да">1</option>
+                      <option value="Нет">2</option>
+                    </select>
+
+                  </div>
+
+                  
                   <label for="input6" class="input_text-area">
                     <p class="input-title text_bold">Комментарий</p>
                     <textarea
