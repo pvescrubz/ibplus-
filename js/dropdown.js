@@ -66,7 +66,7 @@ function createAllDropDowns() {
     content.innerHTML = ""; // Очищаем существующий контент
     select.querySelectorAll("option").forEach((option) => {
       const value = option.value;
-      const text = option.textContent || value;
+      const text = option.textContent;
 
       // Создаём элемент <a> для видимого меню
       const link = document.createElement("a");
@@ -79,7 +79,6 @@ function createAllDropDowns() {
       content.appendChild(link);
     });
   }
-
   // Обновление значения в <select>
   function updateSelect(select, value) {
     const optionToSelect = select.querySelector(`option[value="${value}"]`);
@@ -101,7 +100,7 @@ function createAllDropDowns() {
   function setDefaultButtonValue(buttonText, select) {
     const defaultOption = select.querySelector("option[selected]") || select.querySelector("option:first-child");
     if (defaultOption) {
-      buttonText.textContent = defaultOption.textContent || defaultOption.value || "Выберите";
+      buttonText.textContent = defaultOption.textContent;
     }
   }
 
