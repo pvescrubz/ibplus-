@@ -535,7 +535,7 @@
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Архив</h2>
+              <h2 class="main_title">Новости</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -550,391 +550,71 @@
                 />
               </svg>
             </div>
-            <form class="content_left opoznanie-left">
-
+            <form class="content_left">
               <div class="form_content">
-               
-                <div class="opoznanie-archive-container">
-                  <div class="checkbox_content">
-                    <div class="content_account radio">
-                      <div class="radio_container">
-                        <input
-                          type="radio"
-                          id="radio1"
-                          name="drone"
-                          value="radio1"
-                          checked=""
-                        />
-                        <label for="radio1" class="text_semibold label_radio"
-                          >по операциям</label
-                        >
-                      </div>
-                      <div class="radio_container">
-                        <input
-                          type="radio"
-                          id="radio2"
-                          name="drone"
-                          value="radio2"
-                        />
-                        <label for="radio2" class="text_semibold label_radio"
-                          >за период</label
-                        >
-                      </div>
-                    </div>
-                    <div class="dropdown_content operation_dropdown">
-                      <div class="dropdown-archive-box">
-                        <div class="dropdown" data-target="select3">
-                          <a class="dropdown-button text_semibold">
-                            <span class="dropdown-button_text text_semibold"
-                              >За последние 5 операций</span
-                            >
-                          </a>
-                          <div class="dropdown-content">
-                            <a
-                              href="#За последние 5 операций"
-                              class="text_semibold"
-                              data-value="За последние 5 операций"
-                              >За последние 5 операций</a
-                            ><a
-                              href="#За последние 15 операций"
-                              class="text_semibold"
-                              data-value="За последние 15 операций"
-                              >За последние 15 операций</a
-                            ><a
-                              href="#За последние 25 операций"
-                              class="text_semibold"
-                              data-value="За последние 25 операций"
-                              >За последние 25 операций</a
-                            ><a
-                              href="#Все операции"
-                              class="text_semibold"
-                              data-value="Все операции"
-                              >Все операции</a
-                            >
-                          </div>
-                        </div>
-  
-                        <!-- Скрытый select для операций -->
-                        <select id="select3" name="operations" hidden="">
-                          <option
-                            id="select3_option1"
-                            value="За последние 5 операций"
-                            selected=""
-                          >
-                            За последние 5 операций
-                          </option>
-                          <option
-                            id="select3_option2"
-                            value="За последние 15 операций"
-                          >
-                            За последние 15 операций
-                          </option>
-                          <option
-                            id="select3_option3"
-                            value="За последние 25 операций"
-                          >
-                            За последние 25 операций
-                          </option>
-                          <option id="select3_option4" value="Все операции">
-                            Все операции
-                          </option>
-                        </select>
-                        <div class="dropdown" data-target="select4">
-                          <a class="dropdown-button text_semibold">
-                            <span class="dropdown-button_text text_semibold"
-                              >За последние 5 операций</span
-                            >
-                          </a>
-                          <div class="dropdown-content">
-                            <a
-                              href="#За последние 5 операций"
-                              class="text_semibold"
-                              data-value="За последние 5 операций"
-                              >За последние 5 операций</a
-                            ><a
-                              href="#За последние 15 операций"
-                              class="text_semibold"
-                              data-value="За последние 15 операций"
-                              >За последние 15 операций</a
-                            ><a
-                              href="#За последние 25 операций"
-                              class="text_semibold"
-                              data-value="За последние 25 операций"
-                              >За последние 25 операций</a
-                            ><a
-                              href="#Все операции"
-                              class="text_semibold"
-                              data-value="Все операции"
-                              >Все операции</a
-                            >
-                          </div>
-                        </div>
-  
-                        <!-- Скрытый select для операций -->
-                        <select id="select4" name="operations" hidden="">
-                          <option id="select3_option1" value="USD" selected="">
-                            USD
-                          </option>
-                          <option id="select3_option2" value="USD">USD</option>
-                          <option id="select3_option3" value="USD">USD</option>
-                          <option id="select3_option4" value="USD">USD</option>
-                        </select>
-                      </div>
-  
-                      <div class="date-picker" data-mode="range">
-                        <!-- Видимое поле для отображения выбранного диапазона -->
-                        <input
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Выберите диапазон"
-                          readonly=""
-                        />
-                        <!-- Контейнер для календаря -->
-                        <div class="calendar"></div>
-                        <!-- Скрытые поля для начальной и конечной дат -->
-                        <div class="form-hidden">
-                          <input
-                            type="hidden"
-                            class="hidden-start-date"
-                            value="22.11.2013"
-                          />
-                          <input
-                            type="hidden"
-                            class="hidden-end-date"
-                            value="22.11.2015"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="archive-content">
-                    <label for="input4" class="dropdown-archive">
-                      <p class="content_account_item_title text_bold">
-                        Плательщик:
-                      </p>
+                <div class="news_content-single-page">
+                <p class="text_bold">За период:</p>
+                <div class="date-picker" data-mode="range">
+                    <!-- Видимое поле для отображения выбранного диапазона -->
+                    <input
+                      type="text"
+                      class="input-main text_semibold"
+                      placeholder="Выберите диапазон"
+                      readonly=""
+                    />
+                    <!-- Контейнер для календаря -->
+                    <div class="calendar"></div>
+                    <!-- Скрытые поля для начальной и конечной дат -->
+                    <div class="form-hidden">
                       <input
-                        name="input4"
-                        type="text"
-                        class="input-main text_semibold input-archive"
-                        placeholder="Введите название плательщика"
-                        required
+                        type="hidden"
+                        class="hidden-start-date"
+                        value="22.11.2013"
                       />
-                    </label>
-                    <div class="dropdown dropdown-archive" data-target="select6">
-                      <p
-                        class="content_account_item_title text_bold archive-text"
-                      >
-                        Состояние:
-                      </p>
-                      <a
-                        class="dropdown-button text_semibold archive-span-dropdown"
-                      >
-                        <span
-                          class="dropdown-button_text text_semibold archive-span-dropdown"
-                          >Все</span
-                        >
-                      </a>
-                      <div class="dropdown-content archive-dropdown"></div>
-                      <button class="gradient_btn archive-btn">Искать</button>
+                      <input
+                        type="hidden"
+                        class="hidden-end-date"
+                        value="22.11.2015"
+                      />
                     </div>
-                    <select id="select6" name="operations" hidden>
-                      <option id="select3_option1" value="все">все</option>
-                      <option id="select3_option2" value="Введен">Введен</option>
-                      <option id="select3_option3" value="В обработке">
-                        В обработке
-                      </option>
-                      <option id="select3_option4" value="Выполнен">
-                        Выполнен
-                      </option>
-                      <option id="select3_option4" value="Отказан">
-                        Отказан
-                      </option>
-                    </select>
-                  </div>
                 </div>
-                <p class="title-archive text_bold">Документы за последние 5 операций. Всего в базе 6 документов</p>
-                <div id="statementArea" class="wideTableContainer-archive">
-                  <table id="statement" class="reference-archive table-archive">
-                    <tbody class="grid-archive" >
-                      <tr class="grid-archive ">
-                        <th class="text_bold grid_colored"></th>
-                        <th class="grid_colored text_bold pc-tablet">
-                          <input
-                            type="checkbox"
-                          />
-                        </th>
-                        <th class="grid_colored archive-title-th text_bold pc-tablet">Состояние1</th>
-                        <th class="grid_colored archive-title-th text_bold">Дата2</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">Дата вал.3</th>
-                        <th class="grid_colored archive-title-th text_bold">Документ4</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">Валюта5</th>
-                        <th class="grid_colored archive-title-th text_bold ">Сумма6</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">Плательщик7</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">ИНН8</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc grid_colored archive-title-th-last-pc ">Комментарий9</th>
-                        <th class="grid_colored archive-title-th text_bold "></th>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                        <td class="radio_container1 ">
-                          <input
-                            data-val="true"
-                            data-val-number="Значением поля SelectedItem должно быть число."
-                            id="SelectedItem"
-                            class="visible-radio"
-                            name="SelectedItem"
-                            type="radio"
-                            value="57"
-                          />
-                        </td>
-                        <td class="pc-tablet">
-                          <input
-                            type="checkbox"
-                            name="CheckedItems"
-                            id="CheckedItems"
-                            value="57"
-                          />
-                        </td>
-                        <td class="text_semibold pc-tablet">
-                          <img src="../img/refresh-circle.png" title="Выпуск"/>
-                        </td>
-                        <td class="text_semibold">2</td>
-                        <td class="text_semibold onlypc">3</td>
-                        <td class="text_semibold">
-                          <a href="/IdentificationPay/View/57">4</a>
-                        </td>
-                        <td class="text_semibold onlypc">5</td>
-                        <td class="text_semibold ">6</td>
-                        <td class="text_semibold onlypc ">7</td>
-                        <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
-                        <td class="text_semibold tablet-mobile pointer">...</td>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                        <td class="radio_container1">
-                          <input
-                            id="SelectedItem"
-                            class="visible-radio"
-                            name="SelectedItem"
-                            type="radio"
-                            value="55"
-                            class="visible-radio"
-                          />
-                        </td>
-                        <td class="text_semibold pc-tablet"></td>
-                        <td class="text_semibold pc-tablet">
-                          <img src="../img/tick-circle.png" title="Выпуск"/>
-                        </td>
-                        <td class="text_semibold">2</td>
-                        <td class="text_semibold onlypc">3</td>
-                        <td class="text_semibold">
-                          <a href="/IdentificationPay/View/55">4</a>
-                        </td>
-                        <td class="text_semibold onlypc">5</td>
-                        <td class="text_semibold ">6</td>
-                        <td class="text_semibold onlypc">7</td>
-                        <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
-                        <td class="text_semibold tablet-mobile pointer">...</td>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                        <td class="radio_container1">
-                          <input
-                            id="SelectedItem"
-                            class="visible-radio"
-                            name="SelectedItem"
-                            type="radio"
-                            value="55"
-                            class="visible-radio"
-                          />
-                        </td>
-                        <td class="text_semibold pc-tablet"></td>
-                        <td class="text_semibold pc-tablet">
-                          <img src="../img/tick-circle.png" title="Выпуск"/>
-                        </td>
-                        <td class="text_semibold">2</td>
-                        <td class="text_semibold onlypc">3</td>
-                        <td class="text_semibold">
-                          <a href="/IdentificationPay/View/55">4</a>
-                        </td>
-                        <td class="text_semibold onlypc">5</td>
-                        <td class="text_semibold ">6</td>
-                        <td class="text_semibold onlypc">7</td>
-                        <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
-                        <td class="text_semibold tablet-mobile pointer">...</td>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                        <td class="radio_container1">
-                          <input
-                            id="SelectedItem"
-                            class="visible-radio"
-                            name="SelectedItem"
-                            type="radio"
-                            value="55"
-                            class="visible-radio"
-                          />
-                        </td>
-                        <td class="text_semibold pc-tablet"></td>
-                        <td class="text_semibold pc-tablet">
-                          <img src="../img/delete.png" title="Отказано"/>
-                        </td>
-                        <td class="text_semibold">2</td>
-                        <td class="text_semibold onlypc">3</td>
-                        <td class="text_semibold">
-                          <a href="/IdentificationPay/View/55">4</a>
-                        </td>
-                        <td class="text_semibold onlypc">5</td>
-                        <td class="text_semibold ">6</td>
-                        <td class="text_semibold onlypc">7</td>
-                        <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
-                        <td class="text_semibold tablet-mobile pointer">...</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-  
-              <div class="grid_btns archive_btns-container">
-                <div class="grid_btns vipiska_btns-nav">
-                  <a href="#" class="grid-btn active">1</a>
-                  <a href="#" class="grid-btn ">2</a>
-                  <a href="#" class="grid-btn disabled-form-btn">3</a>
-                  <a href="#0" class="grid-btn more "></a>
-                </div>
-                <div class="form-buttons">
-                  <button type="submit" class="help_btn opoznanie-help-btn disabled-form-btn">
-                    Вставить в платеж
-                  </button>
-                  <button class="help_btn opoznanie-help-btn">
-                    Передать в Банк
-                  </button>
-                  <button class="help_btn opoznanie-help-btn">Удалить</button>
-                  <button class="help_btn opoznanie-help-btn">Очистить</button>
-                </div>
-              </div>
-            </form>
-            <div id="popup" class="popup-container_vipiska" style="display: none;">
-              <div class="popup-content_vipiska">
-                
-                 <div class="popup-title-main-vipiska">
-                  <h2 class="main_title">Документ №123</h2>
-                  <span id="popup-close_vipiska" class="popup-close">&times;</span>
-                 </div>
-                <!-- Динамически заполняемый контент -->
-                <div id="popup-data_vipiska">
-                  <!-- Здесь будут отображаться поля и значения -->
-                </div>
-              </div>
+                <button class="gradient_btn news_single-btn">Искать</button>
             </div>
+            
+              <div class="grid_btns news_btns">
+              </div>
+              </div>
+              <div class="news_mail-container">
+                <div class="news_mail-item">
+                    <p class="news-mail-empty">15.06.2024</p>
+                    <p class="text_semibold">Добрый день! Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о...</p>
+                </div>
+                <div class="news_mail-item">
+                    <p class="news-mail-empty">15.06.2024</p>
+                    <p class="text_semibold">Добрый день! Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о...</p>
+                </div>
+                <div class="news_mail-item">
+                    <p class="news-mail-empty">15.06.2024</p>
+                    <p class="text_semibold">Добрый день! Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о...</p>
+                </div>
+                <div class="news_mail-item">
+                    <p class="news-mail-empty">15.06.2024</p>
+                    <p class="text_semibold">Добрый день! Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о том что мы делаем мобильное приложение. Так называемое "iBankPlus". Делаем его долго и упорно.Это большая новость о...</p>
+                </div>
+                <p class="news-mail-empty-counter">0 / 0</p>
+                <div class="news_mail_btns">
+                    <div class="news_mail_btns-item">
+                        <button class="gradient_btn news_single-btn">начало</button>
+                        <button class="gradient_btn news_single-btn">назад</button>
+                    </div>
+                    <button class="gradient_btn news_single-btn news-close-btn">Закрыть</button>
+                    <div class="news_mail_btns-item">
+                        <button class="gradient_btn news_single-btn">вперед</button>
+                        <button class="gradient_btn news_single-btn">конец</button>
+                    </div>
+                </div>
+            </div>
+            </form>
           </div>
         </div>
       </div>

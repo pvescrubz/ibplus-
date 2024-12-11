@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!popup || !popupClose || !popupData) {
     return; // Если отсутствуют важные элементы, прекращаем выполнение
   }
-
+  
   /**
    * Скрипт для таблицы с <tr> и <td>.
    */
   function handleTableRows() {
-    const tablePointerRows = document.querySelectorAll('.grid-archive .pointer'); // Строки таблицы с классом 'pointer'
+    
+    const tablePointerRows = document.querySelectorAll('.pointer'); // Строки таблицы с классом 'pointer'
     const tableHeaders = document.querySelectorAll('.grid-archive th'); // Заголовки таблицы
   
     // Проверка наличия строк и заголовков таблицы
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     tablePointerRows.forEach(pointerRow => {
       pointerRow.addEventListener('click', () => {
+        console.log('asd')
         // Получаем ячейки текущей строки, начиная с 3-й и заканчивая предпоследней
         const cells = Array.from(pointerRow.closest('tr').querySelectorAll('td')).slice(2, -1);
   
@@ -113,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
   if (document.querySelector('.grid-archive')) {
+
     handleTableRows();
   }
   if (document.querySelector('.grid-table')) {
@@ -120,6 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
+  
   // Закрытие попапа
   popupClose.addEventListener('click', () => {
     popup.style.display = 'none';

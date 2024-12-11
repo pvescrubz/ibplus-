@@ -206,11 +206,21 @@ color: var(--white);
 }
 
 
-.login-error-data {
+.validation-summary-errors > ul > li {
   position: relative !important;
   font-size: 18px !important;
+  color: red;
+    font-family: var(--font-family);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 171%;
+    text-align: center;
 }
 
+.validation-summary-errors > ul {
+  padding: 0;
+}
 .login_form-container {
   width: 100%;
   max-width: 650px;
@@ -587,6 +597,73 @@ color: var(--grey);
   flex-direction: column;
   padding: 0;
 }
+
+.news_mail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  text-align: start;
+  align-items: flex-start;
+  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+background: var(--white);
+  max-width: 1920px;
+}
+.news_content-single-page > .date-picker {
+  min-width: 300px;
+}
+
+.news-mail-empty {
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+text-align: center;
+color: var(--grey);
+}
+
+.news-mail-empty-counter {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: center;
+  color: var(--grey);
+  width: 100%;
+  padding-right: 30px;
+  text-align: end;
+}
+
+.news_mail_btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1920px;
+  padding: 10px 10px;
+}
+
+.news_mail-container {
+  display: flex;
+  align-items: center;
+  gap:15px;
+  max-width: 1920px;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: center;
+}
+.news_content-single-page {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.news_single-btn {
+  padding: 13px 45px !important;
+  line-height: 15px !important;
+}
+
 .news_container {
   height: fit-content;
   border-radius: 10px;
@@ -1728,6 +1805,15 @@ input::placeholder {
 .dropdown_small {
   max-width: 100px;
 }
+
+.pointer {
+cursor: pointer;
+}
+.news_btns {
+  background-color: inherit !important;
+}
+
+
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
@@ -2013,6 +2099,10 @@ border-radius: 10px;
     background-color: var(--white);
   }
 
+  #ViewForm {
+    background-color: var(--white);
+  }
+
   .grid_account-faktura {
     grid-template-columns: repeat(7, 1fr);
   }
@@ -2026,12 +2116,19 @@ border-radius: 10px;
     border-radius: 30px;
     padding: 0 15px 30px 0;
   }
+
+
   @media screen and (max-width: 1200px) {
 
     .form-buttons {
       padding-top: 10px;
+      padding-left: 10px;
       flex-direction: column;
       padding-bottom: 30px;
+    }
+    
+    .news_single-btn {
+     width: unset !important;
     }
 
 
@@ -2379,9 +2476,7 @@ padding: 10px 10px;
     background-color: var(--white);
   }
 
-  .pointer {
-    cursor: pointer;
-  }
+
 
   
   .grid-cell-faktura {
@@ -2396,7 +2491,28 @@ padding: 10px 10px;
     .login_form-btns {
       flex-direction: column;
       gap:10px !important;
+    }
 
+    .news_mail_btns {
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+    }
+    .news-close-btn {
+      order: -1;
+    }
+
+    .news_mail_btns-item {
+      justify-content: center;
+      width: 100%;
+      gap:10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .news_content-single-page {
+      display: flex;
+      flex-direction: column;
     }
 
     .documents-last-item {
