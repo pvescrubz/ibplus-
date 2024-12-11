@@ -1823,9 +1823,15 @@ cursor: pointer;
   gap: 20px;
   justify-content: space-between;
 }
+
+.change-phone-container {
+  gap: 100px;
+}
 .change-password-container {
   margin-bottom: 30px;
 }
+
+
 
 .change-password-btns {
   display: flex;
@@ -1833,11 +1839,30 @@ cursor: pointer;
   gap: 20px;
   padding: 10px 10px;
 }
+
+.change-phone-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.change-phone-btn {
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.black-btn {
+  background: var(--black) !important;
+}
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
 
+  .change-password-container {
+    flex-direction: column;
+  }
   .opoznanie-help-btn {
     padding: 10px 25px;
     word-break: keep-all;
@@ -2515,6 +2540,11 @@ padding: 10px 10px;
       gap:10px !important;
     }
 
+    .change-phone-item {
+      display: flex;
+      gap: 40px;
+      flex-direction: column;
+    }
     .main_title {
       font-size: 16px;
     }
