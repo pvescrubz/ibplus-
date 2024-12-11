@@ -1813,7 +1813,26 @@ cursor: pointer;
   background-color: inherit !important;
 }
 
+.change-password-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.change-password-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.change-password-container {
+  margin-bottom: 30px;
+}
 
+.change-password-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 10px 10px;
+}
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
@@ -2120,6 +2139,9 @@ border-radius: 10px;
 
   @media screen and (max-width: 1200px) {
 
+    .change-password-container {
+      flex-direction: column;
+    }
     .form-buttons {
       padding-top: 10px;
       padding-left: 10px;
@@ -2493,6 +2515,13 @@ padding: 10px 10px;
       gap:10px !important;
     }
 
+    .main_title {
+      font-size: 16px;
+    }
+
+    .change-password-btns {
+      flex-direction: column;
+    }
     .news_mail_btns {
       flex-direction: column;
       justify-content: center;
