@@ -361,27 +361,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function dateUpdateTest() {
-
-  const hiddenEndDate2 = document.querySelector(".hidden-start-date");
-
-  // Заполняем поля с датами (нужно для тестирования)
-
+function dateUpdateHiddenInput() {
+  const hiddenEndDate2 = document.querySelector(".hidden-end-date-disabled");
   hiddenEndDate2.value = "22.11.2011";
-
 }
 
 function dateUpdate() {
   [document.querySelector(".hidden-end-date-disabled"), document.querySelector(".hidden-start-date-disabled")]
-  .filter(Boolean) // Оставляем только существующие элементы
-  .forEach(el => el.dispatchEvent(new Event("input") ));
+  .filter(Boolean) 
+  .forEach(el => el.dispatchEvent(new Event("input") )); // Вызываем событие input т.к на него подписали слушатель изменения даты в скрытом инпуте
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+const checkbox = document.getElementById('input7'); // Идентификатор чекбокса СРОЧНОСТЬ
+const needBlock = document.getElementById('need_block'); // Контейнер для календаря (Сюда добавляется ID элемента календаря , чтобы определить что его нужно заблокировать)
 
-  setTimeout(() => {
-    dateUpdateTest();
-    dateUpdate();
-  }, 5000);
-
+// Добавляем слушатель события "change" для чекбокса
+checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+        // Удаляем класс disabled-form-btn
+        needBlock.classList.add('disabled-form-btn');
+    } else {
+        // Добавляем класс disabled-form-btn
+        needBlock.classList.remove('disabled-form-btn');
+    }
 });
