@@ -175,6 +175,7 @@ margin: 0 0 5px 0;
 
 body {
   background: var(--bg);
+  height: 100vh;
 }
 
 .login_form-title {
@@ -881,7 +882,7 @@ color: var(--black);
 }
 
 .archive-text {
-  margin: 0 11px 0 0 !important;
+  margin: 0 16px 0 0 !important;
 }
 
 .archive-title {
@@ -896,6 +897,7 @@ color: var(--black);
 .archive-btn {
   display: block;
   margin-left: auto;
+  padding: 10px 35px !important;
 }
 
 .dropdown-archive-box {
@@ -1406,6 +1408,7 @@ th.pc-tablet, td.pc-tablet {
 .popup-container_vipiska {
   position: fixed;
   top: 0;
+  overflow: scroll;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1660,7 +1663,6 @@ body.no-scroll {
 .input-content {
   min-width: 400px;
   margin-bottom: 30px;
- 
 }
 
 
@@ -1854,6 +1856,12 @@ cursor: pointer;
 
 .black-btn {
   background: var(--black) !important;
+}
+
+.radio_container-kassa {
+  display: flex;
+  gap: 10px;
+  min-width: 100px;
 }
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
@@ -2540,6 +2548,14 @@ padding: 10px 10px;
       gap:10px !important;
     }
 
+    .kassa-orders {
+      gap: 10px !important;
+    }
+
+    #popup {
+      top: 0;
+    }
+
     .change-phone-item {
       display: flex;
       gap: 40px;
@@ -2721,7 +2737,7 @@ padding: 10px 10px;
       left: 0;
       display: flex;
       gap: 30px;
-      top: -180%;
+      top: -230%;
       align-items: center;
       min-height: 1200px;
       flex-direction: column;
@@ -2960,6 +2976,14 @@ padding: 10px 10px;
     max-width: 350px;
     max-height: 350px;
     ;}
+
+
+    .kassa-orders {
+      flex-direction: row !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 25px 10px;
+    }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
 
 
@@ -2996,5 +3020,21 @@ padding: 10px 10px;
   line-height: 171%;
   color: var(--black);
     }
+    
+  }
+
+  @media screen and (max-width: 400px) {
+
+    .kassa-orders {
+      padding: 0;
+      flex-direction: column !important;
+    }
+    .dropdown-button::after {
+      right: 2px;
+    }
+    .dropdown-button {
+      padding: 10px 15px;
+    }
+
     
   }

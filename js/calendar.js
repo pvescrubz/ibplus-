@@ -1,25 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Инициализация календаря для каждого элемента `.date-picker`.
+   * @param {HTMLElement} datePicker - Корневой элемент компонента календаря.
+   */
   function initializeCalendar(datePicker) {
     const dateInput = datePicker.querySelector(".input-main");
     const calendar = datePicker.querySelector(".calendar");
     const hiddenDateInputs = datePicker.querySelectorAll(".form-hidden input");
-    const mode = datePicker.dataset.mode || "single";
+    const mode = datePicker.dataset.mode || "single"; // Определяем режим: выбор одной даты или диапазона.
 
     const monthNames = [
-      "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
-      "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
     ];
     const daysOfWeek = ["ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ", "ВС"];
 
-    let displayedDate = new Date();
-    let startDate = null;
-    let endDate = null;
+    let displayedDate = new Date(); // Дата, отображаемая на календаре.
+    let startDate = null; // Начальная дата для выбора.
+    let endDate = null; // Конечная дата для диапазона.
 
+    /**
+     * Преобразование даты из строки в формате `dd.mm.yyyy` в объект `Date`.
+     * @param {string} dateStr - Строка с датой.
+     * @returns {Date} Объект даты.
+     */
     function parseFromDisplayDate(dateStr) {
       const [day, month, year] = dateStr.split(".").map(Number);
       return new Date(year, month - 1, day);
     }
 
+    // Обработка события "input" для каждого скрытого поля.
+    hiddenDateInputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        initializeDates();
+        renderCalendar();
+      });
+    });
+
+    /**
+     * Форматирование объекта `Date` в строку `dd.mm.yyyy`.
+     * @param {Date} date - Объект даты.
+     * @returns {string} Строка в формате `dd.mm.yyyy`.
+     */
     function formatToInputDate(date) {
       const day = String(date.getDate()).padStart(2, "0");
       const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -27,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return `${day}.${month}.${year}`;
     }
 
+    /**
+     * Инициализация начальной и конечной даты из скрытых полей.
+     */
     function initializeDates() {
       if (hiddenDateInputs[0] && hiddenDateInputs[0].value) {
         const startValue = hiddenDateInputs[0].value;
@@ -35,7 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      if (mode === "range" && hiddenDateInputs[1] && hiddenDateInputs[1].value) {
+      if (
+        mode === "range" &&
+        hiddenDateInputs[1] &&
+        hiddenDateInputs[1].value
+      ) {
         const endValue = hiddenDateInputs[1].value;
         if (/^\d{2}\.\d{2}\.\d{4}$/.test(endValue)) {
           endDate = parseFromDisplayDate(endValue);
@@ -45,11 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
       updateTextInput();
     }
 
+    /**
+     * Обновление текстового поля и скрытых полей на основе выбранных дат.
+     */
     function updateTextInput() {
       if (dateInput) {
         if (mode === "range") {
           if (startDate && endDate) {
-            dateInput.value = `${formatToInputDate(startDate)} - ${formatToInputDate(endDate)}`;
+            dateInput.value = `${formatToInputDate(
+              startDate
+            )} - ${formatToInputDate(endDate)}`;
             hiddenDateInputs[0].value = formatToInputDate(startDate);
             hiddenDateInputs[1].value = formatToInputDate(endDate);
           } else if (startDate) {
@@ -72,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    /**
+     * Отображение календаря, включая заголовок, дни недели и дни месяца.
+     */
     function renderCalendar() {
       const calendarContent = document.createElement("div");
       calendarContent.className = "calendar-content";
@@ -79,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const header = document.createElement("div");
       header.className = "calendar-header";
 
+      // Кнопка для переключения на предыдущий месяц.
       const prevButton = document.createElement("button");
       prevButton.textContent = "<";
       prevButton.addEventListener("click", (event) => {
@@ -92,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCalendar();
       });
 
+      // Кнопка для переключения на следующий месяц.
       const nextButton = document.createElement("button");
       nextButton.textContent = ">";
       nextButton.addEventListener("click", (event) => {
@@ -108,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const monthDisplay = document.createElement("span");
       monthDisplay.textContent = `${monthNames[displayedDate.getMonth()]}`;
 
-      // Выпадающий список для года
+      // Выпадающий список для выбора года.
       const yearDropdownContainer = document.createElement("div");
       yearDropdownContainer.className = "year-dropdown-container";
 
@@ -119,23 +168,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const yearDropdown = document.createElement("div");
       yearDropdown.className = "year-dropdown";
-      
-      // Устанавливаем диапазон от 2000 до текущего года
+
+      // Генерация списка лет для выбора.
       const startYear = 2000;
       const endYear = new Date().getFullYear();
-      
       for (let year = startYear; year <= endYear; year++) {
         const yearOption = document.createElement("div");
         yearOption.className = "year-option";
         yearOption.textContent = year;
-      
+
         yearOption.addEventListener("click", (event) => {
           event.stopPropagation();
           displayedDate.setFullYear(year);
           renderCalendar();
           yearDropdown.classList.remove("active");
         });
-      
+
         yearDropdown.appendChild(yearOption);
       }
 
@@ -165,19 +213,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const daysContainer = document.createElement("div");
       daysContainer.className = "calendar-days";
 
-      const firstDayOfMonth = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), 1).getDay();
-      const daysInMonth = new Date(displayedDate.getFullYear(), displayedDate.getMonth() + 1, 0).getDate();
+      // Добавление пустых ячеек перед первым днем месяца.
+      const firstDayOfMonth = new Date(
+        displayedDate.getFullYear(),
+        displayedDate.getMonth(),
+        1
+      ).getDay();
+      const daysInMonth = new Date(
+        displayedDate.getFullYear(),
+        displayedDate.getMonth() + 1,
+        0
+      ).getDate();
 
-      // Пустые дни перед началом месяца
       for (let i = 0; i < (firstDayOfMonth + 6) % 7; i++) {
         const emptyDay = document.createElement("div");
         emptyDay.className = "day empty";
         daysContainer.appendChild(emptyDay);
       }
 
-      // Дни месяца
+      // Генерация ячеек для дней месяца.
       for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(displayedDate.getFullYear(), displayedDate.getMonth(), day);
+        const date = new Date(
+          displayedDate.getFullYear(),
+          displayedDate.getMonth(),
+          day
+        );
         const dayElement = document.createElement("div");
         dayElement.className = "day";
 
@@ -187,17 +247,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         dayElement.appendChild(dayText);
 
-        // Проверяем начальную и конечную дату
+        // Добавление классов для выделения выбранных дат.
         if (startDate && date.toDateString() === startDate.toDateString()) {
           dayElement.classList.add("selected-start");
         }
 
-        if (mode === "range" && endDate && date.toDateString() === endDate.toDateString()) {
+        if (
+          mode === "range" &&
+          endDate &&
+          date.toDateString() === endDate.toDateString()
+        ) {
           dayElement.classList.add("selected-end");
         }
 
-        // Класс для диапазона
-        if (mode === "range" && startDate && endDate && date > startDate && date < endDate) {
+        if (
+          mode === "range" &&
+          startDate &&
+          endDate &&
+          date > startDate &&
+          date < endDate
+        ) {
           dayElement.classList.add("in-range");
         }
 
@@ -218,32 +287,35 @@ document.addEventListener("DOMContentLoaded", () => {
       calendar.appendChild(calendarContent);
     }
 
+    /**
+     * Логика выбора даты или диапазона.
+     * @param {Date} date - Выбранная дата.
+     */
     function selectDate(date) {
       if (mode === "range") {
         if (!startDate || (startDate && endDate)) {
-          // Устанавливаем начальную дату, сбрасываем конечную
           startDate = date;
           endDate = null;
         } else if (date < startDate) {
-          // Если выбранная дата раньше начальной, меняем их местами
           endDate = startDate;
           startDate = date;
         } else {
-          // Устанавливаем конечную дату
           endDate = date;
-    
-          // Закрываем календарь после выбора обеих дат
-          toggleCalendar(false);
+          toggleCalendar(false); // Закрываем календарь после выбора диапазона.
         }
         updateTextInput();
         renderCalendar();
       } else if (mode === "single") {
         startDate = date;
         updateTextInput();
-        toggleCalendar(false); // Закрываем календарь после выбора одной даты
+        toggleCalendar(false); // Закрываем календарь после выбора даты.
       }
     }
 
+    /**
+     * Переключение отображения календаря (открытие/закрытие).
+     * @param {boolean|null} state - Опционально: состояние календаря (true - открыть, false - закрыть).
+     */
     function toggleCalendar(state = null) {
       if (state === null) {
         calendar.classList.toggle("active");
@@ -255,26 +327,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Обработчик открытия календаря по клику на текстовое поле.
     dateInput.addEventListener("click", (event) => {
-      event.stopPropagation();
+      if (datePicker.classList.contains("disabled-form-btn")) {
+        event.stopPropagation();
+        return; // Блокируем дальнейшую обработку, если элемент отключен.
+      }
       toggleCalendar();
     });
 
+    // Закрытие календаря при клике вне его области.
     document.addEventListener("click", (event) => {
-      if (calendar.classList.contains("active") && !datePicker.contains(event.target)) {
+      if (
+        calendar.classList.contains("active") &&
+        !datePicker.contains(event.target)
+      ) {
         toggleCalendar(false);
       }
     });
 
+    // Предотвращение закрытия календаря при клике внутри него.
     calendar.addEventListener("click", (event) => {
       event.stopPropagation();
     });
 
-    initializeDates();
+    initializeDates(); // Инициализация начальных данных.
   }
 
+  // Инициализация календарей для всех элементов с классом `date-picker`.
   const datePickers = document.querySelectorAll(".date-picker");
   datePickers.forEach((datePicker) => {
     initializeCalendar(datePicker);
   });
+});
+
+function dateUpdateTest() {
+
+  const hiddenEndDate2 = document.querySelector(".hidden-start-date");
+
+  // Заполняем поля с датами (нужно для тестирования)
+
+  hiddenEndDate2.value = "22.11.2011";
+
+}
+
+function dateUpdate() {
+  [document.querySelector(".hidden-end-date-disabled"), document.querySelector(".hidden-start-date-disabled")]
+  .filter(Boolean) // Оставляем только существующие элементы
+  .forEach(el => el.dispatchEvent(new Event("input") ));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  setTimeout(() => {
+    dateUpdateTest();
+    dateUpdate();
+  }, 5000);
+
 });
