@@ -3,7 +3,7 @@ document.querySelectorAll('[data-btn="settings_btn"]').forEach(button => {
     button.addEventListener('click', function(event) {
       event.stopPropagation(); // Останавливаем всплытие, чтобы избежать немедленного закрытия
       document.querySelector('.settings_content').style.display = 'flex';
-      document.body.classList.add('no-scroll');
+      
     });
   });
   
