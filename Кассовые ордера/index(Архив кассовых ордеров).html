@@ -535,7 +535,7 @@
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Архив</h2>
+              <h2 class="main_title">Архив кассовых ордеров</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -553,7 +553,6 @@
             <form class="content_left opoznanie-left">
 
               <div class="form_content">
-               
                 <div class="opoznanie-archive-container">
                   <div class="checkbox_content">
                     <div class="content_account radio">
@@ -681,7 +680,7 @@
                         </select>
                       </div>
   
-                      <div class="date-picker " data-mode="range">
+                      <div class="date-picker disabled-form-btn" data-mode="single">
                         <!-- Видимое поле для отображения выбранного диапазона -->
                         <input
                           type="text"
@@ -698,11 +697,7 @@
                             class="hidden-start-date"
                             value="22.11.2013"
                           />
-                          <input
-                            type="hidden"
-                            class="hidden-end-date"
-                            value="22.11.2015"
-                          />
+
                         </div>
                       </div>
                     </div>
@@ -710,13 +705,13 @@
                   <div class="archive-content">
                     <label for="input4" class="dropdown-archive">
                       <p class="content_account_item_title text_bold">
-                        Плательщик:
+                        Примечание:
                       </p>
                       <input
                         name="input4"
                         type="text"
                         class="input-main text_semibold input-archive"
-                        placeholder="Введите название плательщика"
+                        placeholder=""
                         required
                       />
                     </label>
@@ -767,11 +762,10 @@
                         <th class="grid_colored archive-title-th text_bold">Дата2</th>
                         <th class="grid_colored archive-title-th text_bold onlypc">Дата вал.3</th>
                         <th class="grid_colored archive-title-th text_bold">Документ4</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">Валюта5</th>
-                        <th class="grid_colored archive-title-th text_bold ">Сумма6</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">Плательщик7</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc">ИНН8</th>
-                        <th class="grid_colored archive-title-th text_bold onlypc grid_colored archive-title-th-last-pc ">Комментарий9</th>
+                        <th class="grid_colored archive-title-th text_bold onlypc">In / Out 5</th>
+                        <th class="grid_colored archive-title-th text_bold ">Валюта6</th>
+                        <th class="grid_colored archive-title-th text_bold onlypc">Сумма7</th>
+                        <th class="grid_colored archive-title-th text_bold onlypc">Примечание8</th>
                         <th class="grid_colored archive-title-th text_bold "></th>
                       </tr>
                       <tr
@@ -808,7 +802,6 @@
                         <td class="text_semibold ">6</td>
                         <td class="text_semibold onlypc ">7</td>
                         <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
                         <td class="text_semibold tablet-mobile pointer">...</td>
                       </tr>
                       <tr
@@ -837,7 +830,7 @@
                         <td class="text_semibold ">6</td>
                         <td class="text_semibold onlypc">7</td>
                         <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
+                        
                         <td class="text_semibold tablet-mobile pointer">...</td>
                       </tr>
                       <tr
@@ -866,7 +859,7 @@
                         <td class="text_semibold ">6</td>
                         <td class="text_semibold onlypc">7</td>
                         <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
+                        
                         <td class="text_semibold tablet-mobile pointer">...</td>
                       </tr>
                       <tr
@@ -895,7 +888,7 @@
                         <td class="text_semibold ">6</td>
                         <td class="text_semibold onlypc">7</td>
                         <td class="text_semibold onlypc">8</td>
-                        <td class="text_semibold onlypc">9</td>
+                        
                         <td class="text_semibold tablet-mobile pointer">...</td>
                       </tr>
                     </tbody>
@@ -918,7 +911,7 @@
                     Передать в Банк
                   </button>
                   <button class="help_btn opoznanie-help-btn">Удалить</button>
-                  <button class="help_btn opoznanie-help-btn">Очистить</button>
+                  <button class="help_btn opoznanie-help-btn">Закрыть</button>
                 </div>
               </div>
             </form>
