@@ -2544,6 +2544,14 @@ padding: 10px 10px;
   
   @media screen and (max-width: 768px) {
 
+    .popup-container_vipiska{
+      display: block;
+    }
+    
+    .popup-content_vipiska {
+      top: 10px;
+      margin: 0 auto;
+    }
     .checkbox_area-text {
       font-size: 12px !important;
     }
@@ -2894,7 +2902,7 @@ padding: 10px 10px;
     }
     
     .popup-content_vipiska {
-      max-width: 90%;
+      max-width: 100%;
       padding: 15px;
     }
   
