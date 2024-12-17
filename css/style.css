@@ -132,6 +132,10 @@ background: var(--green-1);
   display: block;
   padding-left: 20px;
 }
+
+.text-area-error {
+  left: 25px !important;
+}
 .news_date  {
   margin: 0;
 }
@@ -1869,6 +1873,14 @@ cursor: pointer;
   display: flex;
   gap: 10px;
 }
+
+.kovertacia-orders-radio {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 18px;
+}
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
@@ -2175,9 +2187,10 @@ border-radius: 10px;
     padding: 0 15px 30px 0;
   }
 
-
   @media screen and (max-width: 1200px) {
-
+    .konvertacia-archive-container {
+      gap: 10px;
+    }
     .change-password-container {
       flex-direction: column;
     }
@@ -2233,7 +2246,7 @@ padding: 10px 10px;
     .last-documents-link {
       display: block;
       width: 80%;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
     }
 
     .last-documents-container {
@@ -2550,10 +2563,20 @@ padding: 10px 10px;
   
   @media screen and (max-width: 768px) {
 
+
+
+   
     .popup-container_vipiska{
       display: block;
     }
+
+    .radio_container-konvertacia {
+      min-width: 100px;
+    }
     
+    .kovertacia-orders-radio {
+      flex-direction: column;
+    }
     .popup-content_vipiska {
       top: 10px;
       margin: 0 auto;
@@ -3027,6 +3050,14 @@ padding: 10px 10px;
 
     .checkbox-text {
       margin: 0;
+    }
+
+    .konvertacia-content {
+      margin-bottom: 0;
+    }
+
+    .konvertacia-text {
+      margin-right: 10px;
     }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
 
