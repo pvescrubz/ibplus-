@@ -14,10 +14,12 @@ document.querySelectorAll('[data-btn="settings_btn"]').forEach(button => {
 
   popUpTrigger.addEventListener('click', function(event) {
     showMorePopUp.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
   });
 
   showMorePopUpClose.addEventListener('click', function(event) {
     showMorePopUp.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
   });
 
   // Закрытие окна при клике вне его области
@@ -31,6 +33,7 @@ document.querySelectorAll('[data-btn="settings_btn"]').forEach(button => {
       !event.target.closest('[data-btn="settings_btn"]')
     ) {
       settingsContent.style.display = 'none';
+      document.body.classList.remove('no-scroll');
     }
   });
   

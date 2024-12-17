@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     tablePointerRows.forEach(pointerRow => {
       pointerRow.addEventListener('click', () => {
-        console.log('asd')
         // Получаем ячейки текущей строки, начиная с 3-й и заканчивая предпоследней
         const cells = Array.from(pointerRow.closest('tr').querySelectorAll('td')).slice(2, -1);
   
@@ -59,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
         // Показываем попап
         popup.style.display = 'flex';
+        document.body.classList.toggle('no-scroll');
       });
     });
   }
@@ -67,8 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
    * Скрипт для таблицы через <ul> и <li>.
    */
   function handleDivRows() {
-
-
 
     const showMoreButtons = document.querySelectorAll('.show_more-btn'); // Кнопки "Показать больше"
     const gridHead = document.querySelector('.grid-head'); // Заголовки таблицы
@@ -106,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Показываем попап
         popup.style.display = 'flex';
+        document.body.classList.toggle('no-scroll');
       }
     });
   });
@@ -128,12 +127,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Закрытие попапа
   popupClose.addEventListener('click', () => {
     popup.style.display = 'none';
+    document.body.classList.toggle('no-scroll');
   });
 
   // Закрытие попапа при клике вне контента
   popup.addEventListener('click', (e) => {
     if (e.target === popup) {
       popup.style.display = 'none';
+      document.body.classList.toggle('no-scroll');
     }
   });
 });

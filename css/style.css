@@ -240,7 +240,7 @@ html {
 
 .content {
   width: 100%;
-  height: 500px;
+  min-height: 500px;
 }
 
 .container {
@@ -1416,7 +1416,7 @@ th.pc-tablet, td.pc-tablet {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 30;
 }
 
 /* Содержимое попапа */
@@ -2741,7 +2741,6 @@ padding: 10px 10px;
       left: 0;
       display: flex;
       gap: 30px;
-      top: -230%;
       align-items: center;
       min-height: 1200px;
       flex-direction: column;
