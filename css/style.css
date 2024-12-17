@@ -165,7 +165,7 @@ margin: 0;
   font-family: var(--font-family);
 font-weight: 500;
 font-size: 14px;
-line-height: 171%;
+line-height: 172%;
 color: var(--black);
 margin: 0 0 5px 0;
 }
@@ -1693,10 +1693,11 @@ body.no-scroll {
 
 .opoznanie-main-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Две равные колонки */
+  grid-template-columns: 1fr 1fr;
   gap: 20px; /* Расстояние между элементами */
   padding: 20px; /* Внутренние отступы контейнера */
   box-sizing: border-box; /* Включает отступы в ширину */
+  min-width: 0;
 }
 
 .opoznanie-main-container > div, 
@@ -1861,7 +1862,6 @@ cursor: pointer;
 .radio_container-kassa {
   display: flex;
   gap: 10px;
-  min-width: 100px;
 }
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
@@ -2543,6 +2543,10 @@ padding: 10px 10px;
   }
   
   @media screen and (max-width: 768px) {
+
+    .checkbox_area-text {
+      font-size: 12px !important;
+    }
     .login_form-btns {
       flex-direction: column;
       gap:10px !important;
@@ -2979,13 +2983,39 @@ padding: 10px 10px;
 
 
     .kassa-orders {
-      flex-direction: row !important;
+      flex-direction: column !important;
       justify-content: center !important;
       align-items: center !important;
-      padding: 25px 10px;
+      gap: 20px !important;
+    }
+
+    .kassa-orders-radio {
+      display: flex;
+      gap: 30px;
+    }
+
+    .make-copy-link {
+      cursor: pointer;
+    }
+
+    .checkbox_area {
+      min-height: 28px;
+      margin-top: -5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .kassa-orders > p {
+      margin: -5px 0 0 0 ;
+    }
+
+    .checkbox-text {
+      margin: 0;
     }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
-
 
 
     .documents-last-item {
