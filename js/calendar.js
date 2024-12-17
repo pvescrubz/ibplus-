@@ -372,16 +372,22 @@ function dateUpdate() {
   .forEach(el => el.dispatchEvent(new Event("input") )); // Вызываем событие input т.к на него подписали слушатель изменения даты в скрытом инпуте
 }
 
-const checkbox = document.getElementById('input7'); // Идентификатор чекбокса СРОЧНОСТЬ
-const needBlock = document.getElementById('need_block'); // Контейнер для календаря (Сюда добавляется ID элемента календаря , чтобы определить что его нужно заблокировать)
+// Получаем ссылки на чекбокс и блок
+const checkbox = document.getElementById('input7'); // Чекбокс "Срочность"
+const needBlock = document.getElementById('need_block'); // Контейнер для блокировки
 
-// Добавляем слушатель события "change" для чекбокса
-checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-        // Удаляем класс disabled-form-btn
-        needBlock.classList.add('disabled-form-btn');
-    } else {
-        // Добавляем класс disabled-form-btn
-        needBlock.classList.remove('disabled-form-btn');
-    }
-});
+// Проверяем, что элементы существуют на странице
+if (checkbox && needBlock) {
+    // Добавляем слушатель события "change" для чекбокса
+    checkbox.addEventListener('change', function () {
+        if (checkbox.checked) {
+            // Добавляем класс disabled-form-btn
+            needBlock.classList.add('disabled-form-btn');
+
+        } else {
+            // Удаляем класс disabled-form-btn
+            needBlock.classList.remove('disabled-form-btn');
+
+        }
+    });
+} 
