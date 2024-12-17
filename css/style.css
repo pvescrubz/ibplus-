@@ -123,8 +123,8 @@ background: var(--green-1);
   border-radius: 20px;
   text-align: center;
   max-height: 100%;
-  padding: 20px 15px;
-  margin-top: 65px;
+  padding: 7px 15px;
+  margin-top: 63px;
 }
 
 .input_text-area {
@@ -1741,8 +1741,14 @@ color: var(--purple-4);
 .documents-last-item {
   padding-top: 10px;
   display: flex;
+  display: none;
   flex-direction: column;
   border-bottom: 1px solid var(--light-grey);
+}
+
+.documents-last-item:nth-child(-n+3) 
+{
+  display: flex;
 }
 
 .documents-last-item_text {
