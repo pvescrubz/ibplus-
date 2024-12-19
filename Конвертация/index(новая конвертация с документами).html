@@ -535,7 +535,7 @@
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Добавление нового кассового ордера</h2>
+              <h2 class="main_title">Добавление новой конвертации</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -552,102 +552,240 @@
             </div>
             <form class="content_left opoznanie-left">
               <div class="form_content">
-              <div class="opoznanie-main-container">
+                <div class="opoznanie-main-container">
                   <div class="date-picker" data-mode="single">
                     <p class="data-picker_title text_bold">Дата:</p>
                     <!-- Видимое поле для отображения выбранного диапазона -->
-                    <input type="text" class="input-main text_semibold" placeholder="Выберите диапазон" readonly="">
+                    <input
+                      type="text"
+                      class="input-main text_semibold"
+                      placeholder="Выберите диапазон"
+                      readonly=""
+                    />
+                    <p class="error-data">
+                      <span
+                        class="field-validation-error"
+                        data-valmsg-for="ContractorName"
+                        data-valmsg-replace="true"
+                        ><span
+                          for="ContractorName"
+                          generated="true"
+                          class=""
+                          >ошибка</span
+                        ></span
+                      >
+                    </p>
                     <!-- Контейнер для календаря -->
                     <div class="calendar"></div>
                     <!-- Скрытые поля для начальной и конечной дат -->
                     <div class="form-hidden">
-                      <input type="hidden" class="hidden-start-date" value="22.11.2013">
+                      <input
+                        type="hidden"
+                        class="hidden-start-date"
+                        value="22.11.2013"
+                      />
                     </div>
-                    <p class="error-data">
-                      <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
                   </div>
                   <div class="dropdown" data-target="select2">
                     <p class="data-picker_title text_bold">Счет списания</p>
                     <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold">Счет 1</span>
+                      <span class="dropdown-button_text text_semibold"
+                        >2001</span
+                      >
                     </a>
                     <p class="error-data">
-                      <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
-                    <div class="dropdown-content"><a href="#Счет 1" class="text_semibold" data-value="Счет 1">Счет 1</a><a href="#Счет 2" class="text_semibold" data-value="Счет 2">Счет 2</a><a href="#Счет 3" class="text_semibold" data-value="Счет 3">Счет 3</a></div>
-                </div>
-                <select id="select2" class="hidden-select" hidden="">
-                    <option value="Счет 1">Счет 1</option>
-                    <option value="Счет 2">Счет 2</option>
-                    <option value="Счет 3">Счет 3</option>
-                </select>
-                <div class="opoznanie-input-container">
-                  <p class="data-picker_title text_bold">Сумма</p>
-                  <div class="flex-container">
-                  <label for="input2 " class="money-label">
-                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Введите сумму" required="">
-                      <p class="error-data">
-                        <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                    </p>
-                  </label>
-                  
-                  <div class="dropdown dropdown-money" data-target="select1">
-                    <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold">RUB</span>
-                    </a>
-                    <div class="dropdown-content"><a href="#RUB" class="text_semibold" data-value="RUB">RUB</a><a href="#USD" class="text_semibold" data-value="USD">USD</a><a href="#EUR" class="text_semibold" data-value="EUR">EUR</a></div>
+                          <span
+                            class="field-validation-error"
+                            data-valmsg-for="ContractorName"
+                            data-valmsg-replace="true"
+                            ><span
+                              for="ContractorName"
+                              generated="true"
+                              class=""
+                              >ошибка</span
+                            ></span
+                          >
+                        </p>
+                    <div class="dropdown-content">
+                      <a
+                        href="2001"
+                        class="text_semibold"
+                        data-value="2002"
+                        >2002</a
+                      ><a
+                        href="2003"
+                        class="text_semibold"
+                        data-value="2003"
+                        >2003</a
+                      ><a
+                        href="2004"
+                        class="text_semibold"
+                        data-value="2004"
+                        >2004</a
+                      >
                     </div>
-                <select id="select1" class="hidden-select" hidden="">
-                    <option value="RUB">RUB</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                </select>
                   </div>
+                  <select id="select2" class="hidden-select" hidden="">
+                    <option value="Счет 1">2001</option>
+                    <option value="Счет 2">2002</option>
+                    <option value="Счет 3">2003</option>
+                  </select>
+                  <div class="content_account radio kassa-orders">
+                    <div class="kovertacia-orders-radio">
+                      <p class="data-picker_title text_bold">Выберите тип:</p>
+                      <div class="radio_container-konvertacia">
+                        <input
+                          type="radio"
+                          id="radio1"
+                          name="drone"
+                          value="radio1"
+                          checked=""
+                        />
+                        <label for="radio1" class="text_semibold label_radio"
+                          >Зачислить</label
+                        >
+                      </div>
+                      <div class="radio_container-konvertacia">
+                        <input
+                          type="radio"
+                          id="radio2"
+                          name="drone"
+                          value="radio2"
+                        />
+                        <label for="radio2" class="text_semibold label_radio"
+                          >Выдать</label
+                        >
+                      </div>
+                    </div>
+                    <div class="konvertacia-currency">
+                      <div class="dropdown" data-target="select3">
+                        <a class="dropdown-button text_semibold">
+                          <span class="dropdown-button_text text_semibold"
+                            >Счет 1</span
+                          >
+                        </a>
+                        <div class="dropdown-content">
+                          <a
+                            href="#Счет 1"
+                            class="text_semibold"
+                            data-value="Счет 1"
+                            >Счет 1</a
+                          ><a
+                            href="#Счет 2"
+                            class="text_semibold"
+                            data-value="Счет 2"
+                            >Счет 2</a
+                          ><a
+                            href="#Счет 3"
+                            class="text_semibold"
+                            data-value="Счет 3"
+                            >Счет 3</a
+                          >
+                        </div>
+                      </div>
+                      <select id="select3" class="hidden-select" hidden="">
+                        <option value="RUB">RUB</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                      </select>
+                      <img class="currency-arrow" src="../img/exchange.svg">
+                     
+                      <div class="dropdown" data-target="select4">
+                        <a class="dropdown-button text_semibold">
+                          <span class="dropdown-button_text text_semibold"
+                            >Счет 1</span
+                          >
+                        </a>
+                        <div class="dropdown-content">
+                          <a
+                            href="#Счет 1"
+                            class="text_semibold"
+                            data-value="Счет 1"
+                            >Счет 1</a
+                          ><a
+                            href="#Счет 2"
+                            class="text_semibold"
+                            data-value="Счет 2"
+                            >Счет 2</a
+                          ><a
+                            href="#Счет 3"
+                            class="text_semibold"
+                            data-value="Счет 3"
+                            >Счет 3</a
+                          >
+                        </div>
+                        
+                      </div>
+                      <select id="select4" class="hidden-select" hidden="">
+                        <option value="RUB">RUB</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="opoznanie-input-container">
+                    <div class="flex-container">
+                      <label for="input2 " class="money-label">
+                        <input
+                          name="input2"
+                          id="input2"
+                          type="text"
+                          class="input-main text_semibold"
+                          placeholder="Введите сумму"
+                          required=""
+                        />
+                        <p class="error-data">
+                          <span
+                            class="field-validation-error"
+                            data-valmsg-for="ContractorName"
+                            data-valmsg-replace="true"
+                            ><span
+                              for="ContractorName"
+                              generated="true"
+                              class=""
+                              >ошибка</span
+                            ></span
+                          >
+                        </p>
+                      </label>
+                    </div>
+                  </div>
+            
+                </div>
+                <label for="input6" class="input_text-area">
+                  <p class="input-title text_bold">Инфо</p>
+                  <textarea
+                    name="input6"
+                    id="input6"
+                    class="input-main text_semibold"
+                    placeholder="Ваш комментарий"
+                    required=""
+                    rows="4"
+                  ></textarea>
+                  <p class="error-data text-area-error">
+                    <span
+                      class="field-validation-error"
+                      data-valmsg-for="ContractorName"
+                      data-valmsg-replace="true"
+                      ><span
+                        for="ContractorName"
+                        generated="true"
+                        class=""
+                        >ошибка</span
+                      ></span
+                    >
+                  </p>
+                </label>
               </div>
-              <div class="content_account radio kassa-orders">
-                <div class="kovertacia-orders-radio">
-                  <p class="data-picker_title text_bold">Выберите тип:</p>
-              <div class="radio_container-konvertacia">
-                <input
-                  type="radio"
-                  id="radio1"
-                  name="drone"
-                  value="radio1"
-                  checked=""
-                />
-                <label for="radio1" class="text_semibold label_radio"
-                  >Зачислить</label
-                >
+              <div class="form-buttons">
+                <button type="submit" class="help_btn opoznanie-help-btn">
+                  Сохранить
+                </button>
+                <button class="help_btn opoznanie-help-btn">
+                  Передать в Банк
+                </button>
+                <button class="help_btn opoznanie-help-btn">Очистить</button>
               </div>
-              <div class="radio_container-konvertacia">
-                <input
-                  type="radio"
-                  id="radio2"
-                  name="drone"
-                  value="radio2"
-                />
-                <label for="radio2" class="text_semibold label_radio"
-                  >Выдать</label
-                >
-              </div>
-              </div>
-            </div>
-              </div>
-              <label for="input6" class="input_text-area">
-                <p class="input-title text_bold">Инфо</p>
-                <textarea name="input6" id="input6" class="input-main text_semibold" placeholder="Ваш комментарий" required="" rows="4"></textarea>
-                <p class="error-data text-area-error">
-                  <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-              </p>
-              </label>
-
-            </div>
-            <div class="form-buttons">
-              <button type="submit" class="help_btn opoznanie-help-btn">Сохранить</button>
-              <button class="help_btn opoznanie-help-btn">Передать в Банк</button>
-              <button class="help_btn opoznanie-help-btn">Очистить</button>
-            </div>
             </form>
           </div>
           <div class="last-documents-container">
