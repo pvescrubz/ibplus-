@@ -3059,6 +3059,20 @@ padding: 10px 10px;
     .konvertacia-text {
       margin-right: 10px;
     }
+
+    .error-text-area {
+      left:  25px !important;
+    }
+    .konvertacia-currency {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .currency-arrow {
+      width: 35px;
+      height: 35px;
+    }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
 
 
