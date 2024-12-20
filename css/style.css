@@ -458,6 +458,15 @@ color: var(--grey);
   color: var(--purple-2);
 }
 
+.dwnload-svg > path { 
+  transition: all 0.3s linear;
+  
+}
+
+.dwnload-svg:hover > path { 
+  fill: rgb(0, 90, 158);
+
+}
 .nav_btn.active {
   background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
 }
@@ -1139,6 +1148,14 @@ input[type="radio"] {
   text-align: center; /* Горизонтальное выравнивание */
   vertical-align: middle; /* Вертикальное выравнивание */
   height: 30px;
+  border-bottom: 7px solid transparent;
+  border-top: 7px solid transparent;
+}
+.emtpy-tr {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 100px !important;
 }
 
 .active-row {
@@ -1881,10 +1898,39 @@ cursor: pointer;
   gap: 15px;
   padding-top: 18px;
 }
+.download-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#statementArea {
+  border-radius: 15px;
+  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+background: var(--white);
+}
+
+.rekviziti-btns {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+
+
+.emtpy-tr > td {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
+  
 
   .change-password-container {
     flex-direction: column;
@@ -2188,6 +2234,12 @@ border-radius: 10px;
   }
 
   @media screen and (max-width: 1200px) {
+
+    .left-mail_reglaments{
+      display: b !important;
+    }
+
+
     .konvertacia-archive-container {
       gap: 10px;
     }
@@ -2971,6 +3023,7 @@ padding: 10px 10px;
 
   .reference-archive {
     width: 100%;
+    border-spacing: 10px 0;
   }
 
   table, th, td, tr {
@@ -2978,8 +3031,11 @@ padding: 10px 10px;
     outline: none;
   }
 
+
+
   td {
     text-align: center;
+    min-height: 35px;
   }
 
   table {
@@ -3073,6 +3129,14 @@ padding: 10px 10px;
       width: 35px;
       height: 35px;
     }
+
+    .nav_menu-reglaments {
+      display: none;
+    }
+
+    .left-mail_reglaments {
+      display: none;
+    }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
 
 
@@ -3112,7 +3176,10 @@ padding: 10px 10px;
   }
 
   @media screen and (max-width: 400px) {
-
+    
+    .grid_colored {
+      padding: 20px 5px;
+    }
     .kassa-orders {
       padding: 0;
       flex-direction: column !important;

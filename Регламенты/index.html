@@ -9,7 +9,7 @@
   </head>
   <body>
     <main class="layout">
-      <div class="left_main">
+      <div class="left_main left-mail_reglaments">
         <div class="logo">
           <div class="logo_media">
             <img src="../img/Logo.png" alt="Logo" />
@@ -95,7 +95,7 @@
             </div>
           </div>
         </div>
-        <nav class="nav_menu">
+        <nav class="nav_menu nav_menu-reglaments">
           <ul class="nav_menu_list">
             <li class="nav_menu_item active">
               <a href="#" class="nav_menu_link">Информация по счетам </a>
@@ -578,7 +578,7 @@
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Отчёт по счетам-фактурам</h2>
+              <h2 class="main_title">Регламенты</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -594,192 +594,69 @@
               </svg>
             </div>
             <form class="form-main">
-            <div class="content_account faktura-content">
-              <div class="content_account_item faktura-content_account_item">
-                <div class="dropdown_content operation_dropdown">
-                  <div class="dropdown" data-target="select3">
-                    <p class="content_account_item_title text_bold">
-                      Тип оплаты:
-                    </p>
-                    <a class="dropdown-button text_semibold">
-                      <span class="dropdown-button_text text_semibold"></span>
-                    </a>
-                    <div class="dropdown-content"></div>
-                  </div>
-                  <!-- Скрытый select для операций -->
-                  
-                  <div class="dropdown" data-target="select2">
-                    <p class="content_account_item_title text_bold">Счет</p>
-                    <a class="dropdown-button text_semibold">
-                      <span class="dropdown-button_text text_semibold"></span>
-                    </a>
-                    <div class="dropdown-content"></div>
-                  </div>
-                  <!-- Скрытый select для операций -->
-                  <select id="select2" name="operations" >
-                    <option id="select3_option1" value="Счет" selected>
-                      Счет
-                    </option>
-                    <option id="select3_option2" value="Счет1">Счет1</option>
-                    <option id="select3_option3" value="Счет2">Счет2</option>
-                    <option id="select3_option4" value="Счет3">Счет3</option>
-                  </select>
-                  <select id="select3" name="operations" >
-                    <option id="select3_option1" value="Тип оплаты" selected>
-                      Тип оплаты
-                    </option>
-                    <option id="select3_option2" value="Тип оплаты1">
-                      Тип оплаты1
-                    </option>
-                    <option id="select3_option3" value="Тип оплаты2">
-                      Тип оплаты2
-                    </option>
-                    <option id="select3_option4" value="Тип оплаты3">
-                      Тип оплаты3
-                    </option>
-                  </select>
-                  <div class="date-picker" data-mode="range">
-                    <!-- Видимое поле для отображения выбранного диапазона -->
-                    <input 
-                      type="text" 
-                      class="input-main text_semibold" 
-                      placeholder="Выберите диапазон" 
-                      readonly 
-                    />
-
-                    <!-- Контейнер для календаря -->
-                    <div class="calendar"></div>
-                    <!-- Скрытые поля для начальной и конечной дат -->
-                    <div class="form-hidden">
-                      <input type="text" class="hidden-start-date" value="22.11.2013" />
-                      <input type="text" class="hidden-end-date" value="22.11.2015" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="content_account_item">
-                <div class="input-content">
-                  <label for="input1">
-                    <p class="content_account_item_title text_bold">
-                      Поставщик:
-                    </p>
-                    <input
-                      name="input1"
-                      type="text"
-                      class="input-main text_semibold"
-                      placeholder="Введите название поставщика"
-                      required
-                    />
-                  </label>
-                  <label for="input2" class="faktura-label">
-                    <p class="content_account_item_title text_bold">
-                      Покупатель:
-                    </p>
-                    <input
-                      name="input2"
-                      type="text"
-                      class="input-main text_semibold"
-                      placeholder="Введите название покупателя"
-                      required
-                    />
-                  </label>
-                </div>
-              </div>
-              <button type="submit" class="gradient_btn sbmt-btn">
-                Сформировать
-              </button>
-            </div>
+           
             <div class="text_content">
               <div class="text_content">
-                <p class="text_bold title_table">
-                  Счета-фактуры за период с <span class="text_bold title_table">16.10.2024 </span class="text_bold title_table"> по <span>17.10.2024</span по счёту
-                  211.000002:
-                </p>
               </div>
             </div>
-            <div class="table-container">
-              <ul class="grid-table">
-                <li
-                  class="grid-row grid-main grid_account grid-head faktura-table-colored"
-                >
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold">Дата платежа</p> 
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">ИНН поставщика</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">КПП поставщика</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold onlypc">Наименование поставщика</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">ИНН покупателя</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">КПП покупателя</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold onlypc">Наименование покупателя</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold pc-tablet">Номер счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold onlypc">Дата счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold">Сумма счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">Сумма НДС</p>
-                <p class="grid-cell grid-cell-faktura grid_colored  text_bold hidden">Состояние заявки на СЧФ (если есть)</p>
-                  <p
-                    data-not-count="true"
-                    class="grid-cell grid-cell-faktura grid_colored text_bold  grid_colored-last "
-                  ></p>
-                </li>
-                <li
-                  class="grid-row grid-main grid_account grid_account-faktura"
-                >
-                <p class="grid-cell grid-cell-faktura  text_semibold">Дата платежа</p> 
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">ИНН поставщика</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">КПП поставщика</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold onlypc">Наименование поставщика</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">ИНН покупателя</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">КПП покупателя</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold onlypc">Наименование покупателя</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold pc-tablet">Номер счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold onlypc">Дата счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold">Сумма счёта-фактуры и накладной</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">Сумма НДС</p>
-                <p class="grid-cell grid-cell-faktura  text_semibold hidden">Состояние заявки на СЧФ (если есть)</p>
-                  <p
-                    class="grid-cell grid-cell-faktura text_semibold  show_more-btn"
-                  >
-                    ...
-                  </p>
-                </li>
-                
-              </ul>
-              <div class="grid_btns vipiska_btns-container">
-                <div class="grid_btns vipiska_btns-nav">
-                  <a href="#" class="grid-btn active">1</a>
-                  <a href="#" class="grid-btn ">2</a>
-                  <a href="#" class="grid-btn">3</a>
-                  <a href="#0" class="grid-btn more"></a>
-                </div>
-                <div class="help_btns-container vipiska_btns">
-                  <button class="help_btn">Печать</button>
-                  <button class="help_btn">Экспорт в Excel</button>
-                </div>
+            <div id="statementArea" class="wideTableContainer-archive rekviziti">
+                <table id="statement" class="reference-archive table-archive">
+                  <tbody class="grid-archive">
+                    <tr class="grid-archive ">
+                      <th class="grid_colored archive-title-th text_bold">Дата документа</th>
+                      <th class="grid_colored archive-title-th text_bold pc-tablet">Номер</th>
+                      <th class="grid_colored archive-title-th text_bold pc-tablet">Название документа</th>
+                      <th class="grid_colored archive-title-th text_bold grid_colored archive-title-th-last-pc ">Скачать/посмотреть файл</th>
+                    </tr>
+                    <tr class="pointered">
+                        <td class="text_semibold">Дата документа</td>
+                        <td class="text_semibold pc-tablet">Номер</td>
+                        <td class="text_semibold pc-tablet">Название документа</td>
+                        <td class="text_semibold">
+                          <a class="download-link" href="/IdentificationPay/View/57">
+                            <svg class="dwnload-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.9974 1.66406C5.3974 1.66406 1.66406 5.3974 1.66406 9.9974C1.66406 14.5974 5.3974 18.3307 9.9974 18.3307C14.5974 18.3307 18.3307 14.5974 18.3307 9.9974C18.3307 5.3974 14.5974 1.66406 9.9974 1.66406ZM12.9391 10.8557L10.4391 13.3557C10.3141 13.4807 10.1557 13.5391 9.9974 13.5391C9.83906 13.5391 9.68073 13.4807 9.55573 13.3557L7.05573 10.8557C6.81406 10.6141 6.81406 10.2141 7.05573 9.9724C7.2974 9.73073 7.6974 9.73073 7.93906 9.9724L9.3724 11.4057V7.08073C9.3724 6.73906 9.65573 6.45573 9.9974 6.45573C10.3391 6.45573 10.6224 6.73906 10.6224 7.08073V11.4057L12.0557 9.9724C12.2974 9.73073 12.6974 9.73073 12.9391 9.9724C13.1807 10.2141 13.1807 10.6141 12.9391 10.8557Z" fill="#CBD2F2"/>
+                            </svg></a>
+                        </td>
+                      </tr>
+                      <tr class="pointered">
+                        <td class="text_semibold">Дата документа</td>
+                        <td class="text_semibold pc-tablet">Номер</td>
+                        <td class="text_semibold pc-tablet">Название документа</td>
+                        <td class="text_semibold">
+                          <a class="download-link" href="/IdentificationPay/View/57">
+                            <svg class="dwnload-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.9974 1.66406C5.3974 1.66406 1.66406 5.3974 1.66406 9.9974C1.66406 14.5974 5.3974 18.3307 9.9974 18.3307C14.5974 18.3307 18.3307 14.5974 18.3307 9.9974C18.3307 5.3974 14.5974 1.66406 9.9974 1.66406ZM12.9391 10.8557L10.4391 13.3557C10.3141 13.4807 10.1557 13.5391 9.9974 13.5391C9.83906 13.5391 9.68073 13.4807 9.55573 13.3557L7.05573 10.8557C6.81406 10.6141 6.81406 10.2141 7.05573 9.9724C7.2974 9.73073 7.6974 9.73073 7.93906 9.9724L9.3724 11.4057V7.08073C9.3724 6.73906 9.65573 6.45573 9.9974 6.45573C10.3391 6.45573 10.6224 6.73906 10.6224 7.08073V11.4057L12.0557 9.9724C12.2974 9.73073 12.6974 9.73073 12.9391 9.9724C13.1807 10.2141 13.1807 10.6141 12.9391 10.8557Z" fill="#CBD2F2"/>
+                            </svg></a>
+                        </td>
+                      </tr>
+                      <tr class="pointered">
+                        <td class="text_semibold">Дата документа</td>
+                        <td class="text_semibold pc-tablet">Номер</td>
+                        <td class="text_semibold pc-tablet">Название документа</td>
+                        <td class="text_semibold">
+                          <a class="download-link" href="/IdentificationPay/View/57">
+                            <svg class="dwnload-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.9974 1.66406C5.3974 1.66406 1.66406 5.3974 1.66406 9.9974C1.66406 14.5974 5.3974 18.3307 9.9974 18.3307C14.5974 18.3307 18.3307 14.5974 18.3307 9.9974C18.3307 5.3974 14.5974 1.66406 9.9974 1.66406ZM12.9391 10.8557L10.4391 13.3557C10.3141 13.4807 10.1557 13.5391 9.9974 13.5391C9.83906 13.5391 9.68073 13.4807 9.55573 13.3557L7.05573 10.8557C6.81406 10.6141 6.81406 10.2141 7.05573 9.9724C7.2974 9.73073 7.6974 9.73073 7.93906 9.9724L9.3724 11.4057V7.08073C9.3724 6.73906 9.65573 6.45573 9.9974 6.45573C10.3391 6.45573 10.6224 6.73906 10.6224 7.08073V11.4057L12.0557 9.9724C12.2974 9.73073 12.6974 9.73073 12.9391 9.9724C13.1807 10.2141 13.1807 10.6141 12.9391 10.8557Z" fill="#CBD2F2"/>
+                            </svg></a>
+                        </td>
+                      </tr>
+                     
+                  </tbody>
+                </table>
               </div>
-              <div
-                id="popup"
-                class="popup-container_vipiska"
-                style="display: none"
-              >
-                <div class="popup-content_vipiska">
-                  <div class="popup-title-main-vipiska">
-                    <h2 class="main_title">Документ №123</h2>
-                    <span id="popup-close_vipiska" class="popup-close"
-                      >&times;</span
-                    >
-                  </div>
-                  <!-- Динамически заполняемый контент -->
-                  <div id="popup-data_vipiska">
-                    <!-- Здесь будут отображаться поля и значения -->
-                  </div>
-                </div>
+              <div class="grid_btns rekviziti-btns">
+                <a href="#" class="grid-btn active">1</a>
+                <a href="#" class="grid-btn ">2</a>
+                <a href="#" class="grid-btn disabled-form-btn">3</a>
+                <a href="#0" class="grid-btn more "></a>
               </div>
-            </div>
             </form>
           </div>
         </div>
       </div>
     </main>
   </body>
-  <script src="../js/input-copy.js"></script>
   <script src="../js/scrooll.js"></script>
   <script src="../js/calendar.js"></script>
   <script src="../js/popupTablets.js"></script>
