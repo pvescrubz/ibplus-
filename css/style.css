@@ -122,14 +122,15 @@ background: var(--green-1);
   background: var(--white);
   border-radius: 20px;
   text-align: center;
-  max-height: 100%;
+  height: 100%;
   padding: 7px 15px;
-  margin-top: 63px;
+  margin-top: 75px;
 }
 
 .input_text-area {
   position: relative;
   display: block;
+  width: 100%;
   padding-left: 20px;
 }
 
@@ -1733,6 +1734,7 @@ body.no-scroll {
 
 .flex-container {
   display: flex;
+  align-items: center;
   gap: 25px;
 }
 
@@ -1926,11 +1928,38 @@ background: var(--white);
   left: 50%;
   transform: translate(-50%,-50%);
 }
+
+.platej-btns {
+  display: flex;
+  flex-direction: column;
+  
+}
+.btns-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.platej-btn {
+  max-width: 300px;
+  background-color: var(--accent-color);
+  width: 100%;
+}
 @media screen and (max-width: 1300px) {
   .nav_menu_item {
     padding: 5px 10px;
   }
+  .btns-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
   
+  .main_screen {
+    flex-direction: column !important;
+    padding-bottom: 100px !important;
+  }
 
   .change-password-container {
     flex-direction: column;
@@ -2573,10 +2602,7 @@ padding: 10px 10px;
       display: flex;
       flex-direction: column;
     }
-    .main_screen {
-      flex-direction: column;
-      padding-bottom: 100px;
-    }
+
   
     .news_container {
       max-width: 100%;
@@ -2826,7 +2852,7 @@ padding: 10px 10px;
   
     .show_more_nav {
       position: fixed;
-      top: -1500px;
+      top: -3500px;
       left: 0;
       display: flex;
       gap: 30px;
@@ -3136,6 +3162,82 @@ padding: 10px 10px;
 
     .left-mail_reglaments {
       display: none;
+    }
+    .info-text {
+      font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+text-align: right;
+color: var(--grey);
+bottom: -45px;
+    }
+
+    .platej_content1 {
+      padding: 15px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+      padding: 10px 0 30px 0;
+    }
+
+    .platej-input-content {
+      display: flex;
+    }
+    .plateji-form {
+      background-color: unset;
+      box-shadow: unset;
+    }
+
+    .platej-choice-btn {
+      display: block;
+      width: 60%;
+      font-family: var(--font-family);
+font-weight: 600;
+font-size: 14px;
+line-height: 171%;
+text-align: center;
+color: var(--white);
+padding: 10px 25px;
+height: 40px;
+margin: 0 auto;
+    }
+    .second-title {
+       grid-column: span 2; /* Занимает обе колонки */
+    text-align: center; 
+    background: var(--bg);
+    border-radius: 15px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 14px;
+line-height: 171%;
+text-transform: uppercase;
+color: var(--black);
+    }
+    .platej-choice-btn.gray {
+      background: var(--purple-2) !important;
+    }
+    .form_content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .patej-title {
+      font-family: var(--font-family);
+font-weight: 700;
+font-size: 16px;
+line-height: 150%;
+color: var(--black);
+background: var(--purple-1);
+text-align: center;
+padding: 20px 30px;
+margin: 10px auto;
+border-radius: 15px;
+max-width: 90%;
+
     }
   @media screen and (max-width: 1300px) and (min-width: 768px) {
 
