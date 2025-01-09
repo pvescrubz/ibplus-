@@ -806,8 +806,11 @@ html {
   background-color: var(--purple-3);
 }
 
+
+
 .grid_colored {
   background: var(--purple-1);
+  border: none;
 }
 
 
@@ -815,6 +818,8 @@ html {
 .archive-title-th {
   padding: 20px 5px 20px 5px;
 }
+
+
 
 .grid_colored-last-pc {
   border-top-right-radius: 10px;
