@@ -1150,6 +1150,10 @@ input[type="radio"] {
   vertical-align: middle; /* Вертикальное выравнивание */
 }
 
+td.pointer {
+  word-break: keep-all;
+}
+
 /* Для кастомных элементов, например, радио-кнопок, если нужно */
 .radio_container1 {
   display: table-cell;
@@ -1465,6 +1469,7 @@ td.pc-tablet {
 .popup-descr-vipiska {
   font-family: var(--font-family);
   font-weight: 600;
+  word-break: break-all;
   font-size: 14px;
   line-height: 171%;
   color: var(--black);
@@ -2596,6 +2601,9 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+  .add-remove-btns_container {
+    flex-direction: column;
+  }
   .popup-container_vipiska {
     display: block;
   }
@@ -3028,6 +3036,8 @@ td {
   text-align: center;
   min-height: 35px;
   word-break: break-word;
+  max-width: 250px;
+  cursor: pointer;
 }
 
 table {
@@ -3215,7 +3225,7 @@ table {
   padding: 20px 30px;
   margin: 10px auto;
   border-radius: 15px;
-  max-width: 90%;
+  width: 90%;
 }
 
 .faktura-content-title-container {
@@ -3280,6 +3290,19 @@ table {
   margin-bottom: 8px;
 }
 
+.add-remove-btns_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.add-remove-btn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
