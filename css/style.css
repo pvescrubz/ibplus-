@@ -1566,6 +1566,38 @@ body.no-scroll {
   animation: fadeIn 0.3s ease;
 }
 
+.mediumParagraph > ul {
+display: flex;
+padding: 0;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+gap: 20px;
+}
+.mediumParagraph › ul › li {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+.mediumParagraph › ul › li › .label {
+display: flex;
+flex-direction: column;
+gap: 5px;
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+color: var(--black);
+}
+.buttonArea > .paragraph {
+display: flex;
+flex-direction: row;
+gap: 10px;
+justify-content: center;
+}
+ .dialog-file {
+max-width: 500px;
+ }
 /* Анимация появления */
 @keyframes fadeIn {
   from {
