@@ -1132,11 +1132,23 @@ input[type="radio"] {
 
 /* Для всей строки tr */
 .pointered {
+  position: relative;
   text-align: center; /* Горизонтальное выравнивание */
   vertical-align: middle; /* Вертикальное выравнивание */
   height: 30px;
-  border-bottom: 7px solid transparent;
-  border-top: 7px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
+.pointered:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 97%;
+  height: 1px;
+  background-color: var(--light-grey);
 }
 .emtpy-tr {
   position: relative;
@@ -1363,7 +1375,7 @@ textarea {
     rgba(0, 0, 0, 0.6);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 171%;
   text-align: center;
   cursor: pointer;
@@ -1848,6 +1860,7 @@ input::placeholder {
 
 .pointer {
   cursor: pointer;
+  font-size: 25px;
 }
 .news_btns {
   background-color: inherit !important;
@@ -2344,10 +2357,7 @@ label {
     margin: 0 auto 10px auto;
   }
 
-  .last-documents-container {
-    margin-bottom: 100px;
-    width: 100%;
-  }
+
 
   .input_text-area {
     padding-left: 15px;
@@ -3069,6 +3079,11 @@ tr {
   outline: none;
 }
 
+th {
+  padding: 0 10px;
+  vertical-align: text-top;
+  max-width: 350px;
+}
 td {
   text-align: center;
   min-height: 35px;
@@ -3364,6 +3379,15 @@ table {
   .platej-dropdown {
     justify-content: flex-start !important;
   }
+
+}
+
+@media screen and (max-width: 1350px) {
+  .last-documents-container {
+    margin-bottom: 100px;
+    width: 100%;
+  }
+  
 }
 @media screen and (max-width: 1300px) and (min-width: 768px) {
   .documents-last-item {

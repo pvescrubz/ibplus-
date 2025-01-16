@@ -623,60 +623,60 @@
               </label>
               <p class="patej-title">Список получателей</p>
               <div id="statementArea" class="wideTableContainer-archive">
-                <table id="statement" class="reference-archive table-archive">
+                <table id="statement" class="reference-archive table-archive double-header-table">
                   <tbody class="grid-archive">
-                    <tr class="grid-archive ">
+                    <tr class="grid-archive">
                       <th class="text_bold grid_colored">Физлицо</th>
-                      <th class="grid_colored archive-title-th text_bold ">Номер карты</th>
+                      <th class="grid_colored archive-title-th text_bold pc-tablet">Номер карты</th>
                       <th class="grid_colored archive-title-th text_bold">Сумма</th>
-                      <th class="grid_colored archive-title-th text_bold "></th>
-                      <th class="grid_colored archive-title-th text_bold">Максимум</th>
-                      <th class="grid_colored archive-title-th text_bold"></th>
+                      <th class="grid_colored archive-title-th text_bold onlypc"></th>
+                      <th class="grid_colored archive-title-th text_bold onlypc">Максимум</th>
+                      <th class="grid_colored archive-title-th text_bold onlypc"></th>
                       <th class="grid_colored archive-title-th text_bold"></th>
                     </tr>
-                        <tr class="grid-archive">
-                            <th class="archive-title-th text_bold"></th>
-                            <th class="archive-title-th text_bold"></th>
-                            <th class="archive-title-th text_bold"></th>
-                            <th class="archive-title-th text_bold">За период 7 дней</th>
-                            <th class="archive-title-th text_bold">в день</th>
-                            <th class="archive-title-th text_bold">в день по номеру моб. тел.</th>
-                          </tr>
-                          <tr class="grid-archive ">
-                            <th class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</th>
-                            <th class="text_semibold">1234 5674 1211 1111</th>
-                            <th class="text_semibold">777777.00</th>
-                            <th class="text_semibold">149 000,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold"></th>
-                          </tr>
-                          <tr class="grid-archive ">
-                            <th class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</th>
-                            <th class="text_semibold">1234 5674 1211 1111</th>
-                            <th class="text_semibold">777777.00</th>
-                            <th class="text_semibold">149 000,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold"></th>
-                          </tr>
-                          <tr class="grid-archive ">
-                            <th class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</th>
-                            <th class="text_semibold">1234 5674 1211 1111</th>
-                            <th class="text_semibold">777777.00</th>
-                            <th class="text_semibold">149 000,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold">59 900,00</th>
-                            <th class="text_semibold"></th>
-                          </tr>
+                    <tr class="grid-archive">
+                      <th class="archive-title-th text_bold"></th>
+                      <th class="archive-title-th text_bold"></th>
+                      <th class="archive-title-th text_bold"></th>
+                      <th class="archive-title-th text_bold onlypc">За период 7 дней</th>
+                      <th class="archive-title-th text_bold onlypc">в день</th>
+                      <th class="archive-title-th text_bold onlypc">в день по номеру моб. тел.</th>
+                    </tr>
+                    <tr class="pointered">
+                      <td class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
+                      <td class="text_semibold pc-tablet">1234 5674 1211 1111</td>
+                      <td class="text_semibold">777777.00</td>
+                      <td class="text_semibold onlypc">149 000,00</td>
+                      <td class="text_semibold onlypc">59 900,00</td>
+                      <td class="text_semibold onlypc">59 900,00</td>
+                      <td class="text_semibold tablet-mobile pointer">...</td>
+                    </tr>
+                    <tr class="pointered">
+                      <td class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
+                      <td class="text_semibold pc-tablet">1234 5674 1211 1111</td>
+                      <td class="text_semibold">777777.00</td>
+                      <td class="text_semibold onlypc">149 000,00</td>
+                      <td class="text_semibold onlypc">59 900,00</td>
+                      <td class="text_semibold onlypc">59 900,00</td>
+                      <td class="text_semibold tablet-mobile pointer">...</td>
+                    </tr>
                   </tbody>
                 </table>
+                
+                <div id="popup" class="popup-container_vipiska" style="display: none;">
+                  <div class="popup-content_vipiska">
+                    
+                     <div class="popup-title-main-vipiska">
+                      <h2 class="main_title">Документ №123</h2>
+                      <span id="popup-close_vipiska" class="popup-close">&times;</span>
+                     </div>
+                    <!-- Динамически заполняемый контент -->
+                    <div id="popup-data_vipiska">
+                      <!-- Здесь будут отображаться поля и значения -->
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-
-
-
-
             <div class="grid_btns archive_btns-container">
                 <div class="grid_btns vipiska_btns-nav">
                   <a href="#" class="grid-btn active">1</a>
@@ -696,12 +696,27 @@
                   <button class="help_btn opoznanie-help-btn">Очистить</button>
                 </div>
               </div>
+              
             </form>
           </div>
-          <div class="last-documents-container">
-            <p class="last-documents-title">ПОСЛЕДНИЕ ДОКУМЕНТЫ</p>
-            <p class="last-documents-text">Не введено ни одного платежа</p>
-            <a href="#0" class="last-documents-link">Список документов</a>
+          
+        </div>
+        <div class="last-documents-container">
+          <p class="last-documents-title">ПОСЛЕДНИЕ ДОКУМЕНТЫ</p>
+          <p class="last-documents-text">Не введено ни одного платежа</p>
+          <a href="#0" class="last-documents-link">Список документов</a>
+        </div>
+      </div>
+      <div id="popup" class="popup-container_vipiska" style="display: none;">
+        <div class="popup-content_vipiska">
+          
+           <div class="popup-title-main-vipiska">
+            <h2 class="main_title">Документ №123</h2>
+            <span id="popup-close_vipiska" class="popup-close">&times;</span>
+           </div>
+          <!-- Динамически заполняемый контент -->
+          <div id="popup-data_vipiska">
+            <!-- Здесь будут отображаться поля и значения -->
           </div>
         </div>
       </div>

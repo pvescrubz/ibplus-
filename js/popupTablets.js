@@ -11,6 +11,66 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Скрипт для таблицы с <tr> и <td>.
    */
+
+  function handleDoubleHeaderRows() {
+    const doubleHeaderTables = document.querySelectorAll('.double-header-table .pointered');
+
+    doubleHeaderTables.forEach(row => {
+      row.addEventListener('click', () => {
+        // Получаем заголовки из двух строк
+        const firstHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(1) th');
+        const secondHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(2) th');
+
+        // Объединяем заголовки из двух строк
+        const headers = Array.from(firstHeaderRow).map(th => th.textContent.trim())
+          .concat(Array.from(secondHeaderRow).map(th => th.textContent.trim()));
+
+        // Получаем все ячейки, исключая ячейки с классом 'pointer' и 'tablet-mobile'
+        const dataCells = Array.from(row.querySelectorAll('td')).filter(cell =>
+          !cell.classList.contains('pointer') &&
+          !cell.classList.contains('tablet-mobile')
+        );
+
+        // Очищаем попап перед заполнением
+        popupData.innerHTML = '';
+
+        // Заполняем попап данными
+        dataCells.forEach((cell, index) => {
+          const header = headers[index] || `Колонка ${index + 1}`;
+          const value = extractCellValue(cell);
+
+          if (header && value) {
+            const field = document.createElement('div');
+            field.classList.add('popup-item_vipiska');
+            field.innerHTML = `<p class="popup-title">${header}:</p> <span class="popup-descr-vipiska">${value}</span>`;
+            popupData.appendChild(field);
+          }
+        });
+
+        // Показываем попап
+        popup.style.display = 'flex';
+        document.body.classList.add('no-scroll');
+      });
+    });
+  }
+
+  /**
+   * Вспомогательная функция для извлечения значения из ячейки
+   */
+  function extractCellValue(cell) {
+    if (cell.querySelector('img')) {
+      return cell.querySelector('img').getAttribute('title') || '';
+    } else if (cell.querySelector('a')) {
+      return cell.querySelector('a').textContent.trim();
+    } else {
+      return cell.textContent.trim();
+    }
+  }
+
+  // Инициализируем обработку таблиц с двойными заголовками
+  if (document.querySelector('.double-header-table')) {
+    handleDoubleHeaderRows();
+  }
   function handleTableRows() {
     
     const tablePointerRows = document.querySelectorAll('.pointer'); // Строки таблицы с классом 'pointer'
@@ -114,16 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
   if (document.querySelector('.grid-archive')) {
-
     handleTableRows();
   }
   if (document.querySelector('.grid-table')) {
     handleDivRows();
   }
 
-
-
-  
   // Закрытие попапа
   popupClose.addEventListener('click', () => {
     popup.style.display = 'none';
