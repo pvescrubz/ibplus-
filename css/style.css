@@ -145,6 +145,7 @@
   background-color: white;
   justify-content: flex-end;
   gap: 10px;
+  align-items: stretch;
 }
 
 .text_gray {
@@ -1825,8 +1826,6 @@ input {
 .archive-right-content {
   display: flex;
 }
-input::placeholder {
-}
 
 .opoznanie-archive-container {
   display: flex;
@@ -3355,6 +3354,12 @@ table {
   align-items: center;
   margin-bottom: 15px;
 }
+
+.note-counter {
+  margin: 0 auto;
+}
+
+
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
