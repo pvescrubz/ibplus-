@@ -1122,9 +1122,13 @@ input[type="radio"] {
   padding-left: 30px; /* Пространство для кастомной кнопки */
 }
 
+.group-radio {
+  max-width: 100px;
+}
 .visible-radio {
   display: block !important;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .radio_container1 {
@@ -1159,7 +1163,7 @@ input[type="radio"] {
 }
 
 .active-row {
-  background-color: var(--purple-4);
+  background-color: #e1e5f7;
 }
 
 /* Для каждой ячейки td внутри строки */
@@ -2631,7 +2635,6 @@ label {
 
   .faktura-table-colored {
     align-items: center;
-
     grid-template-columns: repeat(4, 1fr) !important;
     padding: 12px;
     border-bottom: 1px solid #e7e9ef;
@@ -2652,6 +2655,15 @@ label {
   }
   .popup-container_vipiska {
     display: block;
+  }
+
+  .group-page-content  {
+    margin-bottom: 40px;
+  }
+  .error-group {
+    left: 50%;
+    bottom: -45px;
+    transform: translate(-50%,0);
   }
 
   .info-text-edit  {
@@ -3359,7 +3371,42 @@ table {
   margin: 0 auto;
 }
 
+.group-radio {
+  width: 100px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.group-radio input {
+  margin: 0 !important;
+  width: 100px;
+}
 
+.group-name {
+  text-align: left !important;
+  margin: 0 !important;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--black);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.group-pointered {
+  position: relative;
+  border-bottom: 25px solid transparent;
+  border-top: 25px solid transparent; 
+}
+
+
+
+.group-page-content {
+  position: relative;
+}
+.group-pointered:not(:last-child)::after {
+  bottom: -21px;
+}
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
