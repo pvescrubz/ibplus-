@@ -2667,6 +2667,30 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+
+  .grid-signature {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .signature-item {
+    width: 100% !important;
+  }
+  .signature {
+    margin: 30px auto 20px auto !important;
+  }
+  .colored-grid {
+    flex-direction: column !important;
+  }
+  .non-colored-grid {
+    flex-direction: column !important;
+  }
+  .card-colored {
+    width: 100% !important;
+  }
+  .card-non-colored {
+    width: 100% !important;
+  }
   .add-remove-btns_container {
     flex-direction: column;
   }
@@ -3426,8 +3450,115 @@ table {
   bottom: -21px;
 }
 
-.invisible {
-  color: transparent;
+.watch-title {
+  justify-content: center;
+  background-color: var(--purple-1);
+  padding: 30px 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.colored-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+.non-colored-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  width: 100%;
+  gap: 20px;
+}
+.card-colored {
+  word-break: break-all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--superlight-purple);
+  padding: 15px 10px;
+  width: calc(33% - 20px);
+}
+
+.card-non-colored {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  width: calc(33% - 20px);
+  word-break: break-all;
+}
+.with-border {
+  position: relative;
+}
+.title-split-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  padding: 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+.grid-signature {
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.signature-item {
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  text-align: center; 
+  padding: 10px;
+  box-sizing: border-box; 
+  width: 30%;
+}
+
+.signature {
+  margin: 10px auto 20px auto;
+  display: block;
+  width: 60%;
+  height: 1px;
+    background-color: var(--light-grey);
+}
+
+.signature:last-child {
+  margin-top: auto;
+}
+
+.bank-marks {
+  margin-top: auto;
+  padding: 10px 0 0 10px;
+  border-radius: 15px;
+  background: var(--superlight-purple);
+}
+.title-split-container p {
+  margin: 0;
+  line-height: 170%;
+}
+
+.title-split {
+  text-align: center;
+  padding: 10px 10px;
+}
+.with-border::after {
+  display: block;
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  width: 90%;
+  height: 1px;
+  left: 50%;
+  transform: translate(-50%,0);
+  background-color: lightgray;
+  margin: 0 auto;
 }
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
@@ -3440,8 +3571,12 @@ table {
     flex-direction: column;
     gap: 15px;
   }
+  .svg_title {
+    display: none;
+}
 }
 @media screen and (max-width:1300px) {
+
   .onlypc {
     display: none;
   }

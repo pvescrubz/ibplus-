@@ -55,12 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } 
           const value = extractCellValue(cell);
 
-     // Условие для изменения названия колонок
-     if (header === 'Колонка 4') {
-      header = 'За период 7 дней';
-    } else if (header === 'Колонка 6') {
-      header = 'В день по номеру моб. телефона';
-    }
+
 
 
           if (header && value) {
