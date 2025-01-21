@@ -536,7 +536,7 @@
           <div class="content_left">
             <div class="title_container">
               <h2 class="main_title">
-                Справочник БИК</h2>
+                Справочник Групп</h2>
               <svg
                 class="svg_title"
                 width="26"
@@ -554,85 +554,58 @@
             <form class="content_left opoznanie-left">
               <div class="form_content">
                 <div class="opoznanie-archive-container">
-                    <label for="input2 " class="money-label">
+                    <div class="news_content-single-page group-page-content">
                         <p class="input-title text_bold">
-                            БИК:
+                            Наименование:
                           </p>
-                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Введите БИК" required="">
-                        <p class="error-data">
-                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                        </p>
-                      </label>
-                      <label for="input2 " class="money-label">
-                        <p class="input-title text_bold">
-                           Наименование:
+                          <input name="input2" id="input2" type="text" class="input-main text_semibold " placeholder="Введите наименование" required="">
+                          <p class="error-data error-group">
+                            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                           </p>
-                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Введите наименование" required="">
-                        <p class="error-data">
-                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                        </p>
-                      </label>
-                      <button class="gradient_btn archive-platej-btn">Искать</button>
-
+                        <button class="gradient_btn news_single-btn">Добавить</button>
+                    </div>
                 </div>
-
                 <div id="statementArea" class="wideTableContainer-archive">
                   <table id="statement" class="reference-archive table-archive">
                     <tbody class="grid-archive">
-                      <tr class="grid-archive">
-                        <th class="grid_colored archive-title-th text_bold "></th>
-                        <th class="grid_colored archive-title-th text_bold ">БИК</th>
-                        <th class="grid_colored archive-title-th text_bold">Наименование банка</th>
-                        <th class="grid_colored archive-title-th text_bold ">Корреспондетский счёт</th>
-                        <th class="grid_colored archive-title-th text_bold"></th>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                      <td class="radio_container1 ">
-                        <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
-                      </td>
-                        <td class="text_semibold">1</td>
-                        <td class="text_semibold ">2</td>
-                        <td class="text_semibold">3
-                        </td>
-                      </tr>
-                      <tr
-                        class="pointered"
-                      >
-                      <td class="radio_container1 ">
-                        <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
-                      </td>
-                        <td class="text_semibold">1</td>
-                        <td class="text_semibold ">2</td>
-                        <td class="text_semibold">3
-                        </td>
-                      </tr>
+                        <tr class="pointered group-pointered">
+                            <td class="radio_container1 group-radio">
+                              <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
+                            </td>
+                              <td class="group-name">Название группы</td>
+                              </td>
+                            </tr>
+                            <tr class="pointered group-pointered">
+                                <td class="radio_container1 group-radio">
+                                  <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
+                                </td>
+                                  <td class="group-name">Название группы</td>
+                                  </td>
+                                </tr>
+                                <tr class="pointered group-pointered">
+                                    <td class="radio_container1 group-radio">
+                                      <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
+                                    </td>
+                                      <td class="group-name">Название группы</td>
+                                      </td>
+                                    </tr>
                     </tbody>
                   </table>
                 </div>
 
-                <p class="note-counter text_semibold">
-                  0 / 0
-                </p>
-
+                
               </div>
 
-              <div class="spravochnik-bik">
-                <div class="spravochnik-bik_btns-item">
-                    <button class="gradient_btn news_single-btn">начало</button>
-                    <button class="gradient_btn news_single-btn">назад</button>
-                </div>
-                <div class="spravochnik-bik_btns-item ">
-                <button class="gradient_btn news_single-btn news-close-btn">Вставить</button>
-                <button class="gradient_btn news_single-btn news-close-btn">Отмена</button>
-                </div>
-
-                <div class="spravochnik-bik_btns-item">
-                    <button class="gradient_btn news_single-btn">вперед</button>
-                    <button class="gradient_btn news_single-btn">конец</button>
-                </div>
-            </div>
+              <div class="form-buttons">
+                <button type="submit" class="help_btn opoznanie-help-btn">
+                  Сохранить
+                </button>
+                <button class="help_btn opoznanie-help-btn disabled-form-btn">
+                  Копия
+                </button>
+                <button class="help_btn opoznanie-help-btn disabled-form-btn">Удалить</button>
+                <button class="help_btn opoznanie-help-btn">Закрыть</button>
+              </div>
             </form>
             
           </div>

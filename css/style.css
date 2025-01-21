@@ -145,6 +145,7 @@
   background-color: white;
   justify-content: flex-end;
   gap: 10px;
+  align-items: stretch;
 }
 
 .text_gray {
@@ -1121,9 +1122,13 @@ input[type="radio"] {
   padding-left: 30px; /* Пространство для кастомной кнопки */
 }
 
+.group-radio {
+  max-width: 100px;
+}
 .visible-radio {
   display: block !important;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .radio_container1 {
@@ -1132,11 +1137,23 @@ input[type="radio"] {
 
 /* Для всей строки tr */
 .pointered {
+  position: relative;
   text-align: center; /* Горизонтальное выравнивание */
   vertical-align: middle; /* Вертикальное выравнивание */
   height: 30px;
-  border-bottom: 7px solid transparent;
-  border-top: 7px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
+.pointered:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 97%;
+  height: 1px;
+  background-color: var(--light-grey);
 }
 .emtpy-tr {
   position: relative;
@@ -1146,7 +1163,7 @@ input[type="radio"] {
 }
 
 .active-row {
-  background-color: var(--purple-4);
+  background-color: #e1e5f7;
 }
 
 /* Для каждой ячейки td внутри строки */
@@ -1363,7 +1380,7 @@ textarea {
     rgba(0, 0, 0, 0.6);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 171%;
   text-align: center;
   cursor: pointer;
@@ -1813,8 +1830,6 @@ input {
 .archive-right-content {
   display: flex;
 }
-input::placeholder {
-}
 
 .opoznanie-archive-container {
   display: flex;
@@ -1848,6 +1863,7 @@ input::placeholder {
 
 .pointer {
   cursor: pointer;
+  font-size: 25px;
 }
 .news_btns {
   background-color: inherit !important;
@@ -2344,10 +2360,7 @@ label {
     margin: 0 auto 10px auto;
   }
 
-  .last-documents-container {
-    margin-bottom: 100px;
-    width: 100%;
-  }
+
 
   .input_text-area {
     padding-left: 15px;
@@ -2622,7 +2635,6 @@ label {
 
   .faktura-table-colored {
     align-items: center;
-
     grid-template-columns: repeat(4, 1fr) !important;
     padding: 12px;
     border-bottom: 1px solid #e7e9ef;
@@ -2643,6 +2655,15 @@ label {
   }
   .popup-container_vipiska {
     display: block;
+  }
+
+  .group-page-content  {
+    margin-bottom: 40px;
+  }
+  .error-group {
+    left: 50%;
+    bottom: -45px;
+    transform: translate(-50%,0);
   }
 
   .info-text-edit  {
@@ -3069,6 +3090,11 @@ tr {
   outline: none;
 }
 
+th {
+  padding: 0 10px;
+  vertical-align: text-top;
+  max-width: 350px;
+}
 td {
   text-align: center;
   min-height: 35px;
@@ -3340,6 +3366,47 @@ table {
   align-items: center;
   margin-bottom: 15px;
 }
+
+.note-counter {
+  margin: 0 auto;
+}
+
+.group-radio {
+  width: 100px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.group-radio input {
+  margin: 0 !important;
+  width: 100px;
+}
+
+.group-name {
+  text-align: left !important;
+  margin: 0 !important;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--black);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.group-pointered {
+  position: relative;
+  border-bottom: 25px solid transparent;
+  border-top: 25px solid transparent; 
+}
+
+
+
+.group-page-content {
+  position: relative;
+}
+.group-pointered:not(:last-child)::after {
+  bottom: -21px;
+}
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
@@ -3364,6 +3431,15 @@ table {
   .platej-dropdown {
     justify-content: flex-start !important;
   }
+
+}
+
+@media screen and (max-width: 1350px) {
+  .last-documents-container {
+    margin-bottom: 100px;
+    width: 100%;
+  }
+  
 }
 @media screen and (max-width: 1300px) and (min-width: 768px) {
   .documents-last-item {
