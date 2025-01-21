@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const doubleHeaderTables = document.querySelectorAll('.double-header-table .pointered');
 
     doubleHeaderTables.forEach(row => {
-      row.addEventListener('click', () => {
+      row.addEventListener('click', (event) => {
+        // Проверяем, что клик был на <td class="pointer">
+        if (!event.target.classList.contains('pointer')) {
+          return;
+        }
         // Получаем заголовки из двух строк
         const firstHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(1) th');
         const secondHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(2) th');
@@ -36,8 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Заполняем попап данными
         dataCells.forEach((cell, index) => {
-          const header = headers[index] || `Колонка ${index + 1}`;
+          let header;
+
+          if (index === 3) {
+            header = 'Максимум (за период 7 дней)';
+          } else if (index === 5) {
+            header = 'Максимум (В день по номеру моб. телефона)';
+          }
+          else if (index === 4) {
+            header = 'Максимум (В день)';
+          }
+          else {
+            header = headers[index] || `Колонка ${index + 1}`;
+          } 
           const value = extractCellValue(cell);
+
+     // Условие для изменения названия колонок
+     if (header === 'Колонка 4') {
+      header = 'За период 7 дней';
+    } else if (header === 'Колонка 6') {
+      header = 'В день по номеру моб. телефона';
+    }
+
 
           if (header && value) {
             const field = document.createElement('div');

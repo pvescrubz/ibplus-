@@ -790,8 +790,7 @@ html {
 .data-picker_title {
   margin: 0;
 }
-.faktura-date {
-}
+
 .grid-btn.more {
   background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
@@ -979,7 +978,8 @@ html {
 
 .archive-dropdown {
   top: 50px;
-  left: 93px;
+  /* left: 93px; */
+  left: 0;
 }
 
 .dropdown-content a {
@@ -1250,6 +1250,11 @@ input[type="radio"]:checked + .label_radio::after {
   border: none;
   text-align: center;
   padding: 10px 15px;
+  transition: all 0.3s linear;
+}
+
+.gradient_btn:hover {
+  background: linear-gradient(180deg, #716eff 0%, #425099 100%) !important;
 }
 
 textarea {
@@ -1376,8 +1381,7 @@ textarea {
 }
 
 .help_btn {
-  background: linear-gradient(180deg, #13182c 0%, #3432a1 100%),
-    rgba(0, 0, 0, 0.6);
+  background: linear-gradient(180deg, #13182c 0%, #040325 100%), rgba(0, 0, 0, 0.6);
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 12px;
@@ -1388,7 +1392,14 @@ textarea {
   border-radius: 40px;
   padding: 12px 24px;
   border: unset;
+  transition: background 0.3s linear;
 }
+
+.help_btn:hover {
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+  transition: background 0.3s linear;
+}
+
 
 .pc-tablet {
   display: block;
@@ -2250,8 +2261,12 @@ label {
 }
 
 .opoznanie-help-btn {
-  background: linear-gradient(180deg, #13182c 0%, #3432a1 100%),
-    rgba(0, 0, 0, 0.6);
+  transition: background 0.3s linear;
+  background: linear-gradient(180deg, #13182c 0%, #040325 100%), rgba(0, 0, 0, 0.6);
+}
+
+.opoznanie-help-btn:hover {
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
 }
 .content_account_item {
   display: flex;
@@ -2412,6 +2427,8 @@ label {
     width: 100%;
     margin-left: 0;
   }
+
+
 
   .content_account {
     max-width: 100%;
@@ -3286,7 +3303,7 @@ table {
   background: var(--purple-1);
   text-align: center;
   padding: 20px 30px;
-  margin: 10px auto;
+  margin: 20px auto;
   border-radius: 15px;
   width: 90%;
 }
@@ -3301,6 +3318,7 @@ table {
   cursor: pointer;
   width: 95%;
   margin: 0 auto;
+  cursor:default;
   border-radius: 15px;
 }
 
@@ -3406,6 +3424,10 @@ table {
 }
 .group-pointered:not(:last-child)::after {
   bottom: -21px;
+}
+
+.invisible {
+  color: transparent;
 }
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
