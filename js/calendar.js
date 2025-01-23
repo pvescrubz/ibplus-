@@ -353,7 +353,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeDates(); // Инициализация начальных данных.
   }
+  window.DatePicker = {
+    initializeAll: function () {
+      const datePickers = document.querySelectorAll(".date-picker");
+      datePickers.forEach((datePicker) => {
+        initializeCalendar(datePicker);
+      });
+      
+    }
 
+  };
   // Инициализация календарей для всех элементов с классом `date-picker`.
   const datePickers = document.querySelectorAll(".date-picker");
   datePickers.forEach((datePicker) => {
@@ -391,3 +400,5 @@ if (checkbox && needBlock) {
         }
     });
 } 
+
+
