@@ -3560,6 +3560,57 @@ table {
   background-color: lightgray;
   margin: 0 auto;
 }
+
+.text-container {
+  display: flex;
+  gap: 10px;
+}
+
+.accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 90% !important;
+  cursor: pointer;
+  padding: 10px 10px !important;
+  position: relative;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 5px 0 5px 0 ;
+}
+
+.active + .accordion-content {
+  max-height: 100px;
+  padding: 10px;
+}
+
+.accordion_content {
+  background-color: white;
+  padding: 15px 15px 5px 15px !important;
+}
+
+.accordion-svg-close {
+  display: none;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+:where(.dropdown-container button) {
+  display: block !important;
+  width: 150px !important;
+  margin-left: auto !important;
+}
+
+
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
