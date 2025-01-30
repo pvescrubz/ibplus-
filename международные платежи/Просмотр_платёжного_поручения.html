@@ -20,8 +20,7 @@
               <svg
                 class="tech_btn-svg"
                 width="28"
-                height="28"
-                te
+                height="28"te
                 viewBox="0 0 28 28"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -576,9 +575,9 @@
         </nav>
         <div class="content_main main_screen">
           <div class="content_left">
-            <div class="title_container">
-              <h2 class="main_title">
-                Добавление нового международного платёжного поручения
+            <div class="title_container watch-title">
+              <h2 class="main_title ">
+                Просмотр международного платёжного поручения
               </h2>
               <svg
                 class="svg_title"
@@ -597,731 +596,109 @@
             <form class="content_left opoznanie-left plateji-form">
               <div class="form_content">
                 <div class="platej_content1">
-                  <div class="opoznanie-main-container">
-                    <div class="text-container">
-                      <p class="input-title text_bold">Дата:</p>
-                      <p class="input-title text_semibold">Дата:</p>
-                    </div>
-                    <div class="platej-btns">
-                      <p class="input-title text_bold">
-                        Управление реквизитами:
-                      </p>
-                      <div class="btns-container">
-                        <button class="gradient_btn platej-btn">
-                          Загрузить
-                        </button>
-                        <button class="gradient_btn platej-btn">
-                          Сохранить
-                        </button>
-                      </div>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">Сумма:</p>
-                      <div class="flex-container">
-                        <label for="input2" class="money-label">
-                          <input
-                            name="input2"
-                            id="input2"
-                            type="text"
-                            class="input-main text_semibold"
-                            placeholder="Введите сумму"
-                            required=""
-                          />
-                          <p class="error-data">
-                            <span
-                              class="field-validation-error"
-                              data-valmsg-for="ContractorName"
-                              data-valmsg-replace="true"
-                              ><span
-                                for="ContractorName"
-                                generated="true"
-                                class=""
-                                >ошибка</span
-                              ></span
-                            >
-                          </p>
-                        </label>
-                        <div
-                          class="dropdown dropdown-money"
-                          data-target="select3"
-                        >
-                          <a class="dropdown-button text_semibold">
-                            <span class="dropdown-button_text text_semibold"
-                              >RUB</span
-                            >
-                          </a>
-                          <div class="dropdown-content">
-                            <a
-                              href="#USD"
-                              class="text_semibold"
-                              data-value="USD"
-                              >USD</a
-                            ><a
-                              href="#RUB"
-                              class="text_semibold"
-                              data-value="RUB"
-                              >RUB</a
-                            >
-                          </div>
-                        </div>
-                        <select id="select3" class="hidden-select" hidden="">
-                          <option value="USD">USD</option>
-                          <option value="RUB">RUB</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Дополнительные реквизиты:
-                      </p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите реквизиты"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                    <select id="select2" class="hidden-select" hidden="">
-                      <option value="Счет 1">Счет 1</option>
-                      <option value="Счет 2">Счет 2</option>
-                      <option value="Счет 3">Счет 3</option>
-                    </select>
-
-                    <div class="dropdown" data-target="select5">
-                      <p class="input-title text_bold">Срочность</p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >Normal</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#Normal"
-                          class="text_semibold"
-                          data-value="Normal"
-                          >Normal</a
-                        ><a href="#Нет" class="text_semibold" data-value="Нет"
-                          >Нет</a
-                        >
-                        
-                      </div>
-                      <p class="error-data">
-                        <span
-                          class="field-validation-error"
-                          data-valmsg-for="ContractorName"
-                          data-valmsg-replace="true"
-                          ><span for="ContractorName" generated="true" class=""
-                            >ошибка</span
-                          ></span
-                        >
-                      </p>
-                    </div>
-                    <select id="select5" class="hidden-select" hidden="">
-                      <option value="Normal">Normal</option>
-                      <option value="Нет">Нет</option>
-                    </select>
-                    <div class="dropdown" data-target="select4">
-                      <p class="input-title text_bold">
-                        Расходы иностранного банка оплачивает:
-                      </p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >Любой</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#Любой"
-                          class="text_semibold"
-                          data-value="Любой"
-                          >Любой</a
-                        ><a href="#Нет" class="text_semibold" data-value="Нет"
-                          >Нет</a
-                        >
-                      </div>
-                      <p class="error-data">
-                        <span
-                          class="field-validation-error"
-                          data-valmsg-for="ContractorName"
-                          data-valmsg-replace="true"
-                          ><span for="ContractorName" generated="true" class=""
-                            >ошибка</span
-                          ></span
-                        >
-                      </p>
-                    </div>
-                    <select id="select4" class="hidden-select" hidden="">
-                      <option value="Любой">Любой</option>
-                      <option value="Нет">Нет</option>
-                    </select>
-                    <div class="dropdown" data-target="select9">
-                      <p class="input-title text_bold">Счет списания</p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >Normal</span
-                        >
-                      </a>
-                      <p class="error-data">
-                        <span
-                          class="field-validation-error"
-                          data-valmsg-for="ContractorName"
-                          data-valmsg-replace="true"
-                          ><span for="ContractorName" generated="true" class=""
-                            >ошибка</span
-                          ></span
-                        >
-                      </p>
-                      <div class="dropdown-content">
-                        <a
-                          href="#Normal"
-                          class="text_semibold"
-                          data-value="Normal"
-                          >Normal</a
-                        ><a href="#Нет" class="text_semibold" data-value="Нет"
-                          >Нет</a
-                        >
-                      </div>
-                    </div>
-                    <select id="select9" class="hidden-select" hidden="">
-                      <option value="Normal">Normal</option>
-                      <option value="Нет">Нет</option>
-                    </select>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Желаемая фирма отправитель (если есть):
-                      </p>
-                      <div class="flex-container">
-                        <label for="input2 " class="money-label">
-                          <input
-                            name="input2"
-                            id="input2"
-                            type="text"
-                            class="input-main text_semibold"
-                            placeholder="Введите фирму"
-                            required=""
-                          />
-                          <p class="error-data">
-                            <span
-                              class="field-validation-error"
-                              data-valmsg-for="ContractorName"
-                              data-valmsg-replace="true"
-                              ><span
-                                for="ContractorName"
-                                generated="true"
-                                class=""
-                                >ошибка</span
-                              ></span
-                            >
-                          </p>
-                        </label>
-                        <div
-                          class="dropdown dropdown-money"
-                          data-target="select3"
-                        >
-                          <a class="dropdown-button text_semibold">
-                            <span class="dropdown-button_text text_semibold"
-                              >Нет</span
-                            >
-                          </a>
-                          <div class="dropdown-content">
-                            <a href="#Да" class="text_semibold" data-value="Да"
-                              >Да</a
-                            ><a
-                              href="#Нет"
-                              class="text_semibold"
-                              data-value="Нет"
-                              >Нет</a
-                            >
-                          </div>
-                        </div>
-                        <select id="select3" class="hidden-select" hidden="">
-                          <option value="Да">Да</option>
-                          <option value="Нет">Нет</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Назначение платежа:
-                      </p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите назначение платежа"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                    <div class="dropdown" data-target="select10">
-                      <p class="input-title text_bold">Вид деятельности:</p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >Любой</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#Любой"
-                          class="text_semibold"
-                          data-value="Любой"
-                          >Любой</a
-                        ><a href="#Нет" class="text_semibold" data-value="Нет"
-                          >Нет</a
-                        >
-                      </div>
-                      <p class="error-data">
-                        <span
-                          class="field-validation-error"
-                          data-valmsg-for="ContractorName"
-                          data-valmsg-replace="true"
-                          ><span for="ContractorName" generated="true" class=""
-                            >ошибка</span
-                          ></span
-                        >
-                      </p>
-                    </div>
-                    <select id="select10" class="hidden-select" hidden="">
-                      <option value="Любой">Любой</option>
-                      <option value="Нет">Нет</option>
-                    </select>
-                  </div>
+                    <ul class="non-colored-grid">
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Номер документа:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Дата:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Сумма:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Состояние:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Срочность:</p>
+                            <p class="field-text documents-last-item_text">08.06.2017	</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Счет списания:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Статус получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Получатель:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Страна получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Адрес получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Счет получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Код банка получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Банк получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Адрес банка:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Код банка посредника:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Банк посредник:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Адрес банка:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Счет банка получателя:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Назначение платежа:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Дополнительные реквизиты:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Расходы иностранного банка оплачивают:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Желаемая фирма отправитель:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                        <li class="card-non-colored">
+                            <p class="field-name documents-last-item_text-small">Вид деятельности:</p>
+                            <p class="field-text documents-last-item_text">Lorem Ipsum</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="accordion_content platej_content1">
-                  <div class="accordion-button second-title">
-                    <span class="accordion-icon"></span>
-                    <p class="text_bold">Получатель</p>
-                  </div>
-                  <div class="opoznanie-main-container accordion-content">
-                    <div class="dropdown" data-target="select11">
-                      <p class="input-title text_bold">Статус получателя:</p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >Юридическое лицо</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a
-                          href="#Юридическое лицо"
-                          class="text_semibold"
-                          data-value="Юридическое лицо"
-                          >Юридическое лицо</a
-                        ><a href="#Нет" class="text_semibold" data-value="Нет"
-                          >Нет</a
-                        >
-                        
-                      </div>
-                    </div>
-                    <select id="select11" class="hidden-select" hidden="">
-                      <option value="Юридическое лицо">Юридическое лицо</option>
-                      <option value="Нет">Нет</option>
-                    </select>
-                    <div class="dropdown" data-target="select12">
-                      <p class="input-title text_bold">Страна получателя:</p>
-                      <a class="dropdown-button text_semibold">
-                        <span class="dropdown-button_text text_semibold"
-                          >1</span
-                        >
-                      </a>
-                      <div class="dropdown-content">
-                        <a href="#1" class="text_semibold" data-value="1">1</a
-                        ><a href="#2" class="text_semibold" data-value="2">2</a>
-                      </div>
-                    </div>
-                    <select id="select12" class="hidden-select" hidden="">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
-
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">Получатель:</p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите получателя"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Адрес получателя:
-                      </p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите адрес"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Счет получателя:
-                      </p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите счет"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion_content platej_content1">
-                  <div class="accordion-button second-title">
-                    <span class="accordion-icon"></span>
-                    <p class="text_bold">Банк получатель</p>
-                  </div>
-                  <div class="opoznanie-main-container accordion-content">
-                    <div class="dropdown-container">
-                        <p class="data-picker_title text_bold">Код банка получателя:</p>
-                        <div class="flex-container">
-                          <label for="input2" class="money-label">
-                            <input
-                              name="input2"
-                              id="input2"
-                              type="text"
-                              class="input-main text_semibold"
-                              placeholder="Введите код"
-                              required=""
-                            />
-                            <p class="error-data">
-                              <span
-                                class="field-validation-error"
-                                data-valmsg-for="ContractorName"
-                                data-valmsg-replace="true"
-                                ><span
-                                  for="ContractorName"
-                                  generated="true"
-                                  class=""
-                                  >ошибка</span
-                                ></span
-                              >
-                            </p>
-                          </label>
-                          <div
-                            class="dropdown dropdown-money"
-                            data-target="select13"
-                          >
-                            <a class="dropdown-button text_semibold">
-                              <span class="dropdown-button_text text_semibold"
-                                >SWIFT</span
-                              >
-                            </a>
-                            <div class="dropdown-content">
-                              <a
-                                href="#SWIFT"
-                                class="text_semibold"
-                                data-value="SWIFT"
-                                >SWIFT</a
-                              ><a
-                                href="#2"
-                                class="text_semibold"
-                                data-value="2"
-                                >2</a
-                              >
-                            </div>
-                          </div>
-                          <select id="select13" class="hidden-select" hidden="">
-                            <option value="SWIFT">SWIFT</option>
-                            <option value="2">2</option>
-                          </select>
-                        </div>
-                      <button class="gradient_btn platej-btn">Поиск</button>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">Банк получателя:</p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите банк получателя"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                    <div class="opoznanie-input-container">
-                      <p class="data-picker_title text_bold">
-                        Адрес банка:
-                      </p>
-                      <label for="input2 " class="money-label">
-                        <input
-                          name="input2"
-                          id="input2"
-                          type="text"
-                          class="input-main text_semibold"
-                          placeholder="Введите адрес"
-                          required=""
-                        />
-                        <p class="error-data">
-                          <span
-                            class="field-validation-error"
-                            data-valmsg-for="ContractorName"
-                            data-valmsg-replace="true"
-                            ><span
-                              for="ContractorName"
-                              generated="true"
-                              class=""
-                              >ошибка</span
-                            ></span
-                          >
-                        </p>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion_content platej_content1">
-                    <div class="accordion-button second-title">
-                      <span class="accordion-icon"></span>
-                      <p class="text_bold">Банк посредник</p>
-                    </div>
-                    <div class="opoznanie-main-container accordion-content">
-                      <div class="dropdown-container">
-                          <p class="data-picker_title text_bold">Код банка получателя:</p>
-                          <div class="flex-container">
-                            <label for="input2" class="money-label">
-                              <input
-                                name="input2"
-                                id="input2"
-                                type="text"
-                                class="input-main text_semibold"
-                                placeholder="Введите код"
-                                required=""
-                              />
-                              <p class="error-data">
-                                <span
-                                  class="field-validation-error"
-                                  data-valmsg-for="ContractorName"
-                                  data-valmsg-replace="true"
-                                  ><span
-                                    for="ContractorName"
-                                    generated="true"
-                                    class=""
-                                    >ошибка</span
-                                  ></span
-                                >
-                              </p>
-                            </label>
-                            <div
-                              class="dropdown dropdown-money"
-                              data-target="select13"
-                            >
-                              <a class="dropdown-button text_semibold">
-                                <span class="dropdown-button_text text_semibold"
-                                  >SWIFT</span
-                                >
-                              </a>
-                              <div class="dropdown-content">
-                                <a
-                                  href="#SWIFT"
-                                  class="text_semibold"
-                                  data-value="SWIFT"
-                                  >SWIFT</a
-                                ><a
-                                  href="#2"
-                                  class="text_semibold"
-                                  data-value="2"
-                                  >2</a
-                                >
-                              </div>
-                            </div>
-                            <select id="select13" class="hidden-select" hidden="">
-                              <option value="SWIFT">SWIFT</option>
-                              <option value="2">2</option>
-                            </select>
-                          </div>
-                        <button class="gradient_btn platej-btn">Поиск</button>
-                      </div>
-                      <div class="opoznanie-input-container">
-                        <p class="data-picker_title text_bold">Счёт банка получателя в банке посреднике:</p>
-                        <label for="input2 " class="money-label">
-                          <input
-                            name="input2"
-                            id="input2"
-                            type="text"
-                            class="input-main text_semibold"
-                            placeholder="Укажите счет посредника в банке получателя"
-                            required=""
-                          />
-                          <p class="error-data">
-                            <span
-                              class="field-validation-error"
-                              data-valmsg-for="ContractorName"
-                              data-valmsg-replace="true"
-                              ><span
-                                for="ContractorName"
-                                generated="true"
-                                class=""
-                                >ошибка</span
-                              ></span
-                            >
-                          </p>
-                        </label>
-                      </div>
-                      <div class="opoznanie-input-container">
-                        <p class="data-picker_title text_bold">Банк посредник:</p>
-                        <label for="input2 " class="money-label">
-                          <input
-                            name="input2"
-                            id="input2"
-                            type="text"
-                            class="input-main text_semibold"
-                            placeholder="Банк посредник"
-                            required=""
-                          />
-                          <p class="error-data">
-                            <span
-                              class="field-validation-error"
-                              data-valmsg-for="ContractorName"
-                              data-valmsg-replace="true"
-                              ><span
-                                for="ContractorName"
-                                generated="true"
-                                class=""
-                                >ошибка</span
-                              ></span
-                            >
-                          </p>
-                        </label>
-                      </div>
-                      <div class="opoznanie-input-container">
-                        <p class="data-picker_title text_bold">
-                          Адрес банка:
-                        </p>
-                        <label for="input2 " class="money-label">
-                          <input
-                            name="input2"
-                            id="input2"
-                            type="text"
-                            class="input-main text_semibold"
-                            placeholder="Введите адрес"
-                            required=""
-                          />
-                          <p class="error-data">
-                            <span
-                              class="field-validation-error"
-                              data-valmsg-for="ContractorName"
-                              data-valmsg-replace="true"
-                              ><span
-                                for="ContractorName"
-                                generated="true"
-                                class=""
-                                >ошибка</span
-                              ></span
-                            >
-                          </p>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
               </div>
               <div class="form-buttons plateji-form-buttons">
-                <button type="submit" class="help_btn opoznanie-help-btn">
-                  Сохранить
-                </button>
-                <button class="help_btn opoznanie-help-btn">
-                  Передать в Банк
-                </button>
-                <button class="help_btn opoznanie-help-btn">Импорт</button>
-                <button class="help_btn opoznanie-help-btn">Очистить</button>
+                <button class="help_btn opoznanie-help-btn">Изменить</button>
+                <button class="help_btn opoznanie-help-btn">Передать в банк</button>
+                <button class="help_btn opoznanie-help-btn">Вставить в платеж</button>
+                <button class="help_btn opoznanie-help-btn">Печать</button>
+                <button class="help_btn opoznanie-help-btn">Удалить</button>
+                <button class="help_btn opoznanie-help-btn">Закрыть</button>
               </div>
             </form>
           </div>
@@ -1367,5 +744,4 @@
   <script src="../js/popupTablets.js"></script>
   <script src="../js/calendar.js"></script>
   <script src="../js/checkboxes.js"></script>
-  <script src="../js/animation_accordion.js"></script>
 </html>

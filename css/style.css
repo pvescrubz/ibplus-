@@ -3611,6 +3611,8 @@ table {
 }
 
 
+
+
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
@@ -3627,6 +3629,15 @@ table {
 }
 }
 @media screen and (max-width:1300px) {
+  :where(.show-more-btn) {
+    display: block !important;
+  }
+  :where(.spravochnik-bik .new-btn) {
+    display: flex !important;
+          justify-content: center !important;;
+          flex-direction: column !important;;
+          gap: 15px !important;;
+  }
 
   .onlypc {
     display: none;

@@ -198,7 +198,59 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.grid-table')) {
     handleDivRows();
   }
-
+  function handleForeignArchiveTable() {
+    const foreignTables = document.querySelectorAll('.foreign-archive');
+  
+    foreignTables.forEach((table) => {
+      // Получаем заголовки (ТОЛЬКО нужные столбцы)
+      const tableHeaders = Array.from(table.querySelectorAll('th'))
+        .map((header) => header.textContent.trim()) // Получаем текст заголовков
+        .filter((text) => text !== ""); // Исключаем пустые заголовки
+  
+      const tableRows = table.querySelectorAll('.pointered');
+  
+      tableRows.forEach((row) => {
+        row.addEventListener('click', (event) => {
+          // Проверяем, что клик был ТОЛЬКО на .pointer
+          if (!event.target.classList.contains('pointer')) {
+            return;
+          }
+  
+          // Получаем ячейки, исключая radio-кнопку и ПОСЛЕДНИЙ столбец (`...`)
+          const dataCells = Array.from(row.querySelectorAll('td'))
+            .filter((cell, index, arr) => 
+              !cell.classList.contains('radio_container1') && index < arr.length - 1 // Исключаем последний
+            );
+  
+          // Очищаем попап перед заполнением
+          popupData.innerHTML = '';
+  
+          // Заполняем попап данными, БЕЗ последней колонки
+          dataCells.forEach((cell, index) => {
+            const header = tableHeaders[index] || `Колонка ${index + 1}`;
+            const value = extractCellValue(cell);
+  
+            if (header && value) {
+              const field = document.createElement('div');
+              field.classList.add('popup-item_vipiska');
+              field.innerHTML = `<p class="popup-title">${header}:</p> <span class="popup-descr-vipiska">${value}</span>`;
+              popupData.appendChild(field);
+            }
+          });
+  
+          // Показываем попап
+          popup.style.display = 'flex';
+          document.body.classList.add('no-scroll');
+        });
+      });
+    });
+  }
+  
+  
+  
+  if (document.querySelector('.foreign-archive')) {
+    handleForeignArchiveTable();
+  }
   // Закрытие попапа
   popupClose.addEventListener('click', () => {
     popup.style.display = 'none';
