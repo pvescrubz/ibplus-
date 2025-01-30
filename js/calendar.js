@@ -353,6 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeDates(); // Инициализация начальных данных.
   }
+  
   window.DatePicker = {
     initializeAll: function () {
       const datePickers = document.querySelectorAll(".date-picker");
