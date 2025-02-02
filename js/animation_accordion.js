@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const accordions = document.querySelectorAll(".accordion-button");
-  
+    function acrrdion() {
+      const accordions = document.querySelectorAll(".accordion-button");
     if (accordions.length === 0) return;
   
     // SVG иконки
@@ -41,5 +41,109 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-  });
+  }
+    function manageSpecifications() {
+   
+      const addButton = document.querySelector(".add-specification");
+      const deleteButton = document.querySelector(".delete-specification");
+      const container = document.querySelector(".flex-container-btns");
+ 
+      if (!addButton || !deleteButton || !container) return;
+
+      const specContainer = container.previousElementSibling;
+      if (!specContainer) return;
   
+      function updateNumbers() {
+        document.querySelectorAll(".accordion_content_specification").forEach((spec, index) => {
+          spec.querySelector(".specification_number").textContent = `${index + 1}. `;
+        });
+      }
+  
+      function toggleDeleteButton() {
+        const specs = document.querySelectorAll(".accordion_content_specification");
+        deleteButton.style.display = specs.length > 1 ? "block" : "none";
+      }
+  
+      addButton.addEventListener("click", function () {
+
+        const specs = document.querySelectorAll(".accordion_content_specification");
+        if (specs.length === 0) return;
+        const lastSpec = specs[specs.length - 1];
+        const newSpec = lastSpec.cloneNode(true);
+        
+        newSpec.querySelectorAll("input").forEach((input) => {
+          input.value = "";
+        });
+  
+        specContainer.appendChild(newSpec);
+        updateNumbers();
+        toggleDeleteButton();
+      });
+  
+      deleteButton.addEventListener("click", function () {
+        const specs = document.querySelectorAll(".accordion_content_specification");
+        if (specs.length > 1) {
+          specs[specs.length - 1].remove();
+          updateNumbers();
+          toggleDeleteButton();
+        }
+      });
+  
+      toggleDeleteButton();
+    
+  }
+  function addSpravochnikEntry() {
+    
+    const formContainer = document.querySelector(".form_content");
+    if (!formContainer) return;
+  
+    formContainer.addEventListener("change", function (event) {
+      const target = event.target;
+      const parentContainer = target.closest(".adds_main_container");
+      if (!parentContainer) return;
+  
+      // Проверка на radio
+      if (target.classList.contains("visible-radio")) {
+        document.querySelectorAll(".adds_main_container").forEach(container => 
+          container.classList.remove("radio-active")
+        );
+        parentContainer.classList.add("radio-active");
+      }
+  
+      // Проверка на checkbox
+      if (target.type === "checkbox") {
+        if (target.checked) {
+          parentContainer.classList.add("checkbox-active");
+        } else {
+          parentContainer.classList.remove("checkbox-active");
+        }
+      }
+    });
+  
+    // Проверки на все кнопки
+    formContainer.addEventListener("click", function (event) {
+      const target = event.target;
+      
+      // Проверка на кнопку добавления
+      if (target.classList.contains("spravochnik-btn")) {
+        console.log("Кнопка добавления нажата");
+      }
+  
+      // Проверка на кнопку удаления
+      if (target.classList.contains("delete-specification")) {
+        console.log("Кнопка удаления нажата");
+      }
+  
+      // Проверка на кнопку поиска
+      if (target.classList.contains("archive-platej-btn")) {
+        console.log("Кнопка поиска нажата");
+      }
+    });
+      
+    
+  }
+
+  addSpravochnikEntry();
+  manageSpecifications();
+  acrrdion();
+  });

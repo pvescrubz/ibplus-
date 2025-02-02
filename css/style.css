@@ -2306,6 +2306,15 @@ label {
     display: b !important;
   }
 
+  .grid4x4 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .grid3x3 {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .counter-agents {
+    align-items: center !important;
+  }
   .spravochnik-bik_btns-item {
     display: flex;
     justify-content: center;
@@ -2668,6 +2677,18 @@ label {
 
 @media screen and (max-width: 768px) {
 
+  .flex-container-btns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .counter-agents {
+    flex-direction: column;
+    text-align: center;
+  }
+  :where(.counter-agents .info-text) {
+    text-align: center !important;
+  }
   .grid-signature {
     flex-direction: column !important;
     justify-content: center;
@@ -3577,6 +3598,24 @@ table {
   position: relative;
 }
 
+.accordion-button p {
+  margin: 0;
+}
+
+.accordion-button_specification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 90% !important;
+  cursor: pointer;
+  padding: 10px 10px !important;
+  position: relative;
+}
+
+.accordion-button_specification p {
+  margin: 0;
+}
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -3612,11 +3651,101 @@ table {
 
 
 
+:where(.flex-container .our-company) {
+  max-width: 100% !important;
+}
 
+
+
+:where(.eror-info) {
+  left: 20px !important;
+}
+
+.counter-agents {
+  align-items: flex-start ;
+}
+.counter-agents p {
+  margin: 0;
+}
+
+.accordion-icon {
+  display: flex;
+}
+
+.flex-container-btns {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.spravochnik_container {
+  padding: 0 20px;
+}
+
+.grid3x3 {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+.grid4x4 {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.spravochnik-btn {
+  margin-left: auto;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.spravochnik_adds_content_left {
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 150px;
+  justify-content: center;
+  
+}
+
+.spravochnik_adds_content_right {
+  width: 100%;
+}
+.spravochnik_adds_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.adds_main_container {
+  border: 1px solid transparent;
+  transition: all 0.3s linear;
+}
+
+.radio-active {
+  border-color:  var(--green-1);
+}
+.checkbox-active {
+  border-color:  transparent;
+  background-color: rgb(252, 239, 239, 0.3);
+}
 @media screen and (max-width:1550px) {
   .spravochnik-rublevih-platejei {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .adds_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .grid4x4 {
+    grid-template-columns: repeat(2, 1fr);
   }
   .spravochnik-rublevih-platejei_btns-item {
     display: flex;
