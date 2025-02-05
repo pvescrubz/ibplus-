@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function acrrdion() {
-      const accordions = document.querySelectorAll(".accordion-button");
+  function acrrdion() {
+    const accordions = document.querySelectorAll(".accordion-button");
     if (accordions.length === 0) return;
   
     // SVG иконки
@@ -16,28 +16,33 @@ document.addEventListener("DOMContentLoaded", function () {
             <stop stop-color="#4F4BF6"/><stop offset="1" stop-color="#2E2C90"/></linearGradient></defs>
         </svg>`;
   
-    // Перебираем все аккордеоны
     accordions.forEach((button) => {
       const iconContainer = button.querySelector(".accordion-icon");
-      iconContainer.innerHTML = svgOpen; // Вставляем начальную иконку
+      const content = button.nextElementSibling;
+  
+      // Проверка при загрузке страницы, если у кнопки есть класс active
+      if (button.classList.contains("active")) {
+        content.style.maxHeight = `${content.scrollHeight + 50}px`;
+        content.style.padding = "10px 10px 30px 40px";
+        if (iconContainer) iconContainer.innerHTML = svgClose;
+      } else {
+        content.style.maxHeight = "0";
+        content.style.padding = "5px 0";
+        if (iconContainer) iconContainer.innerHTML = svgOpen;
+      }
   
       button.addEventListener("click", function () {
-        const content = this.nextElementSibling;
         const isOpen = content.style.maxHeight;
-  
-        // Переключаем класс активности у кнопки
         this.classList.toggle("active");
   
-        // Открытие/закрытие контента и изменение иконки
         if (!isOpen || isOpen === "0px") {
-            content.style.maxHeight = `${content.scrollHeight + 50}px`;
-
-          content.style.padding = "10px 10px 30px 40px"; // Добавляем паддинг при открытии
-          iconContainer.innerHTML = svgClose; // Меняем иконку
+          content.style.maxHeight = `${content.scrollHeight + 50}px`;
+          content.style.padding = "10px 10px 30px 40px";
+          if (iconContainer) iconContainer.innerHTML = svgClose;
         } else {
           content.style.maxHeight = "0";
-          content.style.padding = "5px 0"; // Убираем паддинг при закрытии
-          iconContainer.innerHTML = svgOpen; // Возвращаем иконку
+          content.style.padding = "5px 0";
+          if (iconContainer) iconContainer.innerHTML = svgOpen;
         }
       });
     });
