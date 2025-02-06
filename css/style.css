@@ -1163,7 +1163,7 @@ input[type="radio"] {
 }
 
 .active-row {
-  background-color: #e1e5f7;
+  background-color: rgba(212, 208, 208, 0.4);
 }
 
 /* Для каждой ячейки td внутри строки */
@@ -2053,6 +2053,7 @@ input {
   color: var(--black);
 }
 
+
 .input-main {
   width: 100%;
   border-color: transparent;
@@ -2304,6 +2305,22 @@ label {
 @media screen and (max-width: 1200px) {
   .left-mail_reglaments {
     display: b !important;
+  }
+
+  .spravochnik_fiz_container {
+    grid-template-columns: 40vw 40vw !important;
+  grid-template-rows: auto auto !important;
+    gap: 20px;
+  }
+
+  .spravochnik_fiz_content-btns {
+    grid-column: span 2 !important;
+  }
+
+  .spravochnik_fiz_content-btns button {
+    max-width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .grid4x4 {
@@ -2676,6 +2693,29 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+
+  .spravochnik_adds_content_left {
+    min-width: 50px !important;
+    gap: 50px !important;
+  }
+
+  .spravochnik_fiz_container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .grid5x5 {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .grid3x33 {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .spravochnik_fiz_content-btns {
+    grid-column: span 2 !important;
+  }
 
   .flex-container-btns {
     flex-direction: column;
@@ -3272,6 +3312,16 @@ table {
   bottom: -45px;
 }
 
+.info-text-dropdown {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: right;
+  text-align: center;
+  color: var(--grey);
+}
+
 .info-text-edit {
   display: block;
   width: 100%;
@@ -3456,13 +3506,37 @@ table {
   border-bottom-right-radius: 15px;
 }
 
+
+
+.non-color {
+  background: var(--bg) !important;
+  border: unset !important;
+  box-shadow: unset !important;
+}
+
+.colored-archive-table {
+  border-collapse: separate;
+  border-spacing: 0 10px; /* 10px — расстояние между строками */
+}
+
+.group-colored {
+  background-color: white;
+  position: relative;
+  border-bottom: unset !important; 
+  border-top: unset !important;
+  border-radius: 15px;
+  height: 50px;
+  transition: all 0.3s linear;
+}
+
+.group-colored.active-row {
+  background-color: var(--purple-4);
+}
 .group-pointered {
   position: relative;
   border-bottom: 25px solid transparent;
   border-top: 25px solid transparent; 
 }
-
-
 
 .group-page-content {
   position: relative;
@@ -3687,16 +3761,29 @@ table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
+  gap: 20px;
+}
+.grid3x33 {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
 }
 .grid4x4 {
   padding: 20px 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  gap: 10px;
+  gap: 20px;
 }
-
+.grid5x5 {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
+}
 .spravochnik-btn {
   margin-left: auto;
   max-width: 300px;
@@ -3733,7 +3820,78 @@ table {
   border-color:  transparent;
   background-color: rgb(252, 239, 239, 0.3);
 }
+
+.spravochnik_fiz_container {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(1,1fr);
+}
+
+.spravochnik_fiz_content-btns {
+  display: flex;
+  padding-top: 25px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px !important;
+}
+
+.spravochnik_fiz_content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+:where(.spravochnik_fiz_content-btns button) {
+  display: block !important;
+  max-width: 200px !important;
+  max-height: 50px !important;
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+
+.colored-placeholder input::placeholder {
+  color: black !important; /* Выбери свой цвет */
+  font-weight: bold; /* По желанию */
+  opacity: 1; /* У некоторых браузеров `placeholder` имеет полупрозрачность, убираем это */
+}
+.colored-placeholder .info-text-dropdown {
+  color: black !important;
+  color: black !important; /* Выбери свой цвет */
+  font-weight: bold; /* По желанию */
+}
+
+.status-text {
+  padding-left: 20px;
+}
+
 @media screen and (max-width:1550px) {
+  .status-text {
+    text-align: center;
+  }
+  .custom-label {
+    grid-column: span 2;
+  }
+  .spravochnik-btn {
+    margin-right: auto;
+  }
+
+  .grid5x5 {
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .grid3x33 {
+    padding: 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 20px;
+  }
   .spravochnik-rublevih-platejei {
     flex-direction: column;
     gap: 10px;
