@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!popup || !popupClose || !popupData) {
     return; // Если отсутствуют важные элементы, прекращаем выполнение
   }
+
+
+
+  
   
   /**
    * Скрипт для таблицы с <tr> и <td>.
