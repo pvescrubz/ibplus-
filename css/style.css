@@ -3754,6 +3754,7 @@ table {
 
 .spravochnik_container {
   padding: 0 20px;
+  margin-top: 0 !important;
 }
 
 .grid3x3 {
@@ -3826,6 +3827,7 @@ table {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   grid-template-rows: repeat(1,1fr);
+  margin-top: 0 !important;
 }
 
 .spravochnik_fiz_content-btns {
