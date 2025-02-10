@@ -808,35 +808,110 @@
 
       </div>
       <button class="gradient_btn spravochnik-btn">Добавить</button>
-      <div class="platej_content1 colored-placeholder">
-        <div class="spravochnik_container_grid">
-            <div class="grid5x5">
+      <div class="platej_content1 adds_main_container ">
+        <div class="spravochnik_container_grid spravochnik_adds">
+            <div class="spravochnik_adds_container">
+              <div class="spravochnik_adds_content_left">
+                <input data-val="true" data-val-number="Значением поля SelectedItem должно быть число." id="SelectedItem" class="visible-radio" name="SelectedItem" type="radio" value="57">
+                <input type="checkbox">
+            </div>
+              <div class="spravochnik_adds_content_right"><div class="spravochnik_container_grid">
+                <div class="grid5x5">
+                    <label for="input2 " class="money-label">
+                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Фамилия" required="">
+                        <p class="error-data">
+                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                        </p>
+                      </label>
+                      <label for="input2 " class="money-label">
+                          <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Имя" required="">
+                          <p class="error-data">
+                            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                          </p>
+                        </label>
+                        <label for="input2 " class="money-label">
+                          <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Отчество" required="">
+                          <p class="error-data">
+                            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                          </p>
+                        </label>
+                        <label for="input2 " class="money-label">
+                          <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Телефон" required="">
+                          <p class="error-data">
+                            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                          </p>
+                        </label>
+                        <label for="input2 " class="money-label custom-label">
+                          <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="СНИЛС" required="">
+                          <p class="error-data">
+                            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                          </p>
+                        </label>
+                </div>
+                <div class="grid5x5">
+                  <label for="input2 " class="money-label">
+                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Сумма по умолчанию" required="">
+                      <p class="error-data">
+                        <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                      </p>
+                    </label>
+                    <label for="input2 " class="money-label">
+                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер карты" required="">
+                        <p class="error-data">
+                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                        </p>
+                      </label>
+                      <label for="input2 " class="money-label">
+                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Серия паспорта" required="">
+                        <p class="error-data">
+                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                        </p>
+                      </label>
+                      <label for="input2 " class="money-label">
+                        <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер паспорта" required="">
+                        <p class="error-data">
+                          <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                        </p>
+                      </label>
+                      <div class="dropdown custom-label" data-target="select3">
+                        <a class="dropdown-button  info-text-dropdown">
+                            <span class="dropdown-button_text info-text-dropdown">Группа</span>
+                        </a>
+                        <div class="dropdown-content"><a href="#Группа" class="info-text-dropdown" data-value="Группа">Группа</a><a href="#Группа2" class="info-text-dropdown" data-value="Группа2">Группа2</a><a href="#Группа3" class="text_semibold" data-value="Группа3">Группа3</a></div>
+                    </div>
+                    <select id="select3" class="hidden-select info-text-dropdown" hidden="">
+                      <option class="info-text-dropdown" value="Группа">Группа</option>
+                      <option class="info-text-dropdown" value="Группа2">Группа2</option>
+                      <option class="info-text-dropdown" value="Группа3">Группа3</option>
+                  </select>
+              </div>
+              <div class="grid5x5">
                 <label for="input2 " class="money-label">
-                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Фамилия" required="">
+                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Дата рождения" required="">
                     <p class="error-data">
                       <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                     </p>
                   </label>
                   <label for="input2 " class="money-label">
-                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Имя" required="">
+                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Место рождения" required="">
                       <p class="error-data">
                         <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                       </p>
                     </label>
                     <label for="input2 " class="money-label">
-                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Отчество" required="">
+                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Дата выдачи" required="">
                       <p class="error-data">
                         <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                       </p>
                     </label>
                     <label for="input2 " class="money-label">
-                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Телефон" required="">
+                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Кем выдан паспорт" required="">
                       <p class="error-data">
                         <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                       </p>
                     </label>
                     <label for="input2 " class="money-label custom-label">
-                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="СНИЛС" required="">
+                      <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Код подразделения" required="">
                       <p class="error-data">
                         <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                       </p>
@@ -844,149 +919,81 @@
             </div>
             <div class="grid5x5">
               <label for="input2 " class="money-label">
-                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Сумма по умолчанию" required="">
+                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Страна" required="">
                   <p class="error-data">
                     <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                   </p>
                 </label>
                 <label for="input2 " class="money-label">
-                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер карты" required="">
+                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Регион, область" required="">
                     <p class="error-data">
                       <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                     </p>
                   </label>
                   <label for="input2 " class="money-label">
-                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Серия паспорта" required="">
+                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Район" required="">
                     <p class="error-data">
                       <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                     </p>
                   </label>
                   <label for="input2 " class="money-label">
-                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер паспорта" required="">
+                    <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Населенный пункт" required="">
                     <p class="error-data">
                       <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                     </p>
                   </label>
-                  <div class="dropdown custom-label" data-target="select3">
-                    <a class="dropdown-button  info-text-dropdown">
-                        <span class="dropdown-button_text info-text-dropdown">Группа</span>
-                    </a>
-                    <div class="dropdown-content"><a href="#Группа" class="info-text-dropdown" data-value="Группа">Группа</a><a href="#Группа2" class="info-text-dropdown" data-value="Группа2">Группа2</a><a href="#Группа3" class="text_semibold" data-value="Группа3">Группа3</a></div>
-                </div>
-                <select id="select3" class="hidden-select info-text-dropdown" hidden="">
-                  <option class="info-text-dropdown" value="Группа">Группа</option>
-                  <option class="info-text-dropdown" value="Группа2">Группа2</option>
-                  <option class="info-text-dropdown" value="Группа3">Группа3</option>
-              </select>
-          </div>
-          <div class="grid5x5">
+                  <label for="input2 " class="money-label custom-label">
+                    <input name="input2" id="input2" type="text" class="input-main text_semibold " placeholder="Улица" required="">
+                    <p class="error-data">
+                      <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                    </p>
+                  </label>
+            </div>
+            <div class="grid3x33">
+            <label for="input2 " class="money-label">
+                <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер дома" required="">
+                <p class="error-data">
+                  <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                </p>
+              </label>
+              <label for="input2 " class="money-label">
+                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер корпуса" required="">
+                  <p class="error-data">
+                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                  </p>
+                </label>
+                <label for="input2 " class="money-label custom-label">
+                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Квартира " required="">
+                  <p class="error-data">
+                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+                  </p>
+                </label>
+            </div>
+            <div class="grid3x33">
+            <label for="input2 " class="money-label">
+              <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="ИНН" required="">
+              <p class="error-data">
+                <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
+              </p>
+            </label>
             <label for="input2 " class="money-label">
                 <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Дата рождения" required="">
                 <p class="error-data">
                   <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                 </p>
               </label>
-              <label for="input2 " class="money-label">
-                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Место рождения" required="">
-                  <p class="error-data">
-                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
-                </label>
-                <label for="input2 " class="money-label">
-                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Дата выдачи" required="">
-                  <p class="error-data">
-                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
-                </label>
-                <label for="input2 " class="money-label">
-                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Кем выдан паспорт" required="">
-                  <p class="error-data">
-                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
-                </label>
-                <label for="input2 " class="money-label custom-label">
-                  <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Код подразделения" required="">
-                  <p class="error-data">
-                    <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                  </p>
-                </label>
-        </div>
-        <div class="grid5x5">
-          <label for="input2 " class="money-label">
-              <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Страна" required="">
-              <p class="error-data">
-                <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-              </p>
-            </label>
-            <label for="input2 " class="money-label">
-                <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Регион, область" required="">
-                <p class="error-data">
-                  <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                </p>
-              </label>
-              <label for="input2 " class="money-label">
-                <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Район" required="">
-                <p class="error-data">
-                  <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                </p>
-              </label>
-              <label for="input2 " class="money-label">
-                <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Населенный пункт" required="">
-                <p class="error-data">
-                  <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-                </p>
-              </label>
               <label for="input2 " class="money-label custom-label">
-                <input name="input2" id="input2" type="text" class="input-main text_semibold " placeholder="Улица" required="">
+                <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Примечание " required="">
                 <p class="error-data">
                   <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
                 </p>
               </label>
+            </div>
+            <p class="status-text text_bold">Состояние: <span class="text-semibold">Проверяется</span></p>
+            </div></div>
+            </div>
       </div>
-      <div class="grid3x33">
-        <label for="input2 " class="money-label">
-            <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер дома" required="">
-            <p class="error-data">
-              <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-            </p>
-          </label>
-          <label for="input2 " class="money-label">
-              <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Номер корпуса" required="">
-              <p class="error-data">
-                <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-              </p>
-            </label>
-            <label for="input2 " class="money-label custom-label">
-              <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Квартира " required="">
-              <p class="error-data">
-                <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-              </p>
-            </label>
-      </div>
-    <div class="grid3x33">
-      <label for="input2 " class="money-label">
-          <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="ИНН" required="">
-          <p class="error-data">
-            <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-          </p>
-        </label>
-        <label for="input2 " class="money-label">
-            <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Дата рождения" required="">
-            <p class="error-data">
-              <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-            </p>
-          </label>
-          <label for="input2 " class="money-label custom-label">
-            <input name="input2" id="input2" type="text" class="input-main text_semibold" placeholder="Примечание " required="">
-            <p class="error-data">
-              <span class="field-validation-error" data-valmsg-for="ContractorName" data-valmsg-replace="true"><span for="ContractorName" generated="true" class="">ошибка</span></span>
-            </p>
-          </label>
-  </div>
-  <p class="status-text text_bold">Состояние: <span class="text-semibold">Проверяется</span></p>
-      </div>
-
-      </div>
+    </div>
   
     
 </div>

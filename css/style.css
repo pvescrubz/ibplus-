@@ -2694,6 +2694,23 @@ label {
 
 @media screen and (max-width: 768px) {
 
+  .spravochnik_adds_container {
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  .spravochnik_adds_content_left {
+    flex-direction: row !important;
+    gap: 10px !important;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    order: 5;
+  }
+
+  .spravochnik_adds_content_left .visible-radio {
+    margin: 0 0 0 0 !important;
+  }
   .spravochnik_adds_content_left {
     min-width: 50px !important;
     gap: 50px !important;
@@ -3869,6 +3886,9 @@ table {
   padding-left: 20px;
 }
 
+.width-th {
+  min-width: 300px;
+}
 @media screen and (max-width:1550px) {
   .status-text {
     text-align: center;
