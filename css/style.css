@@ -2305,6 +2305,21 @@ label {
 }
 
 @media screen and (max-width: 1200px) {
+
+
+
+  .mail-buttons {
+    padding: 0 10px !important;
+  }
+
+  .left_main {
+    min-width: 250px;
+    height: unset !important;
+  } 
+  .mail-btn {
+    width: unset !important;
+    min-width: 75px !important;
+  }
   .left-mail_reglaments {
     display: b !important;
   }
@@ -2695,7 +2710,9 @@ label {
 }
 
 @media screen and (max-width: 768px) {
-
+  .width-th {
+    min-width: unset !important;
+  }
   .spravochnik_adds_container {
     flex-direction: column !important;
     gap: 30px !important;
@@ -3891,7 +3908,66 @@ table {
 .width-th {
   min-width: 300px;
 }
+
+.mail-container  {
+  margin-top: 20px !important;
+}
+.mail-btn {
+  min-width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mail-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.mail-btn-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 35px;
+}
+
+.afterMailButtons {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+.tr-more {
+  flex-direction: column;
+  gap: 15px;
+  min-width: 100%;
+  background-color: hsla(221, 72%, 89%, 0.35);
+  padding: 10px 0;
+}
+
+.mail-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  justify-content: center;
+}
+.left_main {
+  min-width: 250px;
+  height: 98vh;
+}
 @media screen and (max-width:1550px) {
+
+  .mail-help-btn {
+    max-width: 200px;
+  }
   .status-text {
     text-align: center;
   }
@@ -3972,6 +4048,8 @@ table {
   
 }
 @media screen and (max-width: 1300px) and (min-width: 768px) {
+
+ 
   .documents-last-item {
     display: flex;
     padding: 10px 10px;
