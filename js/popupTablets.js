@@ -90,6 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function extractSvgCellValue(cell) {
+    if (cell.querySelector('a')) {
+      const link = cell.querySelector('a');
+      const href = link.getAttribute('href') || '#'; // Получаем href ссылки
+      const svgContent = link.innerHTML.trim(); // Получаем содержимое внутри <a> (включая SVG)
+      return `<a href="${href}" target="_blank">${svgContent}</a>`; // Возвращаем полный HTML
+    }
+    return ''; // Если нет ссылки, возвращаем пустую строку
+  }
+
   // Инициализируем обработку таблиц с двойными заголовками
   if (document.querySelector('.double-header-table')) {
     handleDoubleHeaderRows();
@@ -249,11 +259,76 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  
-  
-  
+
   if (document.querySelector('.foreign-archive')) {
     handleForeignArchiveTable();
+  }
+
+  function handlemailArchiveTable() {
+    const tables = document.querySelectorAll('.mail-archive'); // Находим все таблицы с нужными классами
+  
+    tables.forEach((table) => {
+      // Получаем заголовки таблицы
+      const headers = Array.from(table.querySelectorAll('th.grid_colored.archive-title-th.text_bold'))
+        .map(header => header.textContent.trim());
+  
+      // Обрабатываем строки с данными (класс "pointered")
+      table.querySelectorAll('tr.pointered').forEach((row) => {
+        row.addEventListener('click', (event) => {
+          if (!event.target.classList.contains('pointer')) return; // Проверяем, что клик был на элементе с классом "pointer"
+  
+          // Очищаем контейнер данных попапа
+          popupData.innerHTML = '';
+  
+          // Получаем ячейки текущей строки, исключая ненужные столбцы
+          const cells = Array.from(row.querySelectorAll('td'))
+            .filter((cell, index) => index >= 2 && index <= 5); // Берем только нужные столбцы (Дата, Номер, Тема, Вложения)
+  
+          // Формируем данные для попапа
+          cells.forEach((cell, index) => {
+            const header = headers[index];
+  
+            let value;
+            if (header === 'Вложения') {
+              // Используем специальную функцию для обработки SVG
+              value = extractSvgCellValue(cell);
+            } else {
+              // Для остальных ячеек используем оригинальную функцию
+              value = extractCellValue(cell);
+            }
+  
+            if (header && value !== 'Нет данных' && value !== '') {
+              const field = document.createElement('div');
+              field.classList.add('popup-item_vipiska');
+  
+              if (value.includes('<a')) {
+                // Если значение содержит ссылку, добавляем как HTML
+                field.innerHTML = `
+                  <p class="popup-title">${header}:</p> 
+                  <span class="popup-descr-vipiska">${value}</span>
+                `;
+              } else {
+                // Иначе просто добавляем текст
+                field.innerHTML = `
+                  <p class="popup-title">${header}:</p> 
+                  <span class="popup-descr-vipiska">${value}</span>
+                `;
+              }
+  
+              popupData.appendChild(field);
+            }
+          });
+  
+          // Показываем попап
+          popup.style.display = 'flex';
+          document.body.classList.add('no-scroll');
+        });
+      });
+    });
+  }
+
+  if (document.querySelector('.mail-archive')) {
+    handlemailArchiveTable();
   }
   // Закрытие попапа
   popupClose.addEventListener('click', () => {
