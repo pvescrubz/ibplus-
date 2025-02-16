@@ -1,0 +1,15 @@
+<div class="dialog-wrapper" id="wrapper-${id}">
+    <div class="dialog dialog dialog-file" id="${id}">
+        <div class="ui-dialog-titlebar">
+            <span class="ui-dialog-title">${title}</span>
+            <button class="ui-dialog-titlebar-close" onclick="closeDialog('${id}')">✖️</button>
+        </div>
+        <div id="content-${id}" class="ui-dialog-content">
+            ${content}
+        </div>
+        <div class="buttonArea"><div id="buttons" class="paragraph">
+          <input type="button" name="Close" id="Close" value="Закрыть" class="button112" onclick="$('.dialog').dialog('close');">
+        </div>
+      </div>
+    </div>
+  </div>
