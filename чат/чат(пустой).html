@@ -97,28 +97,8 @@
         </div>
         <nav class="nav_menu">
           <ul class="nav_menu_list">
-            <li class="nav_menu_item ">
-              <a href="#" class="nav_menu_link">Входящие</a>
-              <svg
-                class="arrow_nav"
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.45508 9.95906L7.71508 6.69906C8.10008 6.31406 8.10008 5.68406 7.71508 5.29906L4.45508 2.03906"
-                  stroke="#4F4BF6"
-                  stroke-width="1.5"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </li>
             <li class="nav_menu_item active">
-              <a href="#" class="nav_menu_link">Новое Письмо</a>
+              <a href="#" class="nav_menu_link">Чат</a>
               <svg
                 class="arrow_nav"
                 width="12"
@@ -137,8 +117,28 @@
                 />
               </svg>
             </li>
-            <li class="nav_menu_item">
-              <a href="#" class="nav_menu_link">Отправленные</a>
+            <li class="nav_menu_item ">
+              <a href="#" class="nav_menu_link">История чата</a>
+              <svg
+                class="arrow_nav"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.45508 9.95906L7.71508 6.69906C8.10008 6.31406 8.10008 5.68406 7.71508 5.29906L4.45508 2.03906"
+                  stroke="#4F4BF6"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </li>
+            <li class="nav_menu_item ">
+              <a href="#" class="nav_menu_link">Письмо руководству</a>
               <svg
                 class="arrow_nav"
                 width="12"
@@ -415,63 +415,75 @@
         <div class="content_main main_screen">
           <div class="content_left">
             <div class="title_container">
-              <h2 class="main_title">Входящая почта</h2>
-              <svg  class="svg_title" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.4141 3.79297H7.58073C4.33073 3.79297 2.16406 5.41797 2.16406 9.20964V16.793C2.16406 20.5846 4.33073 22.2096 7.58073 22.2096H18.4141C21.6641 22.2096 23.8307 20.5846 23.8307 16.793V9.20964C23.8307 5.41797 21.6641 3.79297 18.4141 3.79297ZM18.9232 10.3905L15.5324 13.0988C14.8174 13.673 13.9074 13.9546 12.9974 13.9546C12.0874 13.9546 11.1666 13.673 10.4624 13.0988L7.07156 10.3905C6.7249 10.1088 6.67073 9.5888 6.94156 9.24214C7.22323 8.89547 7.7324 8.83047 8.07906 9.11214L11.4699 11.8205C12.2932 12.4813 13.6907 12.4813 14.5141 11.8205L17.9049 9.11214C18.2516 8.83047 18.7716 8.88464 19.0424 9.24214C19.3241 9.5888 19.2699 10.1088 18.9232 10.3905Z" fill="#CBD2F2"/>
-                </svg>
+              <h2 class="main_title">ЧАТ</h2>
+              <svg class="svg_title" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.008 18.2318L20.4305 21.6552C20.5388 22.5543 19.5746 23.1827 18.8055 22.7168L15.0571 20.4852C14.7971 20.3335 14.7321 20.0085 14.873 19.7485C15.4146 18.7518 15.7071 17.6252 15.7071 16.4985C15.7071 12.5335 12.3055 9.30518 8.12379 9.30518C7.26795 9.30518 6.43379 9.43518 5.65379 9.69518C5.25295 9.82518 4.86295 9.45685 4.96045 9.04518C5.94629 5.10185 9.73795 2.16602 14.2663 2.16602C19.553 2.16602 23.8321 6.16352 23.8321 11.0927C23.8321 14.0177 22.3263 16.6068 20.008 18.2318Z" fill="#CBD2F2" />
+                <path d="M14.0807 16.5C14.0807 17.7891 13.6041 18.9808 12.8024 19.9233C11.7299 21.2233 10.0291 22.0575 8.1224 22.0575L5.2949 23.7366C4.81823 24.0291 4.21156 23.6283 4.27656 23.0758L4.5474 20.9416C3.09573 19.9341 2.16406 18.32 2.16406 16.5C2.16406 14.5933 3.1824 12.9141 4.7424 11.9175C5.70656 11.2891 6.86573 10.9316 8.1224 10.9316C11.4157 10.9316 14.0807 13.4233 14.0807 16.5Z" fill="#CBD2F2" />
+              </svg>
             </div>
-            <form class="content_left opoznanie-left">
+            <form class="content_left opoznanie-left chat_left">
               <div class="form_content">
-                <div class="opoznanie-archive-container show_mail">
-                  <div class="new-mail-content_show">
-                    <div class="new-mail-info">
-                    <p class="data-picker_title text_bold">Дата</p>
-                    <p class="text_semibold">17.01.01</p>
-                  </div>
-                  <div class="new-mail-info">
-                    <p class="data-picker_title text_bold">Номер</p>
-                    <p class="text_semibold">17.01.01</p>
-                  </div>
-                  <div class="new-mail-info">
-                    <p class="data-picker_title text_bold">Тема</p>
-                    <p class="text_semibold">17.01.01</p>
-                  </div>
-                  <div class="new-mail-info">
-                    <p class="data-picker_title text_bold">Вложения</p>
-                    <a href="#" class="text_semibold">
-                    <p class="text_semibold"><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.24875 14.0045C7.43125 14.0045 6.61375 13.697 5.99125 13.0745C4.74625 11.8295 4.74625 9.81203 5.99125 8.56703L7.85125 6.71453C8.06875 6.49703 8.42875 6.49703 8.64625 6.71453C8.86375 6.93203 8.86375 7.29203 8.64625 7.50953L6.78625 9.36203C5.98375 10.1645 5.98375 11.477 6.78625 12.2795C7.58875 13.082 8.90125 13.082 9.70375 12.2795L12.6212 9.36203C13.5062 8.47703 13.9938 7.29953 13.9938 6.04703C13.9938 4.79453 13.5062 3.61703 12.6212 2.73203C10.7912 0.902031 7.82125 0.902031 5.99125 2.73203L2.81125 5.91203C2.06875 6.65453 1.65625 7.64453 1.65625 8.69453C1.65625 9.74453 2.06875 10.7345 2.81125 11.477C3.02875 11.6945 3.02875 12.0545 2.81125 12.272C2.59375 12.4895 2.23375 12.4895 2.01625 12.272C1.06375 11.312 0.53125 10.0445 0.53125 8.69453C0.53125 7.34453 1.05625 6.06953 2.01625 5.11703L5.19625 1.93703C7.46125 -0.327969 11.1513 -0.327969 13.4163 1.93703C14.5113 3.03203 15.1188 4.49453 15.1188 6.04703C15.1188 7.59953 14.5113 9.06203 13.4163 10.157L10.4987 13.0745C9.87625 13.697 9.06625 14.0045 8.24875 14.0045Z" fill="black" />
-                      </svg>
-                    <span class="text_semibold">123.zip</span></p>
-                </a>
-                  </div>
-              
+                <div class="opoznanie-archive-container new-mail">
+                  <div class="new-mail-content">
+                    <div class="chat-dropdown">
+                        <p class="data-picker_title text_bold chat-for-title">Сообщение для:</p>
+                        <div
+                                class="dropdown dropdown-platej"
+                                data-target="select7"
+                              >
+                              
+                                <a class="dropdown-button text_semibold">
+                                  <span class="dropdown-button_text text_semibold"
+                                    >Менеджера</span
+                                  >
+                                </a>
+                                <div class="dropdown-content">
+                                  <a
+                                    href="#Менеджера"
+                                    class="text_semibold"
+                                    data-value="Менеджера"
+                                    >Менеджера</a
+                                  ><a
+                                    href="#2"
+                                    class="text_semibold"
+                                    data-value="2"
+                                    >2</a
+                                  >
+                                </div>
+                                
+                              </div>
+                              <select id="select7" class="hidden-select" hidden="">
+                                <option value="Менеджера">Менеджера</option>
+                                <option value="2">2</option>
+                              </select>
+                    </div>
+                    
                 </div>
-                <div class="new-mail-content_show">
-                    <div class="new-mail-info">
-                        <p class="data-picker_title text_bold">Письмо</p>
-                        <p class="text_semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates illum quaerat veniam quae, ea expedita hic voluptatum voluptatem aspernatur fuga, quisquam tempora mollitia in, aperiam enim quam eaque architecto vero.</p>
-                      </div>
-
-                </div>
-           
-              </div>
-              <div class="form-buttons new-mail_btns show">
-                
-                <div class="btn-for-files">
-                <button class="help_btn opoznanie-help-btn">Ответить</button>
-                <button class="help_btn opoznanie-help-btn">Печать</button>
+                <div class="chat-container">
+                    <div class="chat-messages">
+                        <!-- Сообщения будут подгружаться от сервера -->
+                        <div class="chat-message empty">
+                            <p class="text_bold">Отправьте ваше сообщение в чат</p>
+                        </div>
+                    </div>      
+                    <div class="chat-input">
+                        <div class="chat-input_content">
+                            <label for="input7" class="chat-label">
+                                <textarea name="input7" id="input6" class="input-main text_semibold chat-area" placeholder="Введите сообщение" required="" rows="4"></textarea>
+                              </label>
+                        <button class="help_btn chat-btn">Отправить <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.0599 8.59922C14.9016 8.59922 14.7432 8.54089 14.6182 8.41589L10.0016 3.79922L5.3849 8.41589C5.14323 8.65755 4.74323 8.65755 4.50156 8.41589C4.2599 8.17422 4.2599 7.77422 4.50156 7.53255L9.5599 2.47422C9.80156 2.23255 10.2016 2.23255 10.4432 2.47422L15.5016 7.53255C15.7432 7.77422 15.7432 8.17422 15.5016 8.41589C15.3849 8.54089 15.2182 8.59922 15.0599 8.59922Z" fill="white" />
+                            <path d="M10 17.7086C9.65833 17.7086 9.375 17.4253 9.375 17.0836V3.05859C9.375 2.71693 9.65833 2.43359 10 2.43359C10.3417 2.43359 10.625 2.71693 10.625 3.05859V17.0836C10.625 17.4253 10.3417 17.7086 10 17.7086Z" fill="white" />
+                          </svg></button>
+                    </div>
+                    </div>
                 </div>
               </div>
             </form>
           </div>
           
         </div>
-        <div class="last-documents-container">
-            <p class="last-documents-title">Входящие письма</p>
-            <p class="last-documents-text">Нет писем</p>
-            <a href="#0" class="last-documents-link">Список писем</a>
-          </div>
+        
       </div>
       
     </main>

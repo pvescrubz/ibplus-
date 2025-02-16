@@ -1640,7 +1640,7 @@ max-width: 500px;
 
 /* Заголовок */
 .ui-dialog-titlebar {
-  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+  background: white;
   color: #fff;
   padding: 10px 15px;
   font-size: 16px;
@@ -1652,12 +1652,15 @@ max-width: 500px;
   align-items: center;
 }
 
+
+
 /* Кнопка закрытия */
 .ui-dialog-titlebar-close {
   background: transparent;
   border: none;
   color: #fff;
   font-size: 18px;
+  margin-left: auto;
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -1689,7 +1692,6 @@ max-width: 500px;
   justify-content: center;
   padding: 15px;
   gap: 10px;
-  border-top: 1px solid #ccc;
 }
 
 .button112 {
@@ -1697,7 +1699,7 @@ max-width: 500px;
   background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
   border: none;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
@@ -1719,7 +1721,7 @@ max-width: 500px;
   font-size: 14px;
   line-height: 171%;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .input-content {
@@ -2308,6 +2310,10 @@ label {
 
 
 
+  .history-mail-content {
+    flex-direction: column;
+    justify-content: center;
+  }
   .mail-buttons {
     padding: 0 10px !important;
   }
@@ -2711,6 +2717,15 @@ label {
 
 @media screen and (max-width: 768px) {
 
+  .chat-container {
+    height: calc(100vh - 150px) !important;
+  }
+  .chat_msg_content {
+    max-width: 100% !important;
+  }
+  .chat-btn {
+    margin: 0 auto 10px auto !important;
+  }
   .btn-for-files {
     gap: 10px;
     display: flex;
@@ -4073,6 +4088,255 @@ color: var(--black);
 
 .new-mail-content_show {
   width: 50%;
+}
+
+.chat-dropdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  gap: 20px;
+}
+.chat-for-title {
+  white-space: nowrap;
+}
+
+
+.chat_left {
+  background-color: unset;
+}
+
+.chat-container {
+  width: 100%;
+  height: calc(100vh - 450px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.chat-messages {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.chat_msg_content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  max-width: 40vw;
+  min-width: 200px;
+  width: fit-content;
+  border-radius: 40px;
+  gap: 40px;
+}
+
+.chat-msg_text {
+  background-color: white;
+  padding: 10px 25px;
+border-radius: 40px;
+  line-height: 40px;
+text-align: center;
+min-width: 200px;
+  width: 100%;
+}
+.chat-msg_date {
+  position: absolute;
+  bottom: -25px;
+  right: 10px;
+  margin: 0;
+  display: block;
+  padding-right: 10px;
+text-align: end;
+  font-family: var(--font-family);
+font-weight: 500;
+width: calc(40vw - 10px);
+font-size: 12px;
+line-height: 200%;
+color: var(--purple-2);
+}
+
+.chat_msg_content.user {
+  margin-left: auto;
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+}
+.chat-msg_text.user {
+  color: white;
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%);
+}
+.chat-msg_date.user {
+  text-align: end;
+  margin-left: auto;
+}
+
+
+.triangle {
+  z-index: 2;
+  position: relative;
+}
+
+.triangle::before {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Отступ от левого края */
+  width: 2px; /* Толщина линии */
+  height: 30px; /* Высота линии */
+  background-color: white;
+  transform: translateY(-50%); /* Центрирование вертикально */
+}
+
+/* Создание треугольника "<" */
+.triangle::after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: -10px; /* Расположение слева */
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent; /* Верхняя граница */
+  border-bottom: 20px solid transparent; /* Нижняя граница */
+  border-right: 20px solid white; /* Правая граница (создает треугольник) */
+  transform: translateY(-50%); /* Центрирование вертикально */
+}
+
+.triangle.user::before {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px; /* Отступ от левого края */
+  width: 2px; /* Толщина линии */
+  height: 30px; /* Высота линии */
+  background: transparent;
+  transform: translateY(-50%); /* Центрирование вертикально */
+}
+
+/* Создание треугольника "<" */
+.triangle.user::after{
+  content: '';
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  left: unset;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #2e2c90;
+  transform: translateY(-50%);
+}
+
+.chat-logo {
+  width: 42px;
+  height: 42px;
+}
+
+.chat-status {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.chat-status p ,
+.chat-status span {
+  margin: 0;
+}
+
+.chat-input {
+  padding: 10px 10px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.chat-label {
+  width: 100%;
+}
+
+.chat-input_content {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.chat-area {
+  text-align: start;
+}
+.chat-btn {
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(90deg, #4f4bf6 0%, #2e2c90 100%) !important;
+  margin-left: auto;
+}
+.chat-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  background: unset;
+}
+
+.status_text-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.status_text-chat.online {
+  color: var(--green-2);
+}
+.status_text-chat.pending {
+  color: var(--accent-color);
+}
+.status_text-chat.offline {
+  color: #f40000;
+}
+.chat_msg_content.admin .chat-msg_text {
+  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+}
+
+.chat-message.empty p{
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 171%;
+text-align: center;
+color: var(--grey) !important;
+  display: flex
+;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 5px;
+    justify-content: flex-end;
+    text-align: center;
+}
+.history-mail-content {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width:1550px) {
   .new-mail_btns {
