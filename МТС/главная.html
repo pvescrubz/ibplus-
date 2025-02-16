@@ -340,7 +340,8 @@
               <p class="nav_btn-text active">Документы</p>
             </a>
             <a class="nav_btn" href="#0">
-              <svg
+              <div class="nav_counter_container">
+                <svg
                 class="nav_svg"
                 width="20"
                 height="20"
@@ -353,9 +354,13 @@
                   fill=""
                 />
               </svg>
+              <span class="nav_counter">01</span>
+              </div>
+              
               <p class="nav_btn-text">Почта</p>
             </a>
             <a class="nav_btn" href="#0">
+              <div class="nav_counter_container">
               <svg
                 class="nav_svg"
                 width="20"
@@ -373,6 +378,8 @@
                   fill=""
                 />
               </svg>
+              <span class="nav_counter">01</span>
+            </div>
               <p class="nav_btn-text">Чат</p>
             </a>
             <a class="nav_btn for_pc" href="#0">
@@ -420,6 +427,7 @@
               <p class="nav_btn-text">Реквизиты</p>
             </a>
             <a class="nav_btn" href="#0">
+              <div class="nav_counter_container">
               <svg
                 class="nav_svg"
                 width="20"
@@ -433,6 +441,8 @@
                   fill=""
                 />
               </svg>
+              <span class="nav_counter">01</span>
+            </div>
               <p class="nav_btn-text">Новости</p>
             </a>
             <a class="nav_btn for_mobile" href="#0"  id="show_more-btn-nav">
@@ -574,21 +584,7 @@
                       <input name="input3" type="text" class="input-main text_semibold" placeholder="Введите номер документа" required="">
                   </label>
                
-                  <div class="dialog-wrapper" id="wrapper-${id}">
-                    <div class="dialog dialog dialog-file" id="${id}">
-                        <div class="ui-dialog-titlebar">
-                            <span class="ui-dialog-title">${title}</span>
-                            <button class="ui-dialog-titlebar-close" onclick="closeDialog('${id}')">✖️</button>
-                        </div>
-                        <div id="content-${id}" class="ui-dialog-content">
-                            ${content}
-                        </div>
-                        <div class="buttonArea"><div id="buttons" class="paragraph">
-                          <input type="button" name="Close" id="Close" value="Закрыть" class="button112" onclick="$('.dialog').dialog('close');">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        
   
   
                 <div class="dropdown" data-target="select4">

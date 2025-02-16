@@ -416,6 +416,27 @@ html {
   fill: #cbd2f2;
   transition: all 0.3s linear;
 }
+.nav_counter_container {
+  position: relative;
+}
+.nav_counter {
+  position: absolute;
+  bottom: 2px;
+  right: -2px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 3px 3px;
+  color: white;
+  font-family: var(--font-family);
+font-weight: 500;
+font-size: 6px;
+line-height: 100%;
+text-align: center;
+color: var(--white);
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
 .link_container {
   gap: 15px;
