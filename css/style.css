@@ -421,21 +421,21 @@ html {
 }
 .nav_counter {
   position: absolute;
-  bottom: 2px;
+  bottom: -3px;
   right: -2px;
   background-color: red;
   border-radius: 50%;
-  padding: 3px 3px;
+  padding: 4px 4px;
   color: white;
   font-family: var(--font-family);
-font-weight: 500;
-font-size: 6px;
-line-height: 100%;
-text-align: center;
-color: var(--white);
-display: flex;
-justify-content: center;
-align-items: center;
+  font-weight: 500;
+  font-size: 6px;
+  line-height: 100%;
+  text-align: center;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .link_container {
@@ -2341,6 +2341,7 @@ label {
 
   .left_main {
     min-width: 250px;
+
     height: unset !important;
   } 
   .mail-btn {
@@ -4007,7 +4008,7 @@ table {
 }
 .left_main {
   min-width: 250px;
-  height: 98vh;
+  height: 100%;
 }
 .links {
   display: flex;
@@ -4360,6 +4361,8 @@ color: var(--grey) !important;
   align-items: center;
 }
 @media screen and (max-width:1550px) {
+
+  
   .new-mail_btns {
     display: flex;
     flex-direction: column;
