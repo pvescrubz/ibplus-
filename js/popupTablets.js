@@ -18,50 +18,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleDoubleHeaderRows() {
     const doubleHeaderTables = document.querySelectorAll('.double-header-table .pointered');
-
+  
     doubleHeaderTables.forEach(row => {
       row.addEventListener('click', (event) => {
         // Проверяем, что клик был на <td class="pointer">
         if (!event.target.classList.contains('pointer')) {
           return;
         }
+  
         // Получаем заголовки из двух строк
-        const firstHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(1) th');
-        const secondHeaderRow = row.closest('table').querySelectorAll('tr:nth-child(2) th');
-
+        const firstHeaderRow = Array.from(row.closest('table').querySelectorAll('tr:nth-child(1) th'))
+          .map(th => th.textContent.trim());
+        const secondHeaderRow = Array.from(row.closest('table').querySelectorAll('tr:nth-child(2) th'))
+          .map(th => th.textContent.trim());
+  
         // Объединяем заголовки из двух строк
-        const headers = Array.from(firstHeaderRow).map(th => th.textContent.trim())
-          .concat(Array.from(secondHeaderRow).map(th => th.textContent.trim()));
-
+        const headers = firstHeaderRow.map((header, index) => {
+          return header + (secondHeaderRow[index] ? ` (${secondHeaderRow[index]})` : '');
+        });
+  
         // Получаем все ячейки, исключая ячейки с классом 'pointer' и 'tablet-mobile'
         const dataCells = Array.from(row.querySelectorAll('td')).filter(cell =>
           !cell.classList.contains('pointer') &&
           !cell.classList.contains('tablet-mobile')
         );
-
+  
         // Очищаем попап перед заполнением
         popupData.innerHTML = '';
-
+  
         // Заполняем попап данными
         dataCells.forEach((cell, index) => {
-          let header;
-
+          let header = headers[index] || `Колонка ${index + 1}`;
+          let value;
+  
+          // Обработка значений из ячеек
+          if (cell.querySelector('input.table-input')) {
+            value = cell.querySelector('input.table-input').value; // Берем значение из input
+          } else {
+            value = extractCellValue(cell); // Используем существующую функцию для извлечения значения
+          }
+  
+          // Специальные заголовки для определенных индексов
           if (index === 3) {
             header = 'Максимум (за период 7 дней)';
+          } else if (index === 4) {
+            header = 'Максимум (в день)';
           } else if (index === 5) {
-            header = 'Максимум (В день по номеру моб. телефона)';
+            header = 'Максимум (в день по номеру моб. тел.)';
           }
-          else if (index === 4) {
-            header = 'Максимум (В день)';
-          }
-          else {
-            header = headers[index] || `Колонка ${index + 1}`;
-          } 
-          const value = extractCellValue(cell);
-
-
-
-
+  
           if (header && value) {
             const field = document.createElement('div');
             field.classList.add('popup-item_vipiska');
@@ -69,14 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
             popupData.appendChild(field);
           }
         });
-
+  
         // Показываем попап
         popup.style.display = 'flex';
         document.body.classList.add('no-scroll');
       });
     });
   }
-
   /**
    * Вспомогательная функция для извлечения значения из ячейки
    */

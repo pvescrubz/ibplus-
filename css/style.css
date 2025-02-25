@@ -421,21 +421,21 @@ html {
 }
 .nav_counter {
   position: absolute;
-  bottom: -3px;
+  bottom: 2px;
   right: -2px;
   background-color: red;
   border-radius: 50%;
-  padding: 4px 4px;
+  padding: 3px 3px;
   color: white;
   font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 6px;
-  line-height: 100%;
-  text-align: center;
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+font-weight: 500;
+font-size: 6px;
+line-height: 100%;
+text-align: center;
+color: var(--white);
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .link_container {
@@ -2341,7 +2341,6 @@ label {
 
   .left_main {
     min-width: 250px;
-
     height: unset !important;
   } 
   .mail-btn {
@@ -2738,6 +2737,21 @@ label {
 }
 
 @media screen and (max-width: 768px) {
+
+  .table-input-th {
+    max-width: 100px !important;
+  }
+
+  .double-header-btns-content {
+    flex-direction: column !important;
+  }
+  .dropdown-nav {
+    width: 100px;
+    max-width: 100% !important;
+  }
+  .table-input {
+    max-width: 150px;
+  }
 
   .chat-container {
     height: calc(100vh - 150px) !important;
@@ -3295,7 +3309,17 @@ table {
   cursor: not-allowed;
   z-index: 1;
 }
+.disabled-popup-btn {
+  position: relative;
+  opacity: 1;
+  pointer-events: none;
+  cursor: not-allowed;
+}
 
+.disabled-popup-btn .dropdown-button::after {
+  content: '';
+  background-image: none;
+}
 .opoznanie_show {
   margin-top: 20px;
   display: grid;
@@ -3313,6 +3337,23 @@ table {
 .login_form-btns {
   display: flex;
   gap: 20px;
+}
+
+.double-header-btns-nav {
+  margin: 0 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.double-header-btns-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.double-header-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .qr-code {
@@ -3403,6 +3444,14 @@ table {
   text-align: right;
   text-align: center;
   color: var(--grey);
+}
+.dropdown-nav {
+  max-width: fit-content;
+}
+
+.page-counter {
+  text-align: end;
+  margin: 15px 0 10px 0;
 }
 
 .info-text-edit {
@@ -3587,6 +3636,14 @@ table {
   color: var(--black);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+.group-name button {
+  display: flex;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
 }
 
 
@@ -4360,9 +4417,45 @@ color: var(--grey) !important;
   justify-content: center;
   align-items: center;
 }
+.table-input {
+  border: none;
+  text-align: center;
+  outline: none;
+}
+.table-input:focus {
+  box-shadow: 0 4px 20px 0 rgba(26, 29, 36, 0.08);
+}
+.group-width {
+  width: 100%;
+}
+.input-table {
+  border-color: transparent !important;
+  margin-bottom: 0;
+}
+
+.new:not(:last-child)::after {
+  content: none;
+}
+.new:last-child::after {
+  content:  none;
+}
+
+.hidden-radio {
+  background-color: white;
+}
+.new {
+  background-color: white;
+}
+
+.button > .new {
+background-color: unset;
+}
+
+.no-bg {
+  background-color: unset;
+}
 @media screen and (max-width:1550px) {
 
-  
   .new-mail_btns {
     display: flex;
     flex-direction: column;
@@ -4448,6 +4541,10 @@ color: var(--grey) !important;
   .last-documents-container {
     margin-bottom: 100px;
     width: 100%;
+  }
+
+  .left_main {
+    height: 100vh;
   }
   .new-mail-content_show {
     width: 100%;
