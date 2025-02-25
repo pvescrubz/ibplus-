@@ -586,9 +586,9 @@
                       <input name="input3" type="text" class="input-main text_semibold" placeholder="Введите номер документа" required="">
                   </label>
                   
-                  <div class="dropdown" data-target="select2">
+                  <div class="dropdown disabled-popup-btn" data-target="select2">
                     <p class="data-picker_title text_bold">Группа:</p>
-                    <a class="dropdown-button text_semibold">
+                    <a class="dropdown-button text_semibold ">
                         <span class="dropdown-button_text text_semibold">Все</span>
                     </a>
                     <div class="dropdown-content"><a href="#Все" class="text_semibold" data-value="Все">Все</a><a href="#Счет 2" class="text_semibold" data-value="Счет 2">Счет 2</a><a href="#Счет 3" class="text_semibold" data-value="Счет 3">Счет 3</a></div>
@@ -626,8 +626,8 @@
                 <table id="statement" class="reference-archive table-archive double-header-table">
                   <tbody class="grid-archive">
                     <tr class="grid-archive">
-                      <th class="text_bold grid_colored">Физлицо</th>
-                      <th class="grid_colored archive-title-th text_bold pc-tablet">Номер карты</th>
+                      <th class="text_bold grid_colored pc-tablet">Физлицо</th>
+                      <th class="grid_colored archive-title-th text_bold ">Номер карты</th>
                       <th class="grid_colored archive-title-th text_bold">Сумма</th>
                       <th class="grid_colored archive-title-th text_bold onlypc"></th>
                       <th class="grid_colored archive-title-th text_bold onlypc">Максимум</th>
@@ -643,18 +643,22 @@
                       <th class="archive-title-th text_bold onlypc">в день по номеру моб. тел.</th>
                     </tr>
                     <tr class="pointered">
-                      <td class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
-                      <td class="text_semibold pc-tablet">1234 5674 1211 1111</td>
-                      <td class="text_semibold">777777.00</td>
+                      <td class="text_semibold pc-tablet">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
+                      <td class="text_semibold table-input  table-input-th">
+                        <input class="table-input" count="0" keys="System.Collections.Generic.Dictionary`2+KeyCollection[System.String,System.Object]" values="System.Collections.Generic.Dictionary`2+ValueCollection[System.String,System.Object]" data-val="true" data-val-length="Длина номера карты 16-18 цифр" data-val-length-max="18" data-val-length-min="16" id="PageEntries_0__CardNumber" maxlength="18" name="PageEntries[0].CardNumber" title="Номер карты" type="text" value="1111111111111111" class="valid">
+                      </td>
+                      <td class="text_semibold"><input class="RetailAmount table-input" data-val="true" data-val-number="Значением поля Сумма должно быть число." id="PageEntries_0__Amount" name="PageEntries[0].Amount" type="text" value="11111"></td>
                       <td class="text_semibold onlypc">149 000,00</td>
                       <td class="text_semibold onlypc">59 900,00</td>
                       <td class="text_semibold onlypc">59 900,00</td>
                       <td class="text_semibold tablet-mobile pointer">...</td>
                     </tr>
                     <tr class="pointered">
-                      <td class="text_semibold">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
-                      <td class="text_semibold pc-tablet">1234 5674 1211 1111</td>
-                      <td class="text_semibold">777777.00</td>
+                      <td class="text_semibold pc-tablet">1. 9111234567 | ИАНОВ ИВАН ИВАНОВИЧ | Паспорт РФ №7777 777777 , выдан 01.01.2024 ОВД |</td>
+                      <td class="text_semibold table-input-th">
+                        <input class="table-input" count="0" keys="System.Collections.Generic.Dictionary`2+KeyCollection[System.String,System.Object]" values="System.Collections.Generic.Dictionary`2+ValueCollection[System.String,System.Object]" data-val="true" data-val-length="Длина номера карты 16-18 цифр" data-val-length-max="18" data-val-length-min="16" id="PageEntries_0__CardNumber" maxlength="18" name="PageEntries[0].CardNumber" title="Номер карты" type="text" value="1234123412341234" class="valid">
+                      </td>
+                      <td class="text_semibold"><input class="RetailAmount table-input" data-val="true" data-val-number="Значением поля Сумма должно быть число." id="PageEntries_0__Amount" name="PageEntries[0].Amount" type="text" value="1111"></td>
                       <td class="text_semibold onlypc">149 000,00</td>
                       <td class="text_semibold onlypc">59 900,00</td>
                       <td class="text_semibold onlypc">59 900,00</td>
@@ -677,14 +681,41 @@
                   </div>
                 </div>
               </div>
-            <div class="grid_btns archive_btns-container">
-                <div class="grid_btns vipiska_btns-nav">
-                  <a href="#" class="grid-btn active">1</a>
-                  <a href="#" class="grid-btn ">2</a>
-                  <a href="#" class="grid-btn disabled-form-btn">3</a>
-                  <a href="#0" class="grid-btn more "></a>
+              <div class="page-counter text_semibold">1 / 1</div>
+              <div class="grid_btns double-header-btns-nav">
+                
+              
+
+                  <div class="double-header-btns-content">
+                  <button type="submit" class="help_btn opoznanie-help-btn ">
+                    Начало
+                  </button>
+                  <button class="help_btn opoznanie-help-btn">
+                    Назад
+                  </button>
                 </div>
-                <div class="form-buttons">
+                <div class="dropdown dropdown-nav" data-target="select5">
+                  <a class="dropdown-button text_semibold ">
+                      <span class="dropdown-button_text text_semibold">10</span>
+                  </a>
+                  <div class="dropdown-content"><a href="#10" class="text_semibold" data-value="10">10</a><a href="#20" class="text_semibold" data-value="20">20</a><a href="#30" class="text_semibold" data-value="30">30</a></div>
+              </div>
+              <select id="select5" class="hidden-select" hidden="">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+              </select>
+                  
+                <div class="double-header-btns-content">
+
+                <button class="help_btn opoznanie-help-btn">Вперед</button>
+                  <button class="help_btn opoznanie-help-btn">Конец</button>
+                </div>
+                
+              </div>
+            
+                
+                <div class="form-buttons double-header-btns">
                   <button type="submit" class="help_btn opoznanie-help-btn disabled-form-btn">
                     Сохранить
                   </button>
@@ -695,7 +726,7 @@
                   <button class="help_btn opoznanie-help-btn">Импорт нескольких реестров</button>
                   <button class="help_btn opoznanie-help-btn">Очистить</button>
                 </div>
-              </div>
+            
               
             </form>
           </div>
